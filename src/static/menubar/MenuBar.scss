@@ -1,0 +1,13 @@
+.menuBar {
+    margin: 10px 100px 0px 100px;
+    position: relative;
+  }
+  .menuBar ul {
+    display: flex;
+    font-size: 30px;
+    font-weight: bold;
+  }
+  .menuBar li {
+    margin: 0px 10px 0px 10px;
+    cursor: pointer;
+  }

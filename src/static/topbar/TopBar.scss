@@ -1,0 +1,40 @@
+.topBar {
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+  }
+  .topBarLeft {
+    margin: 5px;
+    padding: 5px;
+  }
+  .topBarRight {
+    display: flex;
+    margin: 5px;
+    padding: 5px;
+  }
+  .topBarRightOne ul {
+    display: flex;
+  }
+  .topBarRightOne li {
+    margin: 0px 5px 0px 5px;
+    cursor: pointer;
+  }
+  .topBarRightTwo ul {
+    display: flex;
+  }
+  .topBarRightTwo li {
+    margin: 0px 5px 0px 5px;
+    cursor: pointer;
+  }
+  .topBarRightThree ul {
+    display: flex;
+  }
+  .topBarRightThree li {
+    margin: 0px 5px 0px 5px;
+    cursor: pointer;
+  }
+  .topBarRightFour li {
+    margin: 0px 5px 0px 5px;
+    cursor: pointer;
+  }

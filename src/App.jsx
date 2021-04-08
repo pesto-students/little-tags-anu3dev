@@ -1,3 +1,6 @@
+import TopBar from "./static/topbar/TopBar";
+import SubBar from "./static/subbar/SubBar";
+import MenuBar from "./static/menubar/MenuBar";
 import './App.scss';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Home from './components/Home/Home';
@@ -8,6 +11,9 @@ function App() {
   return (
     <Router>
     <div>
+    <TopBar />
+      <SubBar />
+      <MenuBar />
       <Switch>
       <Route exact path="/" component={Home}/>
       <Route exact path="/productsList/:productCategory" component={ProductsList}/>

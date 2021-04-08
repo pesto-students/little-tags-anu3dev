@@ -11,10 +11,10 @@ function App() {
   return (
     <Router>
     <div>
-      <Switch>
-      <TopBar />
+    <TopBar />
       <SubBar />
       <MenuBar />
+      <Switch>
       <Route exact path="/" component={Home}/>
       <Route exact path="/productsList/:productCategory" component={ProductsList}/>
       <Route component={PageNotFound}/>

@@ -13,7 +13,7 @@ export default function SubBar(){
             <div className="subBarRight">
                 <div className="subBarRightOne">
                     <ul>
-                        <li>Need help? +91-9876543210</li>
+                        <li><i className="las la-phone-volume"></i> +91-9876543210</li>
                         <li><input type="text" placeholder="Search Here" /></li>
                     </ul>
                 </div>

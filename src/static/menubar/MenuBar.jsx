@@ -6,14 +6,14 @@ export default function MenuBar() {
     <div className="menuBar">
       <ul>
         <li>
-          <i className="las la-bars"></i>
+          <a href="."><i className="las la-bars"></i></a>
         </li>
-        <li>Grocery</li>
-        <li>Fashion</li>
-        <li>Sports</li>
-        <li>Books</li>
-        <li>Beauty</li>
-        <li>Electronics</li>
+        <li><a href="."> Grocery</a></li>
+        <li><a href=".">Fashion</a></li>
+        <li><a href=".">Sports</a></li>
+        <li><a href=".">Books</a></li>
+        <li><a href=".">Beauty</a></li>
+        <li><a href=".">Electronics</a></li>
       </ul>
     </div>
   );

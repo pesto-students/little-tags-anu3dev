@@ -30,6 +30,7 @@ export default function Footer() {
                     <li><a href=".">Return policy</a></li>
                     <li><a href=".">Affliate Program</a></li>
                     <li><a href=".">Payment Checkout</a></li>
+                    <li><a href=".">Contact Us</a></li>
                 </ul>
             </div>
             <div className="col-lg-3 col-md-3">

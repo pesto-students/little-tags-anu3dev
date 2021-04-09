@@ -4,7 +4,7 @@ import MenuBar from "./static/menubar/MenuBar";
 import Slider from "./static/slider/Slider";
 import { SliderData } from './constant/SliderData';
 import ProductCat from "./static/productCat/ProductCat";
-import Footer from "./static/footer/Footer"
+import Footer from "./static/footer/Footer";
 import './App.scss';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Home from './components/Home/Home';

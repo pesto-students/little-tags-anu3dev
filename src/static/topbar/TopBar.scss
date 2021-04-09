@@ -1,8 +1,15 @@
 .topBar {
-  background-color: #f0f2f5;
+  background-color: #ff9923;
   display: flex;
   position: relative;
   align-items: center;
+  padding-top: 10px;
+  font-weight: bold;
+  color: #fff;
+}
+.topBar a {
+  text-decoration: none;
+  color: #fff;
 }
 .topBarLeft {
   display: flex;

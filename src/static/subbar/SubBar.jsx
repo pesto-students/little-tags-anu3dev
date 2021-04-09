@@ -13,15 +13,15 @@ export default function SubBar(){
             <div className="subBarRight">
                 <div className="subBarRightOne">
                     <ul>
-                        <li><i className="las la-phone-volume"></i> +91-9876543210</li>
+                        <li><a href="tel:+91-9876543210"><i className="las la-phone-volume"></i> +91-9876543210</a></li>
                         <li><input type="text" placeholder="Search Here" /></li>
                     </ul>
                 </div>
                 <div className="subBarRightTwo">
                     <ul>
-                        <li><i className="las la-user"></i></li>
-                        <li><i className="las la-heart"></i></li>
-                        <li><i className="las la-shopping-cart"></i></li>
+                        <li><a href="."><i className="las la-user"></i></a></li>
+                        <li><a href="."><i className="las la-heart"></i></a></li>
+                        <li><a href="."><i className="las la-shopping-cart"></i></a></li>
                     </ul>
                 </div>
             </div>

@@ -2,6 +2,10 @@
     margin: 10px 100px 0px 100px;
     position: relative;
   }
+  .menuBar a {
+    text-decoration: none;
+    color: #20225e;
+  }
   .menuBar ul {
     display: flex;
     font-size: 30px;

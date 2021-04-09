@@ -2,6 +2,9 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import "./ProductsList.scss";
 import ProductsData from "../common/data/products.json";
+import Pagination from "./ProductsPagination";
+const PAGE_LIMIT = 5;
+const DATA_LIMIT = 4;
 
 export default function ProductsList() {
   let { productCategory } = useParams();
@@ -11,20 +14,21 @@ export default function ProductsList() {
     (product) => (product.category = productCategory)
   );
 
-  const content = products.map(
-    ({ id, title, price, description, category, image }) => (
-      <li key={id}>
-        <h3>{title}</h3>
-        <p>{price}</p>
-        <p>{description}</p>
-        <p>{category}</p>
-        <p>{image}</p>
-      </li>
-    )
-  );
+  console.log("products.length: ", products.length);
+
   return (
     <div className="productContainer">
-      <ul>{content}</ul>
+      {products.length > 0 ? (
+        <>
+          <Pagination
+            data={products}
+            pageLimit={PAGE_LIMIT}
+            dataLimit={DATA_LIMIT}
+          />
+        </>
+      ) : (
+        <h1>No products to display</h1>
+      )}
     </div>
   );
 }

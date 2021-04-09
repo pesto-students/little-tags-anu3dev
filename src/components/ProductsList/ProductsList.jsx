@@ -1,30 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./ProductsList.scss";
 import ProductsData from "../common/data/products.json";
 import Pagination from "./ProductsPagination";
-const PAGE_LIMIT = 5;
-const DATA_LIMIT = 4;
+const DATA_LIMIT = 6;
 
 export default function ProductsList() {
   let { productCategory } = useParams();
-  productCategory = "jewelery";
+  const [products, setProducts] = useState([]);
 
-  const products = ProductsData.filter(
-    (product) => (product.category = productCategory)
-  );
-
-  console.log("products.length: ", products.length);
+  useEffect(() => {
+    const productsData = ProductsData.filter(
+      (product) => (product.category = productCategory)
+    );
+    setProducts(productsData);
+  }, [productCategory]);
 
   return (
-    <div className="productContainer">
+    <div>
       {products.length > 0 ? (
         <>
-          <Pagination
-            data={products}
-            pageLimit={PAGE_LIMIT}
-            dataLimit={DATA_LIMIT}
-          />
+          <Pagination data={products} dataLimit={DATA_LIMIT} />
         </>
       ) : (
         <h1>No products to display</h1>

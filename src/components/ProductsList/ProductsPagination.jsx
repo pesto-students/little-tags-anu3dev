@@ -1,22 +1,23 @@
 import React, { useState } from "react";
 import "./ProductsList.scss";
 
-export default function Pagination({ data, pageLimit, dataLimit }) {
-  const [pages] = useState(Math.round(data.length / dataLimit));
+export default function Pagination({ data, dataLimit }) {
+  const [pages] = useState(Math.ceil(data.length / dataLimit));
   const [currentPage, setCurrentPage] = useState(1);
+  const [cart, setCart] = useState([]);
 
-  function goToNextPage() {
-    setCurrentPage((page) => page + 1);
-  }
+  const handleClickNext = () => {
+    setCurrentPage(currentPage + 1);
+  };
 
-  function goToPreviousPage() {
-    setCurrentPage((page) => page - 1);
-  }
+  const handleClickPrevious = () => {
+    setCurrentPage(currentPage - 1);
+  };
 
-  function changePage(event) {
+  const handleChangePage = (event) => {
     const pageNumber = Number(event.target.textContent);
     setCurrentPage(pageNumber);
-  }
+  };
 
   const getPaginatedData = () => {
     const startIndex = currentPage * dataLimit - dataLimit;
@@ -25,27 +26,42 @@ export default function Pagination({ data, pageLimit, dataLimit }) {
   };
 
   const getPaginationGroup = () => {
-    let start = Math.floor((currentPage - 1) / pageLimit) * pageLimit;
-    return new Array(pageLimit).fill().map((_, idx) => start + idx + 1);
+    const pageNumbers = [];
+    for (let i = 1; i <= Math.ceil(data.length / dataLimit); i++) {
+      pageNumbers.push(i);
+    }
+    return pageNumbers;
+  };
+
+  const handleAddToCart = (index) => {
+    setCart(cart.concat(data[index]));
   };
 
   return (
-    <div>
-      <div className="pagination">
-        {getPaginatedData().map((d, idx) => (
-          <li key={idx}>
-            <h3>{d.title}</h3>
-            <p>{d.price}</p>
-            <p>{d.description}</p>
-            <p>{d.category}</p>
-            <p>{d.image}</p>
-          </li>
-        ))}
-      </div>
+    <div className="productContent">
+      {getPaginatedData().map((d, idx) => (
+        <div className="card" key={idx}>
+          <div className="cardImage">
+            <img src={d.image} alt="logo" />
+          </div>
+          <div className="cardHeader">
+            <h3 className="title">{d.title}</h3>
+            <p className="desc">{d.description}</p>
+            <p className="price">{d.price}</p>
+            <p className="price">{d.category}</p>
+            <button
+              className="addToCartBtn"
+              onClick={() => handleAddToCart(idx)}
+            >
+              Add to cart
+            </button>
+          </div>
+        </div>
+      ))}
 
-      <div className="pagination">
+      <div className="page">
         <button
-          onClick={goToPreviousPage}
+          onClick={handleClickPrevious}
           className={`prev ${currentPage === 1 ? "disabled" : ""}`}
         >
           prev
@@ -54,7 +70,7 @@ export default function Pagination({ data, pageLimit, dataLimit }) {
         {getPaginationGroup().map((item, index) => (
           <button
             key={index}
-            onClick={changePage}
+            onClick={handleChangePage}
             className={`paginationItem ${
               currentPage === item ? "active" : null
             }`}
@@ -64,7 +80,7 @@ export default function Pagination({ data, pageLimit, dataLimit }) {
         ))}
 
         <button
-          onClick={goToNextPage}
+          onClick={handleClickNext}
           className={`next ${currentPage === pages ? "disabled" : ""}`}
         >
           next

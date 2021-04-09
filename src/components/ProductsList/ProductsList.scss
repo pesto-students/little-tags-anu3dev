@@ -1,20 +1,94 @@
-.productContainer {
+.dFlex {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid red;
-  height: 80vh;
+}
+.productContent {
+  @extend .dFlex;
+  position: relative;
+  width: 70%;
+  height: 100%;
+  margin: 50px auto;
+  padding: 50px 0 0;
+  box-sizing: border-box;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  .card {
+    width: 30%;
+    border-radius: 15px;
+    @extend .dFlex;
+    flex-direction: column;
+    position: relative;
+    transform: scale(0.8);
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 50px;
+    .cardImage {
+      margin-top: -5vw;
+      img {
+        width: 200px;
+      }
+    }
+    .cardHeader {
+      @extend .dFlex;
+      flex-direction: column;
+      color: var(--white);
+      margin: 25px 0;
+      .title {
+        font-size: 18px;
+      }
+      .desc {
+        font-size: 14px;
+        text-align: center;
+        color: rgba(var(--white), 0.3);
+        margin: 8px 0;
+      }
+      .price {
+        font-size: 25px;
+        color: var(--orange);
+      }
+    }
+  }
+  .card:hover {
+    background-color: var(--lightBg);
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+  .card:hover {
+    .addToCartBtn {
+      background-color: var(--orange);
+      color: var(--white);
+    }
+  }
 }
 
-.pagination {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.addToCartBtn {
+  width: 130px;
+  height: 35px;
+  font-size: 14px;
+  border-radius: 35px;
+  background-color: var(--text);
+  color: var(--white);
+  @extend .dFlex;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s ease;
+  overflow: hidden;
+  outline: none;
+}
+
+.productImage {
+  width: 20%;
+  height: 20%;
+}
+
+.page {
+  @extend .dFlex;
+  margin-left: 25%;
 }
 
 .paginationItem {
-  background: #fff;
-  border: 2px solid #666;
+  background: var(--white);
+  border: 2px solid var(--greyBorder);
   padding: 10px 15px;
   border-radius: 50%;
   height: 45px;
@@ -36,8 +110,8 @@
   background: #fff;
   border: none;
   padding: 10px;
-  color: blue;
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+  color: var(--blue);
+  box-shadow: 0 0 3px var(--borderColor);
   margin: 0 10px;
   cursor: pointer;
 }

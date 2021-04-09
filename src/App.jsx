@@ -1,6 +1,10 @@
 import TopBar from "./static/topbar/TopBar";
 import SubBar from "./static/subbar/SubBar";
 import MenuBar from "./static/menubar/MenuBar";
+import Slider from "./static/slider/Slider";
+import { SliderData } from './constant/SliderData';
+import ProductCat from "./static/productCat/ProductCat";
+import Footer from "./static/footer/Footer";
 import "./App.scss";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./components/Home/Home";
@@ -11,11 +15,14 @@ import * as PATHS from "./components/common/constants/Routes";
 function App() {
   return (
     <Router>
-      <div>
-        <TopBar />
-        <SubBar />
-        <MenuBar />
-        <Switch>
+    <div>
+      <TopBar />
+      <SubBar />
+      <MenuBar />
+      <Slider slides={SliderData} />
+      <ProductCat />
+      <Footer />
+      <Switch>
           <Route exact path={PATHS.HOME}>
             <Home />
           </Route>

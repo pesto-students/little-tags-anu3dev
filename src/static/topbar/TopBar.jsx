@@ -11,39 +11,39 @@ export default function TopBar() {
       <div className="topBarRight">
         <div className="topBarRightOne">
           <ul>
-            <li>Order Tracking</li>
-            <li>Blog</li>
+            <li><a href="."> Order Tracking</a></li>
+            <li><a href=".">Blog</a></li>
           </ul>
         </div>
         <div className="topBarRightTwo">
           <ul>
             <li>
-              <i className="lab la-facebook-f"></i>
+            <a href="."><i className="lab la-facebook-f"></i> </a>
             </li>
             <li>
-              <i className="lab la-instagram"></i>
+            <a href="."><i className="lab la-instagram"></i> </a>
             </li>
             <li>
-              <i className="lab la-youtube"></i>
+            <a href="."><i className="lab la-youtube"></i> </a>
             </li>
             <li>
-              <i className="lab la-pinterest"></i>
+            <a href="."><i className="lab la-pinterest"></i> </a>
             </li>
             <li>
-              <i className="lab la-linkedin-in"></i>
+            <a href="."><i className="lab la-linkedin-in"></i> </a>
             </li>
           </ul>
         </div>
         <div className="topBarRightThree">
           <ul>
-            <li>English</li>
-            <li>INR</li>
+            <li><a href=".">English</a></li>
+            <li><a href=".">INR</a></li>
           </ul>
         </div>
         <div className="topBarRightFour">
           <ul>
             <li>
-              <i className="las la-times"></i>
+              <a href="."><i className="las la-times"></i></a>
             </li>
           </ul>
         </div>

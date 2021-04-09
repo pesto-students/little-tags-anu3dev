@@ -2,16 +2,22 @@
   display: flex;
   position: relative;
   align-items: center;
+  margin-top: 25px;
+}
+.subBar a {
+  text-decoration: none;
 }
 .subBarLeft {
   display: flex;
   flex: 1;
   justify-content: space-around;
+  margin-left: -100px;
 }
 .logo {
   cursor: pointer;
   font-size: 60px;
   font-weight: bold;
+  color: #20225e;
 }
 .subBarRight {
   display: flex;
@@ -30,4 +36,28 @@
 }
 .subBarRightOne li input {
   font-size: 20px;
+  border:#ff9923 2px solid;
+  border-radius: 10px;
+  cursor: pointer;
+  outline: none;
+  padding-left: 10px;
+  margin-left: 20px;
+}
+.subBarRightOne li input:hover {
+  font-size: 20px;
+  border:#20225e 2px solid;
+}
+.subBarRightOne li input::placeholder {
+  color: #ff9923;
+}
+.subBarRightOne {
+  padding: 10px;
+}
+.subBarRight ul li a{
+  text-decoration: none;
+  color: #ff9923;
+}
+.subBarRight ul li a:hover {
+  text-decoration: none;
+  color: #20225e;
 }

@@ -1,8 +1,19 @@
 .topBar {
-  background-color: #f0f2f5;
+  background-color: #ff9923;
   display: flex;
   position: relative;
   align-items: center;
+  padding-top: 10px;
+  font-weight: bold;
+  color: #fff;
+}
+.topBar a {
+  text-decoration: none;
+  color: #fff;
+}
+.topBar a:hover {
+  text-decoration: none;
+  color: #20225e;
 }
 .topBarLeft {
   display: flex;

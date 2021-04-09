@@ -8,8 +8,9 @@ import proE from "../../img/proE.webp";
 
 export default function ProductCat() {
     return (
-        <div className="productCat row">
-            <h1>Product Catogaries</h1>
+        <div className="productCat">
+                <h1>Product Catogaries</h1>
+            <div className="row">
             <div className="productCatTop col-lg-6 col-md-6">
                 <img src={proD} alt=""/>
                 <p className="onTextButton">Check the colection! <br/><br/> It's amazing.</p>
@@ -34,6 +35,7 @@ export default function ProductCat() {
                 <img src={proC} alt=""/>
                 <p className="onTextButtonSmall">Check the colection! <br/><br/> It's amazing.</p>
                 <button className="onImageButtonSmall btn">Browse Products</button>
+            </div>
             </div>
         </div>
     )

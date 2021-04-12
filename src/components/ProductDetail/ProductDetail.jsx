@@ -65,9 +65,6 @@ export default function ProductDetail() {
           </p>
           <button className="addToCart">Add To Cart</button>
         </div>
-        <div className="productDetailRight">
-          <p>Test</p>
-        </div>
       </div>
       <div className="productImages">
         <ImagesThumb

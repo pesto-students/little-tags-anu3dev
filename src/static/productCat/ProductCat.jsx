@@ -18,16 +18,14 @@ export default function ProductCat() {
           <img src="/img/proD.png" alt="men" />
           <p className="onTextButton"></p>
           <Link
-            className="onImageButton btn"
-            to={"/productsList/" + MENS_CLOTHING}
-          >
-            Indian Wear
+            className="onImageButton btn" to={"/productsList/" + MENS_CLOTHING}>
+            Mens Wear
           </Link>
         </div>
         <div className="productCatTop col-lg-6 col-md-6">
           <img src="/img/proE.png" alt="jewellery" />
           <p className="onTextButton"></p>
-          <Link className="onImageButton btn" to={"/productsList/" + JEWELLERY}>
+          <Link className="onImageButton btn" to={"/productsList/" + WOMENS_CLOTHING}>
           Western Wear
           </Link>
         </div>
@@ -35,9 +33,7 @@ export default function ProductCat() {
           <img src="/img/proA.png" alt="" />
           <p className="onTextButtonSmall"></p>
           <Link
-            className="onImageButtonSmall btn"
-            to={"/productsList/" + ELECTRONICS}
-          >
+            className="onImageButtonSmall btn" to={"/productsList/" + KIDS_CLOTHING}>
             Beauty Care
           </Link>
         </div>
@@ -45,9 +41,7 @@ export default function ProductCat() {
           <img src="/img/proB.png" alt="" />
           <p className="onTextButtonSmall"></p>
           <Link
-            className="onImageButtonSmall btn"
-            to={"/productsList/" + WOMENS_CLOTHING}
-          >
+            className="onImageButtonSmall btn" to={"/productsList/" + JEWELLERY}>
             Jewellery
           </Link>
         </div>
@@ -55,9 +49,7 @@ export default function ProductCat() {
           <img src="/img/proC.png" alt="" />
           <p className="onTextButtonSmall"></p>
           <Link
-            className="onImageButtonSmall btn"
-            to={"/productsList/" + KIDS_CLOTHING}
-          >
+            className="onImageButtonSmall btn" to={"/productsList/" + ELECTRONICS}>
             Electronics
           </Link>
         </div>

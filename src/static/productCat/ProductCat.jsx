@@ -4,7 +4,7 @@ import proA from "../../img/proA.png";
 import proB from "../../img/proB.png";
 import proC from "../../img/proC.png";
 import proD from "../../img/proD.png";
-import proE from "../../img/proE.webp";
+import proE from "../../img/proE.png";
 import { Link } from "react-router-dom";
 
 export default function ProductCat() {
@@ -15,43 +15,27 @@ export default function ProductCat() {
       <div className="row">
         <div className="productCatTop col-lg-6 col-md-6">
           <img src={proD} alt="" />
-          <p className="onTextButton">
-            Check the colection! <br />
-            <br /> It's amazing.
-          </p>
           <Link to={"/productsList/" + productCateg}>Prod</Link>
           <button className="onImageButton btn">Browse Products</button>
         </div>
         <div className="productCatTop col-lg-6 col-md-6">
           <img src={proE} alt="" />
-          <p className="onTextButton">
-            Check the colection! <br />
-            <br /> It's amazing.
-          </p>
           <button className="onImageButton btn">Browse Products</button>
         </div>
         <div className="productCatBot col-lg-4 col-md-4">
           <img src={proA} alt="" />
-          <p className="onTextButtonSmall">
-            Check the colection! <br />
-            <br /> It's amazing.
-          </p>
           <button className="onImageButtonSmall btn">Browse Products</button>
         </div>
         <div className="productCatBot col-lg-4 col-md-4">
           <img src={proB} alt="" />
-          <p className="onTextButtonSmall">
-            Check the colection! <br />
-            <br /> It's amazing.
-          </p>
           <button className="onImageButtonSmall btn">Browse Products</button>
         </div>
         <div className="productCatBot col-lg-4 col-md-4">
           <img src={proC} alt="" />
-          <p className="onTextButtonSmall">
+          {/* <p className="onTextButtonSmall">
             Check the colection! <br />
             <br /> It's amazing.
-          </p>
+          </p> */}
           <button className="onImageButtonSmall btn">Browse Products</button>
         </div>
       </div>

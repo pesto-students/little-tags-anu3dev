@@ -1,42 +1,65 @@
 import React from "react";
 import "./ProductCat.scss";
-import proA from "../../img/proA.png";
-import proB from "../../img/proB.png";
-import proC from "../../img/proC.png";
-import proD from "../../img/proD.png";
-import proE from "../../img/proE.png";
 import { Link } from "react-router-dom";
+import {
+  MENS_CLOTHING,
+  JEWELLERY,
+  ELECTRONICS,
+  WOMENS_CLOTHING,
+  KIDS_CLOTHING,
+} from "../../components/common/Routes";
 
 export default function ProductCat() {
-  let productCateg = "jewelery";
   return (
     <div className="productCat">
-      <h1>Product Catogaries</h1>
+      <h1>Product Categories</h1>
       <div className="row">
         <div className="productCatTop col-lg-6 col-md-6">
-          <img src={proD} alt="" />
-          <Link to={"/productsList/" + productCateg}>Prod</Link>
-          <button className="onImageButton btn">Browse Products</button>
+          <img src="/images/MensClothing_1.jpg" alt="men" />
+          <p className="onTextButton">Styles for Men</p>
+          <Link
+            className="onImageButton btn"
+            to={"/productsList/" + MENS_CLOTHING}
+          >
+            Browse Products
+          </Link>
         </div>
         <div className="productCatTop col-lg-6 col-md-6">
-          <img src={proE} alt="" />
-          <button className="onImageButton btn">Browse Products</button>
+          <img src="/images/Jewellery_1.jpg" alt="jewellery" />
+          <p className="onTextButton">Jewellery</p>
+          <Link className="onImageButton btn" to={"/productsList/" + JEWELLERY}>
+            Browse Products
+          </Link>
         </div>
         <div className="productCatBot col-lg-4 col-md-4">
-          <img src={proA} alt="" />
-          <button className="onImageButtonSmall btn">Browse Products</button>
+          <img src="/images/Electronics_1.png" alt="" />
+          <p className="onTextButtonSmall">Electronics</p>
+          <Link
+            className="onImageButtonSmall btn"
+            to={"/productsList/" + ELECTRONICS}
+          >
+            Browse Products
+          </Link>
         </div>
         <div className="productCatBot col-lg-4 col-md-4">
-          <img src={proB} alt="" />
-          <button className="onImageButtonSmall btn">Browse Products</button>
+          <img src="/images/Womensclothing_1.jpg" alt="" />
+          <p className="onTextButtonSmall">Style for Women</p>
+          <Link
+            className="onImageButtonSmall btn"
+            to={"/productsList/" + WOMENS_CLOTHING}
+          >
+            Browse Products
+          </Link>
         </div>
         <div className="productCatBot col-lg-4 col-md-4">
-          <img src={proC} alt="" />
-          {/* <p className="onTextButtonSmall">
-            Check the colection! <br />
-            <br /> It's amazing.
-          </p> */}
-          <button className="onImageButtonSmall btn">Browse Products</button>
+          <img src="/images/Kids_1.jpg" alt="" />
+          <p className="onTextButtonSmall">Kids</p>
+          <Link
+            className="onImageButtonSmall btn"
+            to={"/productsList/" + KIDS_CLOTHING}
+          >
+            Browse Products
+          </Link>
         </div>
       </div>
     </div>

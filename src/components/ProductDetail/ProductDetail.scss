@@ -64,7 +64,11 @@
 }
 .productDetailRight {
   display: flex;
+  flex-direction: column;
   flex: 0.3;
+  border: 1px solid grey;
+  background-color: grayscale($color: #636060);
+  height: 130%;
 }
 .productImages {
   margin: 2% 2%;

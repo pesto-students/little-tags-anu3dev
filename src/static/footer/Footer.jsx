@@ -15,7 +15,6 @@ export default function Footer() {
                 <h3>Product Categories:</h3>
                 <ul>
                     <li><a href=".">Grocery</a></li>
-                    <li><a href=".">Fashion</a></li>
                     <li><a href=".">Sports</a></li>
                     <li><a href=".">Books</a></li>
                     <li><a href=".">Beauty</a></li>

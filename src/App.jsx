@@ -9,7 +9,8 @@ import "./App.scss";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ProductsList from "./components/ProductsList/ProductsList";
 import PageNotFound from "./components/PageNotFound/PageNotFound";
-import * as PATHS from "./components/common/constants/Routes";
+import * as PATHS from "./components/common/Routes";
+import ProductDetail from "./components/ProductDetail/ProductDetail";
 
 function App() {
   return (
@@ -25,6 +26,9 @@ function App() {
           </Route>
           <Route exact path={PATHS.PRODUCTS_LIST}>
             <ProductsList />
+          </Route>
+          <Route exact path={PATHS.PRODUCT_DETAIL}>
+            <ProductDetail />
           </Route>
           <Route>
             <PageNotFound />

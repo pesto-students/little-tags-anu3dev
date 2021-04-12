@@ -8,30 +8,30 @@
   position: relative;
   width: 70%;
   height: 100%;
-  margin: 50px auto;
-  padding: 50px 0 0;
+  margin: 5% auto;
+  padding: 5% 0 0;
   box-sizing: border-box;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
   .card {
     width: 30%;
     border-radius: 15px;
     @extend .dFlex;
-    flex-direction: column;
     position: relative;
     transform: scale(0.8);
     transition: all 0.3s ease-in-out;
     margin-bottom: 50px;
     .cardImage {
       margin-top: -5vw;
+      margin-left: 20%;
       img {
-        width: 200px;
+        width: 60%;
       }
     }
     .cardHeader {
       @extend .dFlex;
       flex-direction: column;
-      color: var(--white);
+      color: var(--black);
       margin: 25px 0;
       .title {
         font-size: 18px;
@@ -54,17 +54,24 @@
     cursor: pointer;
   }
   .card:hover {
-    .addToCartBtn {
+    .viewBtn {
       background-color: var(--orange);
+      color: var(--white);
+      outline: none;
+    }
+    .title {
+      color: var(--black);
+    }
+    .cardHeader {
       color: var(--white);
     }
   }
 }
 
-.addToCartBtn {
-  width: 130px;
-  height: 35px;
-  font-size: 14px;
+.viewBtn {
+  width: 50%;
+  height: 50%;
+  font-size: 20px;
   border-radius: 35px;
   background-color: var(--text);
   color: var(--white);
@@ -74,11 +81,6 @@
   transition: background-color 0.3s ease;
   overflow: hidden;
   outline: none;
-}
-
-.productImage {
-  width: 20%;
-  height: 20%;
 }
 
 .page {
@@ -107,7 +109,7 @@
 
 .prev,
 .next {
-  background: #fff;
+  background: var(--white);
   border: none;
   padding: 10px;
   color: var(--blue);

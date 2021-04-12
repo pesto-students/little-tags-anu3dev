@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./ProductsList.scss";
 
-export default function Pagination({ data, dataLimit }) {
+export default function ProductsPagination({ data, dataLimit }) {
   const [pages] = useState(Math.ceil(data.length / dataLimit));
   const [currentPage, setCurrentPage] = useState(1);
-  const [cart, setCart] = useState([]);
+  // const [cart, setCart] = useState([]);
 
   const handleClickNext = () => {
     setCurrentPage(currentPage + 1);
@@ -33,9 +34,9 @@ export default function Pagination({ data, dataLimit }) {
     return pageNumbers;
   };
 
-  const handleAddToCart = (index) => {
-    setCart(cart.concat(data[index]));
-  };
+  // const handleAddToCart = (e) => {
+  //   setCart(cart.concat(data[e]));
+  // };
 
   return (
     <div className="productContent">
@@ -47,14 +48,14 @@ export default function Pagination({ data, dataLimit }) {
           <div className="cardHeader">
             <h3 className="title">{d.title}</h3>
             <p className="desc">{d.description}</p>
-            <p className="price">{d.price}</p>
+            <p className="price">{d.price} $</p>
             <p className="price">{d.category}</p>
-            <button
-              className="addToCartBtn"
-              onClick={() => handleAddToCart(idx)}
+            <Link
+              to={{ pathname: "/product/", productDetail: d }}
+              className="viewBtn"
             >
-              Add to cart
-            </button>
+              View
+            </Link>
           </div>
         </div>
       ))}

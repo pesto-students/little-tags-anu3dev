@@ -18,7 +18,7 @@ export default function Footer() {
                     <li><a href=".">Sports</a></li>
                     <li><a href=".">Books</a></li>
                     <li><a href=".">Beauty</a></li>
-                    <li><a href=".">Electronics</a></li>
+                    <li><a href=".">Electron</a></li>
                 </ul>
             </div>
             <div className="col-lg-3 col-md-3">

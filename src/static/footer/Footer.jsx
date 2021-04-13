@@ -24,7 +24,6 @@ export default function Footer() {
             <div className="col-lg-3 col-md-3">
                 <h3>Quick Links:</h3>
                 <ul>
-                    <li><a href=".">FAQ</a></li>
                     <li><a href=".">Privacy Policy</a></li>
                     <li><a href=".">Return policy</a></li>
                     <li><a href=".">Affliate Program</a></li>

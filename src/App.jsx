@@ -1,16 +1,16 @@
-import TopBar from "./static/topbar/TopBar";
-import SubBar from "./static/subbar/SubBar";
-import MenuBar from "./static/menubar/MenuBar";
-import Slider from "./static/slider/Slider";
-import { SliderData } from "./constant/SliderData";
-import ProductCat from "./static/productCat/ProductCat";
-import Footer from "./static/footer/Footer";
+import TopBar from "./components/common/topbar/TopBar";
+import SubBar from "./components/common/subbar/SubBar";
+import MenuBar from "./components/common/menubar/MenuBar";
+import Slider from "./components/common/slider/Slider";
+import { SliderData } from "./components/common/data/SliderData";
+import ProductCat from "./components/common/productCategory/ProductCategory";
+import Footer from "./components/common/footer/Footer";
 import "./App.scss";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import ProductsList from "./components/ProductsList/ProductsList";
-import PageNotFound from "./components/PageNotFound/PageNotFound";
+import ProductsList from "./components/productsList/ProductsList";
+import PageNotFound from "./components/pageNotFound/PageNotFound";
 import * as PATHS from "./components/common/Routes";
-import ProductDetail from "./components/ProductDetail/ProductDetail";
+import ProductDetail from "./components/productDetail/ProductDetail";
 
 function App() {
   return (

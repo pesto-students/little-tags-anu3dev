@@ -6,7 +6,7 @@ import {
   WOMENS_CLOTHING,
   JEWELLERY,
   ELECTRONICS,
-} from "../../components/common/Routes";
+} from "../Routes";
 
 export default function MenuBar() {
   return (

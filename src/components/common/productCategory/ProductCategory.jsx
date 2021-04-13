@@ -1,5 +1,5 @@
 import React from "react";
-import "./ProductCat.scss";
+import "./ProductCategory.scss";
 import { Link } from "react-router-dom";
 import {
   MENS_CLOTHING,
@@ -7,7 +7,7 @@ import {
   ELECTRONICS,
   WOMENS_CLOTHING,
   KIDS_CLOTHING,
-} from "../../components/common/Routes";
+} from "../Routes";
 
 export default function ProductCat() {
   return (

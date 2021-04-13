@@ -1,9 +1,5 @@
 .productScreen {
-  display: flex;
-  height: 100vh;
-  width: 90vw;
-  flex-direction: column;
-  margin-left: 5%;
+  margin: 20px 110px 0px 125px;
 }
 .navLinks {
   flex: 0.1;
@@ -32,24 +28,32 @@
   margin-left: 2%;
 }
 .leftImg {
-  width: 70%;
-  height: 80%;
-  margin-left: 10%;
+    display: block;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
 }
-.productDetailCenter {
-  display: flex;
-  flex-direction: column;
-  flex: 0.3;
-  font-size: 0.9rem;
-  margin-left: 2%;
+.imageScroll {
+  margin-bottom: 70px;
 }
 .qtySelect {
   margin-left: 2%;
 }
 .title {
-  background-color: var(--white);
   font-weight: bold;
-  font-size: 1.3rem;
+}
+.features .las {
+  color: green;
+  font-weight: bold;
+  font-size: 20px;
+}
+.features {
+  margin-bottom: 30px;
+}
+.rating {
+  color: var(--orange);
+  font-weight: bold;
+  margin: 20px 0px 20px 0px;
 }
 .addToCart {
   width: 50%;
@@ -62,13 +66,31 @@
   background-color: var(--orange);
   color: var(--white);
 }
+.addToCart:hover {
+  background-color: #20225e;
+}
 .productDetailRight {
+  background-color: #f0f2f5;
+  padding: 30px 0px 30px 20px;
+}
+.productDetailRight h4 {
+  color: var(--orange);
+  font-weight: bold;
+}
+.rightSec {
   display: flex;
-  flex-direction: column;
-  flex: 0.3;
-  border: 1px solid grey;
-  background-color: grayscale($color: #636060);
-  height: 130%;
+  font-weight: bold;
+}
+.rightSec .la-wallet {
+  color: var(--orange);
+  padding-right: 20px;
+}
+.payIcon {
+  font-size: 70px;
+  margin: 10px 10px 10px 10px;
+}
+.payIcon .lab {
+  padding: 0px 10px;
 }
 .productImages {
   margin: 2% 2%;

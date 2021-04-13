@@ -1,6 +1,6 @@
-import TopBar from "./components/common/Topbar/TopBar";
-import SubBar from "./components/common/Subbar/SubBar";
-import MenuBar from "./components/common/Menubar/MenuBar";
+import TopBar from "./components/common/TopBar/TopBar";
+import SubBar from "./components/common/SubBar/SubBar";
+import MenuBar from "./components/common/MenuBar/MenuBar";
 import Slider from "./components/common/Slider/Slider";
 import { SliderData } from "./components/common/data/SliderData";
 import ProductCat from "./components/common/ProductCategory/ProductCategory";

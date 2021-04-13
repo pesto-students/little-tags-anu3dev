@@ -5,7 +5,6 @@ import "./ProductsList.scss";
 export default function ProductsPagination({ data, dataLimit }) {
   const [pages] = useState(Math.ceil(data.length / dataLimit));
   const [currentPage, setCurrentPage] = useState(1);
-  // const [cart, setCart] = useState([]);
 
   const handleClickNext = () => {
     setCurrentPage(currentPage + 1);
@@ -34,16 +33,12 @@ export default function ProductsPagination({ data, dataLimit }) {
     return pageNumbers;
   };
 
-  // const handleAddToCart = (e) => {
-  //   setCart(cart.concat(data[e]));
-  // };
-
   return (
     <div className="productContent">
       {getPaginatedData().map((d, idx) => (
         <div className="card" key={idx}>
           <div className="cardImage">
-            <img src={d.image} alt="logo" />
+            <img src={d.image} alt="product" />
           </div>
           <div className="cardHeader">
             <h3 className="title">{d.title}</h3>

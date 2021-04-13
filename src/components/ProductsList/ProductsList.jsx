@@ -9,12 +9,12 @@ export default function ProductsList() {
   const { productCategory } = useParams();
   const [products, setProducts] = useState([]);
   useEffect(() => {
+    window.scrollTo(0, 0);
     let productsData = ProductsData.filter(
       (product) => product.category === productCategory
     );
     setProducts(productsData);
   }, [productCategory]);
-
   return (
     <div>
       {products.length > 0 ? (

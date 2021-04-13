@@ -14,11 +14,10 @@ export default function Footer() {
             <div className="col-lg-3 col-md-3">
                 <h3>Product Categories:</h3>
                 <ul>
-                    <li><a href=".">Grocery</a></li>
-                    <li><a href=".">Fashion</a></li>
-                    <li><a href=".">Sports</a></li>
-                    <li><a href=".">Books</a></li>
-                    <li><a href=".">Beauty</a></li>
+                    <li><a href=".">Mens Wear</a></li>
+                    <li><a href=".">Womens Wear</a></li>
+                    <li><a href=".">Beauty Care</a></li>
+                    <li><a href=".">Jewellery</a></li>
                     <li><a href=".">Electronics</a></li>
                 </ul>
             </div>

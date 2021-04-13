@@ -36,7 +36,7 @@
 }
 .subBarRightOne li input {
   font-size: 20px;
-  border:#ff9923 2px solid;
+  border: #ff9923 2px solid;
   border-radius: 10px;
   cursor: pointer;
   outline: none;
@@ -45,7 +45,7 @@
 }
 .subBarRightOne li input:hover {
   font-size: 20px;
-  border:#20225e 2px solid;
+  border: #20225e 2px solid;
 }
 .subBarRightOne li input::placeholder {
   color: #ff9923;
@@ -53,7 +53,7 @@
 .subBarRightOne {
   padding: 10px;
 }
-.subBarRight ul li a{
+.subBarRight ul li a {
   text-decoration: none;
   color: #ff9923;
 }
@@ -62,21 +62,21 @@
   color: #20225e;
 }
 .btn1 {
-    font-size: 20px;
-    font-weight: bold;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.21;
-    letter-spacing: normal;
-    text-align: center;
-    color: #fff;
-    padding: 10px 20px 10px 20px;
-    cursor: pointer;
-    border-radius: 38.5px;
-    box-shadow: 0 20px 20px -16px rgba(2, 6, 127, 0.35);
-    background-color: #20225e;
-    margin: 5px 0px 5px 0px;
+  font-size: 20px;
+  font-weight: bold;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.21;
+  letter-spacing: normal;
+  text-align: center;
+  color: #fff;
+  padding: 10px 20px 10px 20px;
+  cursor: pointer;
+  border-radius: 38.5px;
+  box-shadow: 0 20px 20px -16px rgba(2, 6, 127, 0.35);
+  background-color: #20225e;
+  margin: 5px 0px 5px 0px;
 }
 .btnWidth {
   width: 100%;
@@ -112,4 +112,7 @@
 }
 .modal-footer button {
   outline: none;
+}
+::placeholder {
+  color: var(--evergreen);
 }

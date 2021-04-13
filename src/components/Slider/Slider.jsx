@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import "./Slider.scss";
-import { SliderData } from '../data/SliderData';
+import { SliderData } from '../common/data/SliderData';
 
 const Slider = (props) => {
   const [current, setCurrent] = useState(0);

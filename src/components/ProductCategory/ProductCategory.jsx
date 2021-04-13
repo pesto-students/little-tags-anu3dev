@@ -7,7 +7,7 @@ import {
   ELECTRONICS,
   WOMENS_CLOTHING,
   KIDS_CLOTHING,
-} from "../Routes";
+} from "../common/Routes";
 
 export default function ProductCat() {
   return (

@@ -32,7 +32,7 @@ export default function ProductDetail() {
           className="links"
           to={"/productsList/" + location.productDetail.category}
         >
-          Category
+          {location.productDetail.category}
           <i className="fa fa-angle-right arrowIcon"> </i>
         </Link>
         <div className="links">{location.productDetail.title}</div>
@@ -57,22 +57,27 @@ export default function ProductDetail() {
         <div className="productDetailCenter  col-lg-6 col-md-6">
           <h1 className="title">{location.productDetail.title}</h1>
           <div className="rating">
-          <i className="las la-star"></i>
-          <i className="las la-star"></i>
-          <i className="las la-star"></i>
-          <i className="las la-star"></i>
-          <i className="las la-star"></i>
-          <span>( 9 )</span>
+            <i className="las la-star"></i>
+            <i className="las la-star"></i>
+            <i className="las la-star"></i>
+            <i className="las la-star"></i>
+            <i className="las la-star"></i>
+            <span>( 9 )</span>
           </div>
           <p>
             <span>{location.productDetail.description}</span>
           </p>
           <div className="features">
-            <i className="las la-check-double"></i> 100% Original Products <br/>
-            <i className="las la-check-double"></i> Free Delivery on order above Rs. 799 <br/>
-            <i className="las la-check-double"></i> Pay on delivery might be available <br/>
-            <i className="las la-check-double"></i> Easy 30 days returns and exchanges <br/>
-            <i className="las la-check-double"></i> Try & Buy might be available <br/>
+            <i className="las la-check-double"></i> 100% Original Products{" "}
+            <br />
+            <i className="las la-check-double"></i> Free Delivery on order above
+            Rs. 799 <br />
+            <i className="las la-check-double"></i> Pay on delivery might be
+            available <br />
+            <i className="las la-check-double"></i> Easy 30 days returns and
+            exchanges <br />
+            <i className="las la-check-double"></i> Try & Buy might be available{" "}
+            <br />
           </div>
           <p>
             <strong>Price: </strong>
@@ -95,15 +100,23 @@ export default function ProductDetail() {
         <div className="productDetailRight  col-lg-2 col-md-2">
           <div className="rightSec">
             <i className="las la-wallet"></i>
-            <p>100% <br/>Money back</p>
+            <p>
+              100% <br />
+              Money back
+            </p>
           </div>
           <div className="rightSec">
             <i className="las la-wallet"></i>
-            <p>Non-contact <br/> shipping</p>
+            <p>
+              Non-contact <br /> shipping
+            </p>
           </div>
           <div className="rightSec">
             <i className="las la-wallet"></i>
-            <p>Free delivery for <br/>order over $200</p>
+            <p>
+              Free delivery for <br />
+              order over $200
+            </p>
           </div>
           <h4>We accept:</h4>
           <div className="payIcon">
@@ -114,12 +127,6 @@ export default function ProductDetail() {
             <i class="lab la-cc-apple-pay"></i>
             <i class="lab la-amazon-pay"></i>
           </div>
-        
-
-
-
-
-
         </div>
       </div>
     </div>

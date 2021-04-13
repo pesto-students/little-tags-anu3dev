@@ -1,5 +1,5 @@
 import TopBar from "./components/TopBar/TopBar";
-import SubBar from "./components/common/SubBar/SubBar";
+import SubBar from "../src/components/common/SubBar/SubBar";
 import MenuBar from "./components/common/MenuBar/MenuBar";
 import Slider from "./components/common/Slider/Slider";
 import { SliderData } from "./components/common/data/SliderData";

@@ -1,10 +1,10 @@
-import TopBar from "./static/topbar/TopBar";
-import SubBar from "./static/subbar/SubBar";
-import MenuBar from "./static/menubar/MenuBar";
-import Slider from "./static/slider/Slider";
-import { SliderData } from "./constant/SliderData";
-import ProductCat from "./static/productCat/ProductCat";
-import Footer from "./static/footer/Footer";
+import TopBar from "./components/TopBar/TopBar";
+import SubBar from "./components/SubBar/SubBar";
+import MenuBar from "./components/MenuBar/MenuBar";
+import Slider from "./components/Slider/Slider";
+import { SliderData } from "./components/common/data/SliderData";
+import ProductCat from "./components/ProductCategory/ProductCategory";
+import Footer from "./components/Footer/Footer";
 import "./App.scss";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ProductsList from "./components/ProductsList/ProductsList";

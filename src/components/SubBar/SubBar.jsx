@@ -1,5 +1,7 @@
 import React from "react";
 import "./SubBar.scss";
+import { Link } from "react-router-dom";
+import * as ROUTES from '../common/Routes';
 
 export default function SubBar() {
   return (
@@ -31,9 +33,9 @@ export default function SubBar() {
               </a>
             </li>
             <li>
-              <a href=".">
+              <Link to={ROUTES.CARTDEMO}>
                 <i className="las la-shopping-cart"></i>
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

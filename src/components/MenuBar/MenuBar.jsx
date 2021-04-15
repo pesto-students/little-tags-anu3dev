@@ -10,6 +10,7 @@ import {
 } from "../common/Routes";
 import * as ROUTES from '../common/Routes';
 
+
 export default function MenuBar(props) {
   const firebase = useContext(FirebaseContext);
   const [errorMessage, setErrorMessage] = useState('');

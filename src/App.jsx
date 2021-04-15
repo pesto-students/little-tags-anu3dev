@@ -5,6 +5,7 @@ import Slider from "./components/Slider/Slider";
 import { SliderData } from "./components/common/data/SliderData";
 import ProductCat from "./components/ProductCategory/ProductCategory";
 import Footer from "./components/Footer/Footer";
+import Cart1 from './components/Cart/Cart1'
 import "./App.scss";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ProductsList from "./components/ProductsList/ProductsList";
@@ -29,6 +30,9 @@ function App() {
           </Route>
           <Route exact path={PATHS.PRODUCT_DETAIL}>
             <ProductDetail />
+          </Route>
+          <Route exact path={PATHS.CARTDEMO}>
+            <Cart1 />
           </Route>
           <Route>
             <PageNotFound />

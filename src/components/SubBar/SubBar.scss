@@ -119,8 +119,50 @@
 }
 .subBarRightTwo span {
   color: #20225e;
+  font-weight: bold;
 }
 .subBarRightTwo span:hover {
   color: #ff9923
+}
+.dropdown-menu {
+  padding: 10px;
+}
+.dropdown-item {
+  padding-left: 0px;
+}
+.btnMid {
+  text-align: center;
+  margin: 5px;
+}
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+.hrLine {
+  border: 2px solid #ff9923;
+  border-radius: 1px;
+}
+.dropdownText {
+  color: #20225e;
+  font-weight: bold;
+}
+.dropdown-menu li {
+  font-size: 40px;
+  padding-left: 0px;
+}
+.dropdown-menu ul {
+  padding-left: 0px;
+}
+.popUpIcon p {
+  text-align: center;
+  font-size: 25px;
+}
+.popUpIcon ul {
+  list-style: none;
+  display: flex;
+  padding-left: 20px;
+  justify-content: center;
+}
+.popUpIcon li {
+  padding: 0px 10px 0px 10px;
 }
 

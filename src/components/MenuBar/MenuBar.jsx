@@ -68,7 +68,7 @@ function MenuBar(props) {
           {!!errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
         </li>
         <li>
-          <Link to={ROUTES.CARTDEMO}>
+        <Link to={ROUTES.CARTDEMO}>
             <i className="las la-shopping-cart"></i>
           </Link>
         </li>

@@ -61,6 +61,7 @@
   text-decoration: none;
   color: #20225e;
 }
+
 .btn1 {
   font-size: 20px;
   font-weight: bold;
@@ -116,3 +117,10 @@
 ::placeholder {
   color: var(--evergreen);
 }
+.subBarRightTwo span {
+  color: #20225e;
+}
+.subBarRightTwo span:hover {
+  color: #ff9923
+}
+

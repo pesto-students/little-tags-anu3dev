@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
 import FirebaseContext from "./components/Firebase/context";
 import Firebase from "./components/Firebase/firebase";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { Provider } from "react-redux";
 import store from "./store/index";
 
 ReactDOM.render(

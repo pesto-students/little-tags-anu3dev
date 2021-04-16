@@ -21,6 +21,7 @@ const withAuthentication = (Component) => {
       const user = JSON.parse(localStorage.getItem("authUser"));
       props.setAuthUser(user);
       firebase.onAuthChangeListener(next, fallback);
+      // eslint-disable-next-line
     }, []);
 
     return <Component {...props} />;

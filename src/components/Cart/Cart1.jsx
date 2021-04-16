@@ -1,9 +1,13 @@
-import React from 'react'
+import React from 'react';
+import withAuthorization from '../Session/withAuthorization';
 
-export default function Cart1() {
+
+function Cart1(props) {
     return (
         <div>
             <h1>Hello</h1>
         </div>
     )
 }
+
+export default withAuthorization(Cart1);

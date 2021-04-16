@@ -1,5 +1,7 @@
 import React from "react";
 import "./SubBar.scss";
+import { Link } from "react-router-dom";
+import * as ROUTES from '../common/Routes';
 
 export default function SubBar() {
   return (
@@ -26,13 +28,13 @@ export default function SubBar() {
             </li>
             <li>
             <div className="dropdown">
-              <a href="." className="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false" >
+              <a href="." className="dropdown-toggle" id="dropdownMenu" data-toggle="dropdown" aria-expanded="false" >
                 <i className="las la-user"></i>
                 <span>Login</span>
-                <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a className="dropdown-item" href="."><i className="las la-user-alt"></i> Your Account</a>
+                <div className="dropdown-menu" aria-labelledby="dropdownMenu">
+                  <Link to={ROUTES.ACCOUNT} className="dropdown-item" ><i className="las la-user-alt"></i> Your Account</Link>
                   <a className="dropdown-item" href="."><i className="las la-gift"></i> Your Order</a>
-                  <a className="dropdown-item" href="."><i className="las la-heart"></i> Wishlist</a>
+                  <Link to={ROUTES.CARTDEMO} className="dropdown-item"><i className="las la-heart"></i> Wishlist</Link>
                   <hr className="hrLine"></hr>
                   <p className="dropdownText">If you are a new user</p>
                   <div className="btnMid">

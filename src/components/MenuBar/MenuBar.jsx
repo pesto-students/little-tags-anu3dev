@@ -69,9 +69,12 @@ function MenuBar(props) {
           {!!errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
         </li>
         <li>
-          <Link to={ROUTES.CARTDEMO}>
+        <a href="." data-toggle="modal" data-target="#myModal">cart
             <i className="las la-shopping-cart"></i>
-          </Link>
+          </a>
+          <a href="." data-toggle="modal" data-target="#myModal1">cart
+            <i className="las la-shopping-cart"></i>
+          </a>
         </li>
       </ul>
     </div>

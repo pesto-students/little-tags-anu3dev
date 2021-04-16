@@ -14,7 +14,6 @@ export default function SubBar() {
       <div className="subBarRight">
         <div className="subBarRightOne">
           <ul>
-            {/* <li><a href="tel:+91-9876543210"><i className="las la-phone-volume"></i> +91-9876543210</a></li> */}
             <li>
               <input type="text" placeholder="Search for products" />
             </li>
@@ -22,20 +21,40 @@ export default function SubBar() {
         </div>
         <div className="subBarRightTwo">
           <ul>
-            <li>
-              <a href="." data-toggle="modal" data-target="#myModal">
-                <i className="las la-user"></i>
-              </a>
-            </li>
-            <li>
+          <li>
               <a href=".">
-                <i className="las la-heart"></i>
-              </a>
+                <i className="las la-shopping-cart"></i>
+              <span>Cart</span> </a>
             </li>
             <li>
-              <Link to={ROUTES.CARTDEMO}>
-                <i className="las la-shopping-cart"></i>
-              </Link>
+            <div className="dropdown">
+              <a href="." className="dropdown-toggle" id="dropdownMenu" data-toggle="dropdown" aria-expanded="false" >
+                <i className="las la-user"></i>
+                <span>Login</span>
+                <div className="dropdown-menu" aria-labelledby="dropdownMenu">
+                  <h4>Hello Guest</h4>
+                  <hr className="hrLine"></hr>
+                  <Link to={ROUTES.ACCOUNT} className="dropdown-item" ><i className="las la-user-alt"></i> Your Account</Link>
+                  <a className="dropdown-item" href="."><i className="las la-gift"></i> Your Order</a>
+                  <Link to={ROUTES.CARTDEMO} className="dropdown-item"><i className="las la-heart"></i> Wishlist</Link>
+                  <hr className="hrLine"></hr>
+                  <p className="dropdownText">If you are a new user</p>
+                  <div className="btnMid">
+                    <a href="." data-toggle="modal" data-target="#myModal1">Signup</a>
+                  </div>
+                  <div className="btnMid">
+                    <a href="." data-toggle="modal" data-target="#myModal" className="btn">Login</a>
+                  </div>
+                  <hr className="hrLine"></hr>
+                  <p className="dropdownText">With social links</p>
+                  <ul>
+                    <li><a href="."><i className="lab la-google-plus-g"></i></a></li>
+                    <li><a href="."><i className="lab la-facebook"></i></a></li>
+                    <li><a href="."><i className="lab la-linkedin-in"></i></a></li>
+                  </ul>
+                </div>
+              </a>
+              </div>
             </li>
           </ul>
         </div>
@@ -73,7 +92,15 @@ export default function SubBar() {
                 data-dismiss="modal"
               >
                 Close
-              </button>
+              </button >
+            </div>
+            <div className="popUpIcon">
+              <p>With social media links</p>
+              <ul>
+                <li><a href="."><i className="lab la-google-plus-g"></i></a></li>
+                <li><a href="."><i className="lab la-facebook"></i></a></li>
+                <li><a href="."><i className="lab la-linkedin-in"></i></a></li>
+              </ul>
             </div>
           </div>
         </div>
@@ -113,6 +140,14 @@ export default function SubBar() {
               >
                 Close
               </button>
+            </div>
+            <div className="popUpIcon">
+              <p>With social media links</p>
+              <ul>
+                <li><a href="."><i className="lab la-google-plus-g"></i></a></li>
+                <li><a href="."><i className="lab la-facebook"></i></a></li>
+                <li><a href="."><i className="lab la-linkedin-in"></i></a></li>
+              </ul>
             </div>
           </div>
         </div>

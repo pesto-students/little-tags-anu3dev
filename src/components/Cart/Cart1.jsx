@@ -1,6 +1,5 @@
 import React from 'react';
-import withAuthorization from '../Session/withAuthorization';
-
+import withAuthorization from "../Session/withAuthorization"
 
 function Cart1(props) {
     return (

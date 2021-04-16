@@ -1,6 +1,6 @@
 import React, { useEffect, useContext } from "react";
 import { connect } from "react-redux";
-import { setAuthUser } from "../../actions";
+import { setAuthUser } from "../../redux/actions/index";
 import FirebaseContext from "../Firebase/context";
 
 const withAuthentication = (Component) => {

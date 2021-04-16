@@ -4,7 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import ImagesThumb from "./ImagesThumb";
 import FirebaseContext from "../Firebase/context";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../../constants/CartActions";
+import { addToCart } from "../../redux/actions/CartActions";
 
 export default function ProductDetail() {
   let location = useLocation();

@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import "./Cart.scss";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { removeFromCart } from "../../constants/CartActions";
+import { removeFromCart } from "../../redux/actions/CartActions";
 import FirebaseContext from "../Firebase/context";
 
 export default function Cart() {

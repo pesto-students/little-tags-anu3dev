@@ -1,27 +1,10 @@
-import React, {useState} from "react";
+import React from "react";
 import "./SubBar.scss";
 import { Link } from "react-router-dom";
 import * as ROUTES from "../common/Routes";
-import Dropdown from "../LoginDropdown/LoginDropdown";
+import Modal from "../Modal/Modal"
 
 export default function SubBar() {
-  const [dropdown, setDropdown] = useState(false);
-
-  const onMouseEnter = () => {
-    if (window.innerWidth < 960) {
-      setDropdown(false);
-    } else {
-      setDropdown(true);
-    }
-  };
-
-  const onMouseLeave = () => {
-    if (window.innerWidth < 960) {
-      setDropdown(false);
-    } else {
-      setDropdown(false);
-    }
-  };
   return (
     <div className="subBar">
       <div className="subBarLeft">
@@ -37,30 +20,6 @@ export default function SubBar() {
             </li>
           </ul>
         </div>
-        <div class="container">
-  <div class="dropdown">
-    <button type="button" class="dropdown-toggle" data-toggle="dropdown">
-      Dropup button
-    </button>
-    <div class="dropdown-menu">
-      <a class="dropdown-item" href="fake">Link 1</a>
-      <a class="dropdown-item" href="google">Link 2</a>
-    </div>
-  </div>
-</div>
-        <div
-              className="nav-item"
-              onMouseEnter={onMouseEnter}
-              onMouseLeave={onMouseLeave}
-            >
-              <Link
-                to="/services"
-                className="nav-links"
-              >
-                Services <i className="fas fa-caret-down" />
-              </Link>
-              {dropdown && <Dropdown />}
-            </div>
         <div className="subBarRightTwo">
           <ul>
             <li>
@@ -73,12 +32,12 @@ export default function SubBar() {
               <a href="." className="dropdown-toggle" data-toggle="dropdown" >
                 <i className="las la-user"></i>
                 <span>Login</span>
+              </a>
                 <div className="dropdown-menu">
-                  <h4>Hello Guest</h4>
                   <hr className="hrLine"></hr>
                   <Link to={ROUTES.ACCOUNT} className="dropdown-item" ><i className="las la-user-alt"></i> Your Account</Link>
                   <Link to={ROUTES.ORDER} className="dropdown-item"><i className="las la-gift"></i> Your Order</Link>
-                  <Link to={ROUTES.CARTDEMO} className="dropdown-item"><i className="las la-heart"></i> Wishlist</Link>
+                  <Link to={ROUTES.WISHLIST} className="dropdown-item"><i className="las la-heart"></i> Wishlist</Link>
                   <hr className="hrLine"></hr>
                   <p className="dropdownText">If you are a new user</p>
                   <div className="btnMid">
@@ -95,105 +54,12 @@ export default function SubBar() {
                     <li><a href="."><i className="lab la-linkedin-in"></i></a></li>
                   </ul>
                 </div>
-              </a>
               </div>
             </li>
           </ul>
         </div>
       </div>
-      <div className="modal" id="myModal">
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h1 className="modal-title">Welcome Back!</h1>
-              <a href="." data-dismiss="modal">
-                <i className="las la-times"></i>
-              </a>
-            </div>
-            <div className="modal-body">
-              <input type="text" placeholder="Enter Email" />
-              <br />
-              <input type="text" placeholder="Enter Password" />
-              <br />
-              <button type="button" className="btn1 btnWidth">
-                Submit
-              </button>
-            </div>
-            <div className="modal-footer">
-              <button
-                type="button"
-                className="btn1 btnFoot"
-                data-toggle="modal"
-                data-target="#myModal1"
-              >
-                SignUp
-              </button>
-              <button
-                type="button"
-                className="btn1 btnFoot"
-                data-dismiss="modal"
-              >
-                Close
-              </button >
-            </div>
-            <div className="popUpIcon">
-              <p>With social media links</p>
-              <ul>
-                <li><a href="."><i className="lab la-google-plus-g"></i></a></li>
-                <li><a href="."><i className="lab la-facebook"></i></a></li>
-                <li><a href="."><i className="lab la-linkedin-in"></i></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="modal" id="myModal1">
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h1 className="modal-title">It's first time only!</h1>
-              <a href="." data-dismiss="modal">
-                <i className="las la-times"></i>
-              </a>
-            </div>
-            <div className="modal-body">
-              <input type="text" placeholder="Enter Full Name" />
-              <input type="text" placeholder="Enter Email" />
-              <br />
-              <input type="text" placeholder="Enter Password" />
-              <br />
-              <button type="button" className="btn1 btnWidth">
-                Submit
-              </button>
-            </div>
-            <div className="modal-footer">
-              <button
-                type="button"
-                className="btn1 btnFoot"
-                data-toggle="modal"
-                data-target="#myModal1"
-              >
-                Login
-              </button>
-              <button
-                type="button"
-                className="btn1 btnFoot"
-                data-dismiss="modal"
-              >
-                Close
-              </button>
-            </div>
-            <div className="popUpIcon">
-              <p>With social media links</p>
-              <ul>
-                <li><a href="."><i className="lab la-google-plus-g"></i></a></li>
-                <li><a href="."><i className="lab la-facebook"></i></a></li>
-                <li><a href="."><i className="lab la-linkedin-in"></i></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Modal />
     </div>
   );
 }

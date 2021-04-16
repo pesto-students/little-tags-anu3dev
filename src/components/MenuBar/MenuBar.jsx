@@ -31,6 +31,23 @@ function MenuBar(props) {
         setErrorMessage(error.message);
       });
   };
+  const handleFacebookSignIn = () => {
+    firebase
+      .doFacebookSignIn()
+      .then((authUser) => {
+        return firebase.user(authUser.user.uid).set({
+          email: authUser.user.email,
+          username: authUser.user.displayName,
+          roles: {},
+        });
+      })
+      .then(() => {
+        props.history.push(ROUTES.HOME);
+      })
+      .catch((error) => {
+        setErrorMessage(error.message);
+      });
+  };
 
   const handleSignOut = () => {
     firebase.doSignOut();
@@ -61,16 +78,14 @@ function MenuBar(props) {
           <Link to={"/productsList/" + ELECTRONICS}>Electronics</Link>
         </li>
         <li>
-          <button onClick={handleGoogleSignIn}>Sign In with Google </button>
+          <button onClick={handleGoogleSignIn}>Google </button>
+        </li>
+        <li>
+          <button onClick={handleFacebookSignIn}>Fb </button>
         </li>
         <li>
           <button onClick={handleSignOut}>Logout</button>
           {!!errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
-        </li>
-        <li>
-        <Link to={ROUTES.CARTDEMO}>
-            <i className="las la-shopping-cart"></i>
-          </Link>
         </li>
       </ul>
     </div>

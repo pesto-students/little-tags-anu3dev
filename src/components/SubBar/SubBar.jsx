@@ -32,6 +32,8 @@ export default function SubBar() {
                 <i className="las la-user"></i>
                 <span>Login</span>
                 <div className="dropdown-menu" aria-labelledby="dropdownMenu">
+                  <h4>Hello Guest</h4>
+                  <hr className="hrLine"></hr>
                   <Link to={ROUTES.ACCOUNT} className="dropdown-item" ><i className="las la-user-alt"></i> Your Account</Link>
                   <a className="dropdown-item" href="."><i className="las la-gift"></i> Your Order</a>
                   <Link to={ROUTES.CARTDEMO} className="dropdown-item"><i className="las la-heart"></i> Wishlist</Link>

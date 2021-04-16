@@ -12,6 +12,7 @@ import ProductsList from "./components/ProductsList/ProductsList";
 import PageNotFound from "./components/PageNotFound/PageNotFound";
 import * as PATHS from "./components/common/Routes";
 import ProductDetail from "./components/ProductDetail/ProductDetail";
+import withAuthentication from "./components/Session/withAuthentication";
 
 function App() {
   return (
@@ -44,4 +45,4 @@ function App() {
   );
 }
 
-export default App;
+export default withAuthentication(App);

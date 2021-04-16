@@ -50,14 +50,6 @@ export default function SubBar() {
               </a>
             </div>
             <div className="modal-body">
-              <button type="button" className="btn1 btnWidth">
-                Login with facebook
-              </button>
-              <br />
-              <button type="button" className="btn1 btnWidth">
-                Login with google
-              </button>
-              <br />
               <input type="text" placeholder="Enter Email" />
               <br />
               <input type="text" placeholder="Enter Password" />
@@ -96,14 +88,6 @@ export default function SubBar() {
               </a>
             </div>
             <div className="modal-body">
-              <button type="button" className="btn1 btnWidth">
-                SignUp with facebook
-              </button>
-              <br />
-              <button type="button" className="btn1 btnWidth">
-                SignUp with google
-              </button>
-              <br />
               <input type="text" placeholder="Enter Full Name" />
               <input type="text" placeholder="Enter Email" />
               <br />

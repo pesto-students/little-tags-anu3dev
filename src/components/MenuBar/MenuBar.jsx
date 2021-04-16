@@ -1,4 +1,5 @@
 import React, {useState, useContext} from "react";
+import { withRouter } from 'react-router-dom';
 import "./MenuBar.scss";
 import { Link } from "react-router-dom";
 import FirebaseContext from '../Firebase/context'
@@ -10,7 +11,8 @@ import {
 } from "../common/Routes";
 import * as ROUTES from '../common/Routes';
 
-export default function MenuBar(props) {
+
+function MenuBar(props) {
   const firebase = useContext(FirebaseContext);
   const [errorMessage, setErrorMessage] = useState('');
   const handleGoogleSignIn = () => {
@@ -75,3 +77,5 @@ export default function MenuBar(props) {
     </div>
   );
 }
+
+export default withRouter(MenuBar);

@@ -1,4 +1,4 @@
-import { ADD_TO_CART, REMOVE_FROM_CART } from "./CartActionTypes";
+import { ADD_TO_CART, REMOVE_FROM_CART } from "../constants/CartActionTypes";
 
 export const addToCart = (product) => (dispatch, getState) => {
   console.log("inside addtocart action: ", product.id);

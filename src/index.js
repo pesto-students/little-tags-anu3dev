@@ -5,7 +5,7 @@ import FirebaseContext from "./components/Firebase/context";
 import Firebase from "./components/Firebase/firebase";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import store from "./store/index";
+import store from "../src/redux/store/index";
 
 ReactDOM.render(
   <Provider store={store}>

@@ -1,7 +1,7 @@
 import React from "react";
 import "./SubBar.scss";
 import { Link } from "react-router-dom";
-import * as ROUTES from '../common/Routes';
+import * as ROUTES from "../common/Routes";
 
 export default function SubBar() {
   return (

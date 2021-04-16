@@ -1,0 +1,27 @@
+.cartScreen {
+  margin: 20px 110px 0px 125px;
+  position: relative;
+}
+.cartHeader {
+  color: #103178;
+  font-style: bold;
+  font-size: 30px;
+  background-color: lightgrey;
+  height: 100%;
+  margin-bottom: 40px;
+}
+.cartLink {
+  margin-bottom: 20px;
+  text-decoration: underline;
+  width: 60%;
+}
+.cartDetail {
+  font-style: bold;
+  margin: 0 50px 0 50px;
+}
+.cartItem {
+  margin-bottom: 30px;
+}
+.cartCheckout {
+  margin-top: 40px;
+}

@@ -1,13 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./ProductDetail.scss";
 import { Link, useLocation } from "react-router-dom";
 import ImagesThumb from "./ImagesThumb";
+import FirebaseContext from "../Firebase/context";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../constants/CartActions";
 
 export default function ProductDetail() {
   let location = useLocation();
   const [index, setIndex] = useState(0);
   const imageRef = React.createRef();
-
+  const firebase = useContext(FirebaseContext);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [quantity, setQuantity] = useState(1);
+  const dispatch = useDispatch();
   const handleTab = (index) => {
     setIndex(index);
     const images = imageRef.current.children;
@@ -15,6 +21,19 @@ export default function ProductDetail() {
       images[i].className = images[i].className.replace("active", "");
     }
     images[index].className = "active";
+  };
+  const handleAddToCart = () => {
+    location.productDetail.quantity = Number(quantity);
+    dispatch(addToCart(location.productDetail));
+    firebase
+      .addToCart(location.productDetail)
+      .then(() => console.log("product added to cart"))
+      .catch((e) => {
+        setErrorMessage(e.message);
+      });
+  };
+  const handleChangeQuantity = (e) => {
+    setQuantity(e.target.value);
   };
 
   useEffect(() => {
@@ -88,14 +107,22 @@ export default function ProductDetail() {
           </p>
           <p>
             <strong> Quantity</strong>
-            <select className="qtySelect">
+            <select
+              className="qtySelect"
+              value={quantity}
+              onChange={handleChangeQuantity}
+            >
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
               <option value="4">4</option>
             </select>
           </p>
-          <button className="addToCart">Add To Cart</button>
+          <Link to={"/cart"}>
+            <button className="addToCart" onClick={handleAddToCart}>
+              Add To Cart
+            </button>
+          </Link>
         </div>
         <div className="productDetailRight  col-lg-2 col-md-2">
           <div className="rightSec">
@@ -120,15 +147,16 @@ export default function ProductDetail() {
           </div>
           <h4>We accept:</h4>
           <div className="payIcon">
-            <i class="lab la-cc-mastercard"></i>
-            <i class="lab la-cc-paypal"></i>
-            <i class="lab la-cc-visa"></i>
-            <i class="lab la-cc-stripe"></i>
-            <i class="lab la-cc-apple-pay"></i>
-            <i class="lab la-amazon-pay"></i>
+            <i className="lab la-cc-mastercard"></i>
+            <i className="lab la-cc-paypal"></i>
+            <i className="lab la-cc-visa"></i>
+            <i className="lab la-cc-stripe"></i>
+            <i className="lab la-cc-apple-pay"></i>
+            <i className="lab la-amazon-pay"></i>
           </div>
         </div>
       </div>
+      <span>{errorMessage}</span>
     </div>
   );
 }

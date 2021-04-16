@@ -5,3 +5,7 @@ export const CART = "/cart";
 export const CARTDEMO = "/cartdemo";
 export const ACCOUNT = "/account";
 export const ORDER = "/order";
+export const A = "/a";
+export const B = "/b";
+export const C = "/c";
+

@@ -1,9 +1,27 @@
-import React from "react";
+import React, {useState} from "react";
 import "./SubBar.scss";
 import { Link } from "react-router-dom";
 import * as ROUTES from "../common/Routes";
+import Dropdown from "../LoginDropdown/LoginDropdown";
 
 export default function SubBar() {
+  const [dropdown, setDropdown] = useState(false);
+
+  const onMouseEnter = () => {
+    if (window.innerWidth < 960) {
+      setDropdown(false);
+    } else {
+      setDropdown(true);
+    }
+  };
+
+  const onMouseLeave = () => {
+    if (window.innerWidth < 960) {
+      setDropdown(false);
+    } else {
+      setDropdown(false);
+    }
+  };
   return (
     <div className="subBar">
       <div className="subBarLeft">
@@ -19,9 +37,33 @@ export default function SubBar() {
             </li>
           </ul>
         </div>
+        <div class="container">
+  <div class="dropdown">
+    <button type="button" class="dropdown-toggle" data-toggle="dropdown">
+      Dropup button
+    </button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="fake">Link 1</a>
+      <a class="dropdown-item" href="google">Link 2</a>
+    </div>
+  </div>
+</div>
+        <div
+              className="nav-item"
+              onMouseEnter={onMouseEnter}
+              onMouseLeave={onMouseLeave}
+            >
+              <Link
+                to="/services"
+                className="nav-links"
+              >
+                Services <i className="fas fa-caret-down" />
+              </Link>
+              {dropdown && <Dropdown />}
+            </div>
         <div className="subBarRightTwo">
           <ul>
-          <li>
+            <li>
               <a href=".">
                 <i className="las la-shopping-cart"></i>
               <span>Cart</span> </a>

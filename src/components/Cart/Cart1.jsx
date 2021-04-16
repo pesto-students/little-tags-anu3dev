@@ -1,4 +1,5 @@
 import React from 'react';
+import withAuthorization from "../Session/withAuthorization"
 
 function Cart1(props) {
     return (
@@ -8,4 +9,4 @@ function Cart1(props) {
     )
 }
 
-export default Cart1;
+export default withAuthorization(Cart1);

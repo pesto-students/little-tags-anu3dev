@@ -8,7 +8,7 @@ export default function SubBar() {
     <div className="subBar">
       <div className="subBarLeft">
         <div className="logo">
-          <p>Instant order</p>
+          <Link to={ROUTES.HOME}>Instant Order</Link>
         </div>
       </div>
       <div className="subBarRight">
@@ -28,14 +28,14 @@ export default function SubBar() {
             </li>
             <li>
             <div className="dropdown">
-              <a href="." className="dropdown-toggle" id="dropdownMenu" data-toggle="dropdown" aria-expanded="false" >
+              <a href="." className="dropdown-toggle" data-toggle="dropdown" >
                 <i className="las la-user"></i>
                 <span>Login</span>
-                <div className="dropdown-menu" aria-labelledby="dropdownMenu">
+                <div className="dropdown-menu">
                   <h4>Hello Guest</h4>
                   <hr className="hrLine"></hr>
                   <Link to={ROUTES.ACCOUNT} className="dropdown-item" ><i className="las la-user-alt"></i> Your Account</Link>
-                  <a className="dropdown-item" href="."><i className="las la-gift"></i> Your Order</a>
+                  <Link to={ROUTES.ORDER} className="dropdown-item"><i className="las la-gift"></i> Your Order</Link>
                   <Link to={ROUTES.CARTDEMO} className="dropdown-item"><i className="las la-heart"></i> Wishlist</Link>
                   <hr className="hrLine"></hr>
                   <p className="dropdownText">If you are a new user</p>

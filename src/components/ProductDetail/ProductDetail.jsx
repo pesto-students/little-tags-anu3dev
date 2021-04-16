@@ -1,12 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./ProductDetail.scss";
 import { Link, useLocation } from "react-router-dom";
 import ImagesThumb from "./ImagesThumb";
+import FirebaseContext from "../Firebase/context";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../constants/CartActions";
 
 export default function ProductDetail() {
   let location = useLocation();
   const [index, setIndex] = useState(0);
   const imageRef = React.createRef();
+  const firebase = useContext(FirebaseContext);
+  const [errorMessage, setErrorMessage] = useState("");
+  const dispatch = useDispatch();
 
   const handleTab = (index) => {
     setIndex(index);
@@ -15,6 +21,16 @@ export default function ProductDetail() {
       images[i].className = images[i].className.replace("active", "");
     }
     images[index].className = "active";
+  };
+  const handleAddToCart = () => {
+    console.log("product: ", location.productDetail);
+    dispatch(addToCart(location.productDetail));
+    firebase
+      .addToCart(location.productDetail)
+      .then(() => console.log("product added to cart"))
+      .catch((e) => {
+        setErrorMessage(e.message);
+      });
   };
 
   useEffect(() => {
@@ -95,7 +111,11 @@ export default function ProductDetail() {
               <option value="4">4</option>
             </select>
           </p>
-          <button className="addToCart">Add To Cart</button>
+          <Link to={"/cart"}>
+            <button className="addToCart" onClick={handleAddToCart}>
+              Add To Cart
+            </button>
+          </Link>
         </div>
         <div className="productDetailRight  col-lg-2 col-md-2">
           <div className="rightSec">
@@ -129,6 +149,7 @@ export default function ProductDetail() {
           </div>
         </div>
       </div>
+      <span>{errorMessage}</span>
     </div>
   );
 }

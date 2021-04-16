@@ -1,18 +1,18 @@
-import React, {useState, useContext} from "react";
+import React, { useState, useContext } from "react";
 import "./MenuBar.scss";
 import { Link } from "react-router-dom";
-import FirebaseContext from '../Firebase/context'
+import FirebaseContext from "../Firebase/context";
 import {
   MENS_CLOTHING,
   WOMENS_CLOTHING,
   JEWELLERY,
   ELECTRONICS,
-} from "../common/Routes";
-import * as ROUTES from '../common/Routes';
+} from "../common/ProductCategories";
+import * as ROUTES from "../common/Routes";
 
 export default function MenuBar(props) {
   const firebase = useContext(FirebaseContext);
-  const [errorMessage, setErrorMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState("");
   const handleGoogleSignIn = () => {
     firebase
       .doGoogleSignIn()
@@ -64,7 +64,7 @@ export default function MenuBar(props) {
         </li>
         <li>
           <button onClick={handleSignOut}>Logout</button>
-          {!!errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
+          {!!errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
         </li>
         <li>
           <Link to={ROUTES.CARTDEMO}>

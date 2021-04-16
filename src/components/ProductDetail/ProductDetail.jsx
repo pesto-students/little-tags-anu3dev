@@ -12,8 +12,8 @@ export default function ProductDetail() {
   const imageRef = React.createRef();
   const firebase = useContext(FirebaseContext);
   const [errorMessage, setErrorMessage] = useState("");
+  const [quantity, setQuantity] = useState(1);
   const dispatch = useDispatch();
-
   const handleTab = (index) => {
     setIndex(index);
     const images = imageRef.current.children;
@@ -23,7 +23,7 @@ export default function ProductDetail() {
     images[index].className = "active";
   };
   const handleAddToCart = () => {
-    console.log("product: ", location.productDetail);
+    location.productDetail.quantity = Number(quantity);
     dispatch(addToCart(location.productDetail));
     firebase
       .addToCart(location.productDetail)
@@ -31,6 +31,9 @@ export default function ProductDetail() {
       .catch((e) => {
         setErrorMessage(e.message);
       });
+  };
+  const handleChangeQuantity = (e) => {
+    setQuantity(e.target.value);
   };
 
   useEffect(() => {
@@ -104,7 +107,11 @@ export default function ProductDetail() {
           </p>
           <p>
             <strong> Quantity</strong>
-            <select className="qtySelect">
+            <select
+              className="qtySelect"
+              value={quantity}
+              onChange={handleChangeQuantity}
+            >
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>
@@ -140,12 +147,12 @@ export default function ProductDetail() {
           </div>
           <h4>We accept:</h4>
           <div className="payIcon">
-            <i class="lab la-cc-mastercard"></i>
-            <i class="lab la-cc-paypal"></i>
-            <i class="lab la-cc-visa"></i>
-            <i class="lab la-cc-stripe"></i>
-            <i class="lab la-cc-apple-pay"></i>
-            <i class="lab la-amazon-pay"></i>
+            <i className="lab la-cc-mastercard"></i>
+            <i className="lab la-cc-paypal"></i>
+            <i className="lab la-cc-visa"></i>
+            <i className="lab la-cc-stripe"></i>
+            <i className="lab la-cc-apple-pay"></i>
+            <i className="lab la-amazon-pay"></i>
           </div>
         </div>
       </div>

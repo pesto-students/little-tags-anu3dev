@@ -1,9 +1,17 @@
 import { ADD_TO_CART, REMOVE_FROM_CART } from "./CartActionTypes";
 
 export const addToCart = (product) => (dispatch, getState) => {
+  console.log("inside addtocart action: ", product.id);
   dispatch({
     type: ADD_TO_CART,
-    payload: product,
+    payload: {
+      id: product.id,
+      title: product.title,
+      image: product.image,
+      price: product.price,
+      quantity: product.quantity,
+      description: product.description,
+    },
   });
   localStorage.setItem("cart", JSON.stringify(getState().cart.cartItems));
 };

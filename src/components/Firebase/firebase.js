@@ -47,6 +47,9 @@ class Firebase {
   addToCart = (product) => {
     return this.db.ref("/cart").push(product);
   };
+  removeFromCart = (id) => {
+    return this.db.ref("/cart").child(id).remove();
+  };
 }
 
 export default Firebase;

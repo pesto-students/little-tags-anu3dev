@@ -1,33 +1,33 @@
-import React, { useState, useEffect, useContext } from "react";
-import "./ProductDetail.scss";
-import { Link, useLocation } from "react-router-dom";
-import ImagesThumb from "./ImagesThumb";
-import FirebaseContext from "../Firebase/context";
-import { useDispatch } from "react-redux";
-import { addToCart } from "../../redux/actions/CartActions";
+import React, { useState, useEffect, useContext } from 'react';
+import './ProductDetail.scss';
+import { Link, useLocation } from 'react-router-dom';
+import ImagesThumb from './ImagesThumb';
+import FirebaseContext from '../Firebase/context';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../redux/actions/CartActions';
 
 export default function ProductDetail() {
   let location = useLocation();
   const [index, setIndex] = useState(0);
   const imageRef = React.createRef();
   const firebase = useContext(FirebaseContext);
-  const [errorMessage, setErrorMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState('');
   const [quantity, setQuantity] = useState(1);
   const dispatch = useDispatch();
   const handleTab = (index) => {
     setIndex(index);
     const images = imageRef.current.children;
     for (let i = 0; i < images.length; i++) {
-      images[i].className = images[i].className.replace("active", "");
+      images[i].className = images[i].className.replace('active', '');
     }
-    images[index].className = "active";
+    images[index].className = 'active';
   };
   const handleAddToCart = () => {
     location.productDetail.quantity = Number(quantity);
     dispatch(addToCart(location.productDetail));
     firebase
       .addToCart(location.productDetail)
-      .then(() => console.log("product added to cart"))
+      .then(() => console.log('product added to cart'))
       .catch((e) => {
         setErrorMessage(e.message);
       });
@@ -37,19 +37,19 @@ export default function ProductDetail() {
   };
 
   useEffect(() => {
-    imageRef.current.children[index].className = "active";
+    imageRef.current.children[index].className = 'active';
     // eslint-disable-next-line
   }, []);
   return (
     <div className="productScreen">
       <div className="navLinks">
-        <Link className="links" to={"/"}>
+        <Link className="links" to={'/'}>
           Home
           <i className="fa fa-angle-right arrowIcon"> </i>
         </Link>
         <Link
           className="links"
-          to={"/productsList/" + location.productDetail.category}
+          to={'/productsList/' + location.productDetail.category}
         >
           {location.productDetail.category}
           <i className="fa fa-angle-right arrowIcon"> </i>
@@ -87,7 +87,7 @@ export default function ProductDetail() {
             <span>{location.productDetail.description}</span>
           </p>
           <div className="features">
-            <i className="las la-check-double"></i> 100% Original Products{" "}
+            <i className="las la-check-double"></i> 100% Original Products{' '}
             <br />
             <i className="las la-check-double"></i> Free Delivery on order above
             Rs. 799 <br />
@@ -95,7 +95,7 @@ export default function ProductDetail() {
             available <br />
             <i className="las la-check-double"></i> Easy 30 days returns and
             exchanges <br />
-            <i className="las la-check-double"></i> Try & Buy might be available{" "}
+            <i className="las la-check-double"></i> Try & Buy might be available{' '}
             <br />
           </div>
           <p>
@@ -118,7 +118,7 @@ export default function ProductDetail() {
               <option value="4">4</option>
             </select>
           </p>
-          <Link to={"/cart"}>
+          <Link to={'/cart'}>
             <button className="addToCart" onClick={handleAddToCart}>
               Add To Cart
             </button>

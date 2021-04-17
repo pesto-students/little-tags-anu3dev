@@ -1,19 +1,19 @@
-import React, { useState, useContext } from "react";
-import { withRouter } from "react-router-dom";
-import "./MenuBar.scss";
-import { Link } from "react-router-dom";
-import FirebaseContext from "../Firebase/context";
+import React, { useState, useContext } from 'react';
+import { withRouter } from 'react-router-dom';
+import './MenuBar.scss';
+import { Link } from 'react-router-dom';
+import FirebaseContext from '../Firebase/context';
 import {
   MENS_CLOTHING,
   WOMENS_CLOTHING,
   JEWELLERY,
   ELECTRONICS,
-} from "../common/ProductCategories";
-import * as ROUTES from "../common/Routes";
+} from '../common/ProductCategories';
+import * as ROUTES from '../common/Routes';
 
 function MenuBar(props) {
   const firebase = useContext(FirebaseContext);
-  const [errorMessage, setErrorMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState('');
   const handleGoogleSignIn = () => {
     firebase
       .doGoogleSignIn()
@@ -61,21 +61,21 @@ function MenuBar(props) {
           </a>
         </li>
         <li>
-          <Link to={"/productsList/" + MENS_CLOTHING}>Mens Wear</Link>
+          <Link to={'/productsList/' + MENS_CLOTHING}>Mens Wear</Link>
         </li>
         <li>
-          <Link to={"/productsList/" + WOMENS_CLOTHING} href=".">
+          <Link to={'/productsList/' + WOMENS_CLOTHING} href=".">
             Womens Wear
           </Link>
         </li>
         <li>
-          <Link to={"/productsList/" + JEWELLERY}>Beauty Care</Link>
+          <Link to={'/productsList/' + JEWELLERY}>Beauty Care</Link>
         </li>
         <li>
-          <Link to={"/productsList/" + JEWELLERY}>Jewellery</Link>
+          <Link to={'/productsList/' + JEWELLERY}>Jewellery</Link>
         </li>
         <li>
-          <Link to={"/productsList/" + ELECTRONICS}>Electronics</Link>
+          <Link to={'/productsList/' + ELECTRONICS}>Electronics</Link>
         </li>
         <li>
           <button onClick={handleGoogleSignIn}>Google </button>
@@ -85,7 +85,7 @@ function MenuBar(props) {
         </li>
         <li>
           <button onClick={handleSignOut}>Logout</button>
-          {!!errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
+          {!!errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
         </li>
       </ul>
     </div>

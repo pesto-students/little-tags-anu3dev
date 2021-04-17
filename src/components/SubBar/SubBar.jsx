@@ -1,9 +1,9 @@
-import React from "react";
-import "./SubBar.scss";
-import { Link } from "react-router-dom";
-import * as ROUTES from "../common/Routes";
-import Modal from "../Modal/Modal";
-import { useSelector } from "react-redux";
+import React from 'react';
+import './SubBar.scss';
+import { Link } from 'react-router-dom';
+import * as ROUTES from '../common/Routes';
+import Modal from '../Modal/Modal';
+import { useSelector } from 'react-redux';
 
 export default function SubBar() {
   const cart = useSelector((state) => state.cart);
@@ -29,7 +29,7 @@ export default function SubBar() {
         <div className="subBarRightTwo">
           <ul>
             <li>
-              <Link to={"/cart"}>
+              <Link to={'/cart'}>
                 <a href=".">
                   <i className="las la-shopping-cart"></i>
                   <span>Cart({getCartCount()})</span>

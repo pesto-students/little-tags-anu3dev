@@ -1,7 +1,7 @@
-import { ADD_TO_CART, REMOVE_FROM_CART } from "../constants/CartActionTypes";
+import { ADD_TO_CART, REMOVE_FROM_CART } from '../constants/CartActionTypes';
 
 export const addToCart = (product) => (dispatch, getState) => {
-  console.log("inside addtocart action: ", product.id);
+  console.log('inside addtocart action: ', product.id);
   dispatch({
     type: ADD_TO_CART,
     payload: {
@@ -13,7 +13,7 @@ export const addToCart = (product) => (dispatch, getState) => {
       description: product.description,
     },
   });
-  localStorage.setItem("cart", JSON.stringify(getState().cart.cartItems));
+  localStorage.setItem('cart', JSON.stringify(getState().cart.cartItems));
 };
 
 export const removeFromCart = (id) => (dispatch, getState) => {
@@ -21,5 +21,5 @@ export const removeFromCart = (id) => (dispatch, getState) => {
     type: REMOVE_FROM_CART,
     payload: id,
   });
-  localStorage.setItem("cart", JSON.stringify(getState().cart.cartItems));
+  localStorage.setItem('cart', JSON.stringify(getState().cart.cartItems));
 };

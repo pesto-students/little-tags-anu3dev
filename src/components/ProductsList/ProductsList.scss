@@ -47,7 +47,7 @@
     }
   }
   .card:hover {
-    transform: scale(.95);
+    transform: scale(0.95);
     cursor: pointer;
   }
   .card:hover {
@@ -76,8 +76,6 @@
   overflow: hidden;
   outline: none;
 }
-
-
 
 .paginationItem {
   background: var(--white);

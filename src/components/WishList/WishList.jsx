@@ -1,7 +1,7 @@
 import React from 'react';
 import withAuthorization from '../Session/withAuthorization';
 
-function WishList() {
+function WishList(props) {
   return (
     <div>
       <h1>Hello</h1>

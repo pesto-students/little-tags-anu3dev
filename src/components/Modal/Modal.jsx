@@ -53,11 +53,11 @@ export default function Modal() {
                     <i className="lab la-facebook"></i>
                   </a>
                 </li>
-                <li>
+                {/* <li>
                   <a href=".">
                     <i className="lab la-linkedin-in"></i>
                   </a>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>
@@ -111,11 +111,11 @@ export default function Modal() {
                     <i className="lab la-facebook"></i>
                   </a>
                 </li>
-                <li>
+                {/* <li>
                   <a href=".">
                     <i className="lab la-linkedin-in"></i>
                   </a>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>

@@ -1,5 +1,7 @@
 import React from 'react';
 import './Footer.scss';
+import { Link } from 'react-router-dom';
+import * as ROUTES from '../common/Routes';
 
 export default function Footer() {
   return (
@@ -37,13 +39,13 @@ export default function Footer() {
         <h3>Quick Links:</h3>
         <ul>
           <li>
-            <a href=".">Privacy Policy</a>
+            <Link to={ROUTES.PRIVACYPOLICY}>Privacy Policy</Link>
+          </li>
+          <li>
+            <Link to={ROUTES.TERMSOFUSE}>Terms Of Use</Link>
           </li>
           <li>
             <a href=".">Return policy</a>
-          </li>
-          <li>
-            <a href=".">Affliate Program</a>
           </li>
           <li>
             <a href=".">Payment Checkout</a>

@@ -1,7 +1,7 @@
-import React from 'react';
+import React from 'react'
 import withAuthorization from "../Session/withAuthorization"
 
-function Cart1(props) {
+function WishList() {
     return (
         <div>
             <h1>Hello</h1>
@@ -9,4 +9,4 @@ function Cart1(props) {
     )
 }
 
-export default withAuthorization(Cart1);
+export default withAuthorization(WishList);

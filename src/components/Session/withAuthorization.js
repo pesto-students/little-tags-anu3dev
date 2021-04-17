@@ -10,11 +10,11 @@ const withAuthorization = (Component) => {
 
     const next = (authUser) => {
       if (!authUser) {
-        props.history.push(ROUTES.CARTDEMO);
+        props.history.push(ROUTES.HOME);
       }
     };
 
-    const fallback = () => props.history.push(ROUTES.CARTDEMO);
+    const fallback = () => props.history.push(ROUTES.HOME);
     useEffect(() => {
       firebase.onAuthChangeListener(next, fallback);
       // eslint-disable-next-line

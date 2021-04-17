@@ -34,16 +34,16 @@ export default function ProductsPagination({ data, dataLimit }) {
   };
 
   return (
-    <div className="productContent">
+    <div className="productContent row">
       {getPaginatedData().map((d, idx) => (
-        <div className="card" key={idx}>
+        <div className="card col-md-4" key={idx}>
           <div className="cardImage">
             <img src={d.image} alt="product" />
           </div>
           <div className="cardHeader">
             <h3 className="title">{d.title}</h3>
             <p className="desc">{d.description}</p>
-            <p className="price">{d.price} $</p>
+            <p className="price">₹ {d.price}</p>
             <p className="price">{d.category}</p>
             <Link
               to={{ pathname: "/product/", productDetail: d }}
@@ -60,7 +60,7 @@ export default function ProductsPagination({ data, dataLimit }) {
           onClick={handleClickPrevious}
           className={`prev ${currentPage === 1 ? "disabled" : ""}`}
         >
-          prev
+          Prev
         </button>
 
         {getPaginationGroup().map((item, index) => (
@@ -79,7 +79,7 @@ export default function ProductsPagination({ data, dataLimit }) {
           onClick={handleClickNext}
           className={`next ${currentPage === pages ? "disabled" : ""}`}
         >
-          next
+          Next
         </button>
       </div>
     </div>

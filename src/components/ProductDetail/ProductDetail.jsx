@@ -100,7 +100,7 @@ export default function ProductDetail() {
           </div>
           <p>
             <strong>Price: </strong>
-            <span>$ {location.productDetail.price}</span>
+            <span>₹ {location.productDetail.price}</span>
           </p>
           <p>
             <strong>Status:</strong> <span> In Stock</span>

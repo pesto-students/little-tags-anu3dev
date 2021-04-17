@@ -1,29 +1,29 @@
 .footer {
-    margin: 50px 0px 0px 0px;
-    padding:  20px 110px 0px 115px;
-    background-color:#20225e;
-    color: #fff;
+  margin: 50px 0px 0px 0px;
+  padding: 20px 110px 0px 115px;
+  background-color: #20225e;
+  color: #fff;
 }
 .footer ul {
-    margin-left: -40px;
-    cursor: pointer;
-    list-style: none;
+  margin-left: -40px;
+  cursor: pointer;
+  list-style: none;
 }
 .footer li::before {
-    content: "\2022";
-    color: #ff9923;
-    font-size: 25px;
-    padding: 0px 10px 0px 0px;
+  content: '\2022';
+  color: #ff9923;
+  font-size: 25px;
+  padding: 0px 10px 0px 0px;
 }
 .footer a {
-    text-decoration: none;
-    color: #fff;
+  text-decoration: none;
+  color: #fff;
 }
 .footer a:hover {
-    text-decoration: none;
-    color: #ff9923;
+  text-decoration: none;
+  color: #ff9923;
 }
 .footer h3 {
-    font-weight: bold;
-    color: #ff9923;
+  font-weight: bold;
+  color: #ff9923;
 }

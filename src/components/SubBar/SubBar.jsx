@@ -129,8 +129,8 @@ function SubBar(props) {
                         <i className="las la-sign-out-alt"></i>
                       </button>
                     </li>
-                    <li>{!!errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}</li>
                   </ul>
+                  <span className="errorLog">{!!errorMessage && <p>{errorMessage}</p>}</span>
                 </div>
               </div>
             </li>

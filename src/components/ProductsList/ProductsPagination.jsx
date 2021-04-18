@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import './ProductsList.scss';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import "./ProductsList.scss";
 
 export default function ProductsPagination({ data, dataLimit }) {
   const [pages] = useState(Math.ceil(data.length / dataLimit));
@@ -46,7 +46,7 @@ export default function ProductsPagination({ data, dataLimit }) {
             <p className="price">₹ {d.price}</p>
             <p className="price">{d.category}</p>
             <Link
-              to={{ pathname: '/product/', productDetail: d }}
+              to={"/productsList/" + d.category + "/" + d.id}
               className="viewBtn"
             >
               View
@@ -58,7 +58,7 @@ export default function ProductsPagination({ data, dataLimit }) {
       <div className="page">
         <button
           onClick={handleClickPrevious}
-          className={`prev ${currentPage === 1 ? 'disabled' : ''}`}
+          className={`prev ${currentPage === 1 ? "disabled" : ""}`}
         >
           Prev
         </button>
@@ -68,7 +68,7 @@ export default function ProductsPagination({ data, dataLimit }) {
             key={index}
             onClick={handleChangePage}
             className={`paginationItem ${
-              currentPage === item ? 'active' : null
+              currentPage === item ? "active" : null
             }`}
           >
             <span>{item}</span>
@@ -77,7 +77,7 @@ export default function ProductsPagination({ data, dataLimit }) {
 
         <button
           onClick={handleClickNext}
-          className={`next ${currentPage === pages ? 'disabled' : ''}`}
+          className={`next ${currentPage === pages ? "disabled" : ""}`}
         >
           Next
         </button>

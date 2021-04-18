@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import "./ProductDetail.scss";
+import React from 'react';
+import PropTypes from 'prop-types';
+import './ProductDetail.scss';
 
 export default function ImagesThumb({ images, tab, imageRef }) {
   return (

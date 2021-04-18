@@ -1,13 +1,13 @@
-import React from "react";
-import "./ProductCategory.scss";
-import { Link } from "react-router-dom";
+import React from 'react';
+import './ProductCategory.scss';
+import { Link } from 'react-router-dom';
 import {
   MENS_CLOTHING,
   JEWELLERY,
   ELECTRONICS,
   WOMENS_CLOTHING,
   KIDS_CLOTHING,
-} from "../common/ProductCategories";
+} from '../common/ProductCategories';
 
 export default function ProductCat() {
   return (
@@ -19,7 +19,7 @@ export default function ProductCat() {
           <p className="onTextButton"></p>
           <Link
             className="onImageButton btn"
-            to={"/productsList/" + MENS_CLOTHING}
+            to={'/productsList/' + MENS_CLOTHING}
           >
             Mens Wear
           </Link>
@@ -29,7 +29,7 @@ export default function ProductCat() {
           <p className="onTextButton"></p>
           <Link
             className="onImageButton btn"
-            to={"/productsList/" + WOMENS_CLOTHING}
+            to={'/productsList/' + WOMENS_CLOTHING}
           >
             Western Wear
           </Link>
@@ -39,7 +39,7 @@ export default function ProductCat() {
           <p className="onTextButtonSmall"></p>
           <Link
             className="onImageButtonSmall btn"
-            to={"/productsList/" + KIDS_CLOTHING}
+            to={'/productsList/' + KIDS_CLOTHING}
           >
             Beauty Care
           </Link>
@@ -49,7 +49,7 @@ export default function ProductCat() {
           <p className="onTextButtonSmall"></p>
           <Link
             className="onImageButtonSmall btn"
-            to={"/productsList/" + JEWELLERY}
+            to={'/productsList/' + JEWELLERY}
           >
             Jewellery
           </Link>
@@ -59,7 +59,7 @@ export default function ProductCat() {
           <p className="onTextButtonSmall"></p>
           <Link
             className="onImageButtonSmall btn"
-            to={"/productsList/" + ELECTRONICS}
+            to={'/productsList/' + ELECTRONICS}
           >
             Electronics
           </Link>

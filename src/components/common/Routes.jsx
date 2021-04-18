@@ -5,3 +5,5 @@ export const CART = "/cart";
 export const WISHLIST = "/wishlist";
 export const ACCOUNT = "/account";
 export const ORDER = "/order";
+export const PRIVACYPOLICY = "/PrivacyPolicy";
+export const TERMSOFUSE = "/TermsOfUse";

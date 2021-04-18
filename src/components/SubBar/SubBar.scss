@@ -90,10 +90,10 @@
 }
 .subBarRightTwo span {
   color: #20225e;
-  font-weight: bold;
+  font-size: 25px;
 }
 .subBarRightTwo span:hover {
-  color: #ff9923
+  color: #ff9923;
 }
 .dropdown-menu {
   padding: 10px;
@@ -135,4 +135,8 @@
 }
 .popUpIcon li {
   padding: 0px 10px 0px 10px;
+}
+.logBtn {
+  border: none;
+  background: none;
 }

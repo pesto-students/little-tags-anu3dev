@@ -45,7 +45,7 @@ export default function ProductsPagination({ data, dataLimit }) {
             <p className="desc">{d.description}</p>
             <p className="price">₹ {d.price}</p>
             <p className="price">{d.category}</p>
-            <Link to={'/productsList/' + d.category + '/' + d.id} className="viewBtn">
+            <Link to={'/products/' + d.category + '/' + d.id} className="viewBtn">
               View
             </Link>
           </div>

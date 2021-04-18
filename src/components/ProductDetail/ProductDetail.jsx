@@ -44,7 +44,7 @@ export default function ProductDetail() {
           Home
           <i className="fa fa-angle-right arrowIcon"> </i>
         </Link>
-        <Link className="links" to={'/productsList/' + productDetail.category}>
+        <Link className="links" to={'/products/' + productDetail.category}>
           {productDetail.category}
           <i className="fa fa-angle-right arrowIcon"> </i>
         </Link>

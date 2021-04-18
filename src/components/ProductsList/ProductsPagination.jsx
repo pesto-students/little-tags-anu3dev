@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useRouteMatch } from 'react-router-dom';
 import './ProductsList.scss';
 
 export default function ProductsPagination({ data, dataLimit }) {
   const [pages] = useState(Math.ceil(data.length / dataLimit));
   const [currentPage, setCurrentPage] = useState(1);
+  let { url } = useRouteMatch();
 
   const handleClickNext = () => {
     setCurrentPage(currentPage + 1);
@@ -45,10 +46,9 @@ export default function ProductsPagination({ data, dataLimit }) {
             <p className="desc">{d.description}</p>
             <p className="price">₹ {d.price}</p>
             <p className="price">{d.category}</p>
-            <Link
-              to={{ pathname: '/product/', productDetail: d }}
-              className="viewBtn"
-            >
+            {/* <p className="price">{d.id}</p> */}
+            <Link to={{ pathname: `${url}/` + d.id, productDetail: d }} className="viewBtn">
+              {/* <Link to={{ pathname: '/product/', productDetail: d }} className="viewBtn"> */}
               View
             </Link>
           </div>
@@ -67,9 +67,7 @@ export default function ProductsPagination({ data, dataLimit }) {
           <button
             key={index}
             onClick={handleChangePage}
-            className={`paginationItem ${
-              currentPage === item ? 'active' : null
-            }`}
+            className={`paginationItem ${currentPage === item ? 'active' : null}`}
           >
             <span>{item}</span>
           </button>

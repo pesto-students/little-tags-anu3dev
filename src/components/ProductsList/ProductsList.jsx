@@ -10,9 +10,7 @@ export default function ProductsList() {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     window.scrollTo(0, 0);
-    let productsData = ProductsData.filter(
-      (product) => product.category === productCategory
-    );
+    let productsData = ProductsData.filter((product) => product.category === productCategory);
     setProducts(productsData);
   }, [productCategory]);
   return (

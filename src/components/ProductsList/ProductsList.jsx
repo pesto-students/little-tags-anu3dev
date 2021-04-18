@@ -16,7 +16,7 @@ export default function ProductsList() {
     setProducts(productsData);
   }, [productCategory]);
   return (
-    <div class="container">
+    <div className="container">
       {products.length > 0 ? (
         <>
           <ProductsPagination data={products} dataLimit={DATA_LIMIT} />

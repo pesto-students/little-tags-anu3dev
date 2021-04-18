@@ -46,7 +46,7 @@ export default function ProductsPagination({ data, dataLimit }) {
             <p className="price">₹ {d.price}</p>
             <p className="price">{d.category}</p>
             <Link
-              to={{ pathname: "/product/", productDetail: d }}
+              to={"/productsList/" + d.category + "/" + d.id}
               className="viewBtn"
             >
               View

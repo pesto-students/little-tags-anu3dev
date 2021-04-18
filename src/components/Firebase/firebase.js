@@ -46,11 +46,11 @@ class Firebase {
       }
     });
   };
-  addToCart = (product) => {
-    return this.db.ref("/cart").push(product);
+  addCartToUser = (cartItems, userId) => {
+    return this.db.ref("users/" + userId).set({ cart: cartItems });
   };
-  removeFromCart = (id) => {
-    return this.db.ref("/cart").child(id).remove();
+  removeCartFromUser = (userId) => {
+    return this.db.ref("users/" + userId).set({ cart: [] });
   };
 }
 

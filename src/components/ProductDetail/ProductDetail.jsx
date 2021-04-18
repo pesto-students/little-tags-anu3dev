@@ -1,19 +1,21 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import "./ProductDetail.scss";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import ImagesThumb from "./ImagesThumb";
-import FirebaseContext from "../Firebase/context";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/actions/CartActions";
+import ProductsData from "../common/data/products.json";
 
 export default function ProductDetail() {
-  let location = useLocation();
+  const productObj = useParams();
   const [index, setIndex] = useState(0);
   const imageRef = React.createRef();
-  const firebase = useContext(FirebaseContext);
-  const [errorMessage, setErrorMessage] = useState("");
   const [quantity, setQuantity] = useState(1);
   const dispatch = useDispatch();
+  let productDetail = ProductsData.find((product) => {
+    return product.id === Number(productObj.productId);
+  });
+
   const handleTab = (index) => {
     setIndex(index);
     const images = imageRef.current.children;
@@ -22,15 +24,10 @@ export default function ProductDetail() {
     }
     images[index].className = "active";
   };
+
   const handleAddToCart = () => {
-    location.productDetail.quantity = Number(quantity);
-    dispatch(addToCart(location.productDetail));
-    firebase
-      .addToCart(location.productDetail)
-      .then(() => console.log("product added to cart"))
-      .catch((e) => {
-        setErrorMessage(e.message);
-      });
+    productDetail.quantity = Number(quantity);
+    dispatch(addToCart(productDetail));
   };
   const handleChangeQuantity = (e) => {
     setQuantity(e.target.value);
@@ -47,34 +44,31 @@ export default function ProductDetail() {
           Home
           <i className="fa fa-angle-right arrowIcon"> </i>
         </Link>
-        <Link
-          className="links"
-          to={"/productsList/" + location.productDetail.category}
-        >
-          {location.productDetail.category}
+        <Link className="links" to={"/productsList/" + productDetail.category}>
+          {productDetail.category}
           <i className="fa fa-angle-right arrowIcon"> </i>
         </Link>
-        <div className="links">{location.productDetail.title}</div>
+        <div className="links">{productDetail.title}</div>
       </div>
       <div className="productDetailContent row">
         <div className="productDetailLeftp col-lg-4 col-md-4">
           <div className="imageScroll">
             <img
               className="leftImg"
-              src={location.productDetail.src[index]}
+              src={productDetail.src[index]}
               alt="product name"
             />
           </div>
           <div className="productImages">
             <ImagesThumb
-              images={location.productDetail.src}
+              images={productDetail.src}
               tab={handleTab}
               imageRef={imageRef}
             />
           </div>
         </div>
         <div className="productDetailCenter  col-lg-6 col-md-6">
-          <h1 className="title">{location.productDetail.title}</h1>
+          <h1 className="title">{productDetail.title}</h1>
           <div className="rating">
             <i className="las la-star"></i>
             <i className="las la-star"></i>
@@ -84,7 +78,7 @@ export default function ProductDetail() {
             <span>( 9 )</span>
           </div>
           <p>
-            <span>{location.productDetail.description}</span>
+            <span>{productDetail.description}</span>
           </p>
           <div className="features">
             <i className="las la-check-double"></i> 100% Original Products{" "}
@@ -100,7 +94,7 @@ export default function ProductDetail() {
           </div>
           <p>
             <strong>Price: </strong>
-            <span>₹ {location.productDetail.price}</span>
+            <span>₹ {productDetail.price}</span>
           </p>
           <p>
             <strong>Status:</strong> <span> In Stock</span>
@@ -156,7 +150,6 @@ export default function ProductDetail() {
           </div>
         </div>
       </div>
-      <span>{errorMessage}</span>
     </div>
   );
 }

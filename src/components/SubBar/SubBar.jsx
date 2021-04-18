@@ -30,10 +30,8 @@ export default function SubBar() {
           <ul>
             <li>
               <Link to={"/cart"}>
-                <a href=".">
-                  <i className="las la-shopping-cart"></i>
-                  <span>Cart({getCartCount()})</span>
-                </a>
+                <i className="las la-shopping-cart"></i>
+                <span>Cart({getCartCount()})</span>
               </Link>
             </li>
             <li>

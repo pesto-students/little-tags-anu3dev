@@ -18,21 +18,21 @@ export default function MenuBar() {
           </a>
         </li>
         <li>
-          <Link to={'/products/' + MENS_CLOTHING}>Mens Wear</Link>
+          <Link to={'/productsList/' + MENS_CLOTHING}>Mens Wear</Link>
         </li>
         <li>
-          <Link to={'/products/' + WOMENS_CLOTHING} href=".">
+          <Link to={'/productsList/' + WOMENS_CLOTHING} href=".">
             Womens Wear
           </Link>
         </li>
         <li>
-          <Link to={'/products/' + JEWELLERY}>Beauty Care</Link>
+          <Link to={'/productsList/' + JEWELLERY}>Beauty Care</Link>
         </li>
         <li>
-          <Link to={'/products/' + JEWELLERY}>Jewellery</Link>
+          <Link to={'/productsList/' + JEWELLERY}>Jewellery</Link>
         </li>
         <li>
-          <Link to={'/products/' + ELECTRONICS}>Electronics</Link>
+          <Link to={'/productsList/' + ELECTRONICS}>Electronics</Link>
         </li>
       </ul>
     </div>

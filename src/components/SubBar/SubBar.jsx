@@ -1,17 +1,17 @@
-import React, { useState, useContext } from 'react';
-import { withRouter } from 'react-router-dom';
-import FirebaseContext from '../Firebase/context';
-import './SubBar.scss';
-import { Link } from 'react-router-dom';
-import * as ROUTES from '../common/Routes';
-import Modal from '../Modal/Modal';
-import { useSelector } from 'react-redux';
+import React, { useState, useContext } from "react";
+import { withRouter } from "react-router-dom";
+import FirebaseContext from "../Firebase/context";
+import "./SubBar.scss";
+import { Link } from "react-router-dom";
+import * as ROUTES from "../common/Routes";
+import Modal from "../Modal/Modal";
+import { useSelector } from "react-redux";
 
 function SubBar(props) {
   const firebase = useContext(FirebaseContext);
-  const [errorMessage, setErrorMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState("");
   const cart = useSelector((state) => state.cart);
-  const [user] = useState(JSON.parse(localStorage.getItem('authUser')));
+  const [user] = useState(JSON.parse(localStorage.getItem("authUser")));
   const { cartItems } = cart;
   const getCartCount = () => {
     return cartItems.reduce((qty, item) => Number(item.quantity) + qty, 0);
@@ -72,7 +72,7 @@ function SubBar(props) {
         <div className="subBarRightTwo">
           <ul>
             <li>
-              <Link to={'/cart'}>
+              <Link to={"/cart"}>
                 <i className="las la-shopping-cart"></i>
                 <span>Cart({getCartCount()})</span>
               </Link>
@@ -80,7 +80,9 @@ function SubBar(props) {
             <li>
               <a href=".">
                 <i className="las la-user"></i>
-                <span>Hello {!user ? 'Guest' : user.username.split(' ')[0]}</span>
+                <span>
+                  Hello {!user ? "Guest" : user.username.split(" ")[0]}
+                </span>
               </a>
             </li>
             <li>
@@ -107,7 +109,12 @@ function SubBar(props) {
                     </a>
                   </div>
                   <div className="btnMid">
-                    <a href="." data-toggle="modal" data-target="#myModal" className="btn">
+                    <a
+                      href="."
+                      data-toggle="modal"
+                      data-target="#myModal"
+                      className="btn"
+                    >
                       Login
                     </a>
                   </div>
@@ -115,22 +122,36 @@ function SubBar(props) {
                   <p className="dropdownText">Login with social links</p>
                   <ul>
                     <li>
-                      <button className="logBtn" href="." onClick={handleGoogleSignIn}>
+                      <button
+                        className="logBtn"
+                        href="."
+                        onClick={handleGoogleSignIn}
+                      >
                         <i className="lab la-google-plus-g"></i>
                       </button>
                     </li>
                     <li>
-                      <button className="logBtn" href="." onClick={handleFacebookSignIn}>
+                      <button
+                        className="logBtn"
+                        href="."
+                        onClick={handleFacebookSignIn}
+                      >
                         <i className="lab la-facebook"></i>
                       </button>
                     </li>
                     <li>
-                      <button className="logBtn" href="." onClick={handleSignOut}>
+                      <button
+                        className="logBtn"
+                        href="."
+                        onClick={handleSignOut}
+                      >
                         <i className="las la-sign-out-alt"></i>
                       </button>
                     </li>
                   </ul>
-                  <span className="errorLog">{!!errorMessage && <p>{errorMessage}</p>}</span>
+                  <span className="errorLog">
+                    {!!errorMessage && <p>{errorMessage}</p>}
+                  </span>
                 </div>
               </div>
             </li>

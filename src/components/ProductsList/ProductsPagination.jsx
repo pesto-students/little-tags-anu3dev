@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { Link, useRouteMatch } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './ProductsList.scss';
 
 export default function ProductsPagination({ data, dataLimit }) {
   const [pages] = useState(Math.ceil(data.length / dataLimit));
   const [currentPage, setCurrentPage] = useState(1);
-  let { url } = useRouteMatch();
 
   const handleClickNext = () => {
     setCurrentPage(currentPage + 1);
@@ -46,9 +45,7 @@ export default function ProductsPagination({ data, dataLimit }) {
             <p className="desc">{d.description}</p>
             <p className="price">₹ {d.price}</p>
             <p className="price">{d.category}</p>
-            {/* <p className="price">{d.id}</p> */}
-            <Link to={{ pathname: `${url}/` + d.id, productDetail: d }} className="viewBtn">
-              {/* <Link to={{ pathname: '/product/', productDetail: d }} className="viewBtn"> */}
+            <Link to={'/productsList/' + d.category + '/' + d.id} className="viewBtn">
               View
             </Link>
           </div>

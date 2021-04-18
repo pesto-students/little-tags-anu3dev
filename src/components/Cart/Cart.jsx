@@ -1,22 +1,22 @@
-import React, { useState, useContext } from "react";
-import "./Cart.scss";
-import { useSelector, useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
-import { removeFromCart } from "../../redux/actions/CartActions";
-import FirebaseContext from "../Firebase/context";
+import React, { useState, useContext } from 'react';
+import './Cart.scss';
+import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { removeFromCart } from '../../redux/actions/CartActions';
+import FirebaseContext from '../Firebase/context';
 
 export default function Cart() {
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
   const dispatch = useDispatch();
   const firebase = useContext(FirebaseContext);
-  const [errorMessage, setErrorMessage] = useState("");
-  console.log("cartItems: ", cartItems);
+  const [errorMessage, setErrorMessage] = useState('');
+  console.log('cartItems: ', cartItems);
   const handleRemoveFromCart = (id) => {
     dispatch(removeFromCart(id));
     firebase
       .removeFromCart(id)
-      .then(() => console.log("product removed from cart"))
+      .then(() => console.log('product removed from cart'))
       .catch((e) => {
         setErrorMessage(e.message);
       });
@@ -35,7 +35,7 @@ export default function Cart() {
   return (
     <div className="cartScreen">
       <div className="row ">
-        <Link className="cartLink" to={"/"}>
+        <Link className="cartLink" to={'/'}>
           Continue Shopping
         </Link>
       </div>
@@ -53,7 +53,7 @@ export default function Cart() {
                   alt={item.title}
                 />
                 <div className="col-lg-4 col-md-4 cartDetail">
-                  <Link to={{ pathname: "/product/", productDetail: item }}>
+                  <Link to={{ pathname: '/product/', productDetail: item }}>
                     <h3>{item.title}</h3>
                   </Link>
                   <p>{item.description}</p>

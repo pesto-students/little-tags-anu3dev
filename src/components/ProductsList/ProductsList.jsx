@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import "./ProductsList.scss";
-import ProductsData from "../common/data/products.json";
-import ProductsPagination from "./ProductsPagination";
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import './ProductsList.scss';
+import ProductsData from '../common/data/products.json';
+import ProductsPagination from './ProductsPagination';
 const DATA_LIMIT = 6;
 
 export default function ProductsList() {
@@ -16,7 +16,7 @@ export default function ProductsList() {
     setProducts(productsData);
   }, [productCategory]);
   return (
-    <div class="container">
+    <div className="container">
       {products.length > 0 ? (
         <>
           <ProductsPagination data={products} dataLimit={DATA_LIMIT} />

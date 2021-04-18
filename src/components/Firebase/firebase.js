@@ -1,6 +1,6 @@
-import app from "firebase/app";
-import "firebase/auth";
-import "firebase/database";
+import app from 'firebase/app';
+import 'firebase/auth';
+import 'firebase/database';
 
 const config = {
   apiKey: process.env.REACT_APP_API_KEY,
@@ -30,7 +30,7 @@ class Firebase {
     return this.auth.onAuthStateChanged((authUser) => {
       if (authUser) {
         this.user(authUser.uid)
-          .once("value")
+          .once('value')
           .then((snapshot) => {
             const dbUser = snapshot.val();
             const user = {
@@ -47,10 +47,10 @@ class Firebase {
     });
   };
   addToCart = (product) => {
-    return this.db.ref("/cart").push(product);
+    return this.db.ref('/cart').push(product);
   };
   removeFromCart = (id) => {
-    return this.db.ref("/cart").child(id).remove();
+    return this.db.ref('/cart').child(id).remove();
   };
 }
 

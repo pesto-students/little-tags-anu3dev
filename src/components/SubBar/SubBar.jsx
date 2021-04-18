@@ -1,16 +1,59 @@
-import React from "react";
-import "./SubBar.scss";
-import { Link } from "react-router-dom";
-import * as ROUTES from "../common/Routes";
-import Modal from "../Modal/Modal";
-import { useSelector } from "react-redux";
+import React, { useState, useContext } from 'react';
+import { withRouter } from 'react-router-dom';
+import FirebaseContext from '../Firebase/context';
+import './SubBar.scss';
+import { Link } from 'react-router-dom';
+import * as ROUTES from '../common/Routes';
+import Modal from '../Modal/Modal';
+import { useSelector } from 'react-redux';
 
-export default function SubBar() {
+function SubBar(props) {
+  const firebase = useContext(FirebaseContext);
+  const [errorMessage, setErrorMessage] = useState('');
   const cart = useSelector((state) => state.cart);
+  const [user] = useState(JSON.parse(localStorage.getItem('authUser')));
   const { cartItems } = cart;
   const getCartCount = () => {
     return cartItems.reduce((qty, item) => Number(item.quantity) + qty, 0);
   };
+  const handleFacebookSignIn = () => {
+    firebase
+      .doFacebookSignIn()
+      .then((authUser) => {
+        return firebase.user(authUser.user.uid).set({
+          email: authUser.user.email,
+          username: authUser.user.displayName,
+          roles: {},
+        });
+      })
+      .then(() => {
+        props.history.push(ROUTES.HOME);
+      })
+      .catch((error) => {
+        setErrorMessage(error.message);
+      });
+  };
+  const handleGoogleSignIn = () => {
+    firebase
+      .doGoogleSignIn()
+      .then((authUser) => {
+        return firebase.user(authUser.user.uid).set({
+          email: authUser.user.email,
+          username: authUser.user.displayName,
+          roles: {},
+        });
+      })
+      .then(() => {
+        props.history.push(ROUTES.HOME);
+      })
+      .catch((error) => {
+        setErrorMessage(error.message);
+      });
+  };
+  const handleSignOut = () => {
+    firebase.doSignOut();
+  };
+
   return (
     <div className="subBar">
       <div className="subBarLeft">
@@ -29,21 +72,24 @@ export default function SubBar() {
         <div className="subBarRightTwo">
           <ul>
             <li>
-              <Link to={"/cart"}>
-                <a href=".">
-                  <i className="las la-shopping-cart"></i>
-                  <span>Cart({getCartCount()})</span>
-                </a>
+              <Link to={'/cart'}>
+                <i className="las la-shopping-cart"></i>
+                <span>Cart({getCartCount()})</span>
               </Link>
+            </li>
+            <li>
+              <a href=".">
+                <i className="las la-user"></i>
+                <span>Hello {!user ? 'Guest' : user.username.split(' ')[0]}</span>
+              </a>
             </li>
             <li>
               <div className="dropdown">
                 <a href="." className="dropdown-toggle" data-toggle="dropdown">
-                  <i className="las la-user"></i>
+                  <i className="las la-sign-in-alt"></i>
                   <span>Login</span>
                 </a>
                 <div className="dropdown-menu">
-                  <hr className="hrLine"></hr>
                   <Link to={ROUTES.ACCOUNT} className="dropdown-item">
                     <i className="las la-user-alt"></i> Your Account
                   </Link>
@@ -61,34 +107,30 @@ export default function SubBar() {
                     </a>
                   </div>
                   <div className="btnMid">
-                    <a
-                      href="."
-                      data-toggle="modal"
-                      data-target="#myModal"
-                      className="btn"
-                    >
+                    <a href="." data-toggle="modal" data-target="#myModal" className="btn">
                       Login
                     </a>
                   </div>
                   <hr className="hrLine"></hr>
-                  <p className="dropdownText">With social links</p>
+                  <p className="dropdownText">Login with social links</p>
                   <ul>
                     <li>
-                      <a href=".">
+                      <button className="logBtn" href="." onClick={handleGoogleSignIn}>
                         <i className="lab la-google-plus-g"></i>
-                      </a>
+                      </button>
                     </li>
                     <li>
-                      <a href=".">
+                      <button className="logBtn" href="." onClick={handleFacebookSignIn}>
                         <i className="lab la-facebook"></i>
-                      </a>
+                      </button>
                     </li>
                     <li>
-                      <a href=".">
-                        <i className="lab la-linkedin-in"></i>
-                      </a>
+                      <button className="logBtn" href="." onClick={handleSignOut}>
+                        <i className="las la-sign-out-alt"></i>
+                      </button>
                     </li>
                   </ul>
+                  <span className="errorLog">{!!errorMessage && <p>{errorMessage}</p>}</span>
                 </div>
               </div>
             </li>
@@ -99,3 +141,5 @@ export default function SubBar() {
     </div>
   );
 }
+
+export default withRouter(SubBar);

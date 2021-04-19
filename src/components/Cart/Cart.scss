@@ -1,6 +1,7 @@
 .cartScreen {
   margin: 20px 110px 0px 125px;
   position: relative;
+  min-height: 400px;
 }
 .cartHeader {
   color: #103178;
@@ -23,8 +24,17 @@
   margin-bottom: 30px;
 }
 .cartCheckout {
-  margin-top: 40px;
+  margin-top: 10px;
 }
 .checkoutButton {
   margin-left: 10px;
+}
+.cartSmallSec {
+  margin: 10px 0px 50px 0px;
+}
+.cartPrice {
+  text-align: center;
+}
+.cartImage {
+  max-height: 250px;
 }

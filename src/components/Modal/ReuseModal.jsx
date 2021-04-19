@@ -1,10 +1,12 @@
-import React, { useContext } from "react";
+import React, { useState, useContext } from "react";
+import { withRouter } from "react-router-dom";
 import FirebaseContext from "../Firebase/context";
 import * as ROUTES from "../common/Routes";
 import "./ReuseModal.scss";
 
-export const Modal = ({ show, close, props }) => {
+function Modal(props) {
   const firebase = useContext(FirebaseContext);
+  const [errorMessage, setErrorMessage] = useState("");
   const handleFacebookSignIn = () => {
     firebase
       .doFacebookSignIn()
@@ -17,6 +19,9 @@ export const Modal = ({ show, close, props }) => {
       })
       .then(() => {
         props.history.push(ROUTES.HOME);
+      })
+      .catch((error) => {
+        setErrorMessage(error.message);
       });
   };
   const handleGoogleSignIn = () => {
@@ -31,6 +36,9 @@ export const Modal = ({ show, close, props }) => {
       })
       .then(() => {
         props.history.push(ROUTES.HOME);
+      })
+      .catch((error) => {
+        setErrorMessage(error.message);
       });
   };
 
@@ -38,12 +46,12 @@ export const Modal = ({ show, close, props }) => {
     <div
       className="modal-wrapper"
       style={{
-        transform: show ? "translateY(0vh)" : "translateY(-1000px)",
+        transform: props.show ? "translateY(0vh)" : "translateY(-1000px)",
       }}
     >
       <div className="modal-header">
         <p>Continue with social links</p>
-        <span onClick={close} className="close-modal-btn">
+        <span onClick={props.close} className="close-modal-btn">
           <i className="las la-times"></i>
         </span>
       </div>
@@ -59,13 +67,15 @@ export const Modal = ({ show, close, props }) => {
               <i className="lab la-facebook"></i>
             </button>
           </div>
+          <span className="errorLog">{!!errorMessage && <p>{errorMessage}</p>}</span>
         </div>
         <div className="modal-footer">
-          <button onClick={close} className="btn">
+          <button onClick={props.close} className="btn">
             Close
           </button>
         </div>
       </div>
     </div>
   );
-};
+}
+export default withRouter(Modal);

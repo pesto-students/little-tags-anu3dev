@@ -1,15 +1,15 @@
 import React, { useState } from "react";
-import { Modal } from "./ReuseModal";
+import Modal from "./ReuseModal";
 
 function ModalNew() {
-  const [show, setShow] = useState(true);
-  // console.log(show);
+  const [show, setShow] = useState(false);
+  console.log(show);
   const callModal = () => {
     const userVisitStatus = localStorage.getItem("userVisitStatus");
     return userVisitStatus ? "" : localStorage.setItem("userVisitStatus", true) || Xyz();
   };
   const Xyz = () => setShow(true);
-  // console.log(show);
+  console.log(show);
   const closeModalHandler = () => setShow(false);
 
   return (

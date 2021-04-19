@@ -14,7 +14,7 @@ function ModalNew() {
 
   return (
     <div onLoad={callModal()}>
-      {show ? <div onClick={closeModalHandler}></div> : null}
+      {show ? <div onClick={closeModalHandler} className="back-drop"></div> : null}
       {/* <button onClick={() => setShow(true)} className="btn">
         Open Modal
       </button> */}

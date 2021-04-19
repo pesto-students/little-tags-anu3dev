@@ -16,11 +16,12 @@ import * as PATHS from "./components/common/Routes";
 import ProductDetail from "./components/ProductDetail/ProductDetail";
 import Cart from "./components/Cart/Cart";
 import withAuthentication from "./components/Session/withAuthentication";
-
+import ModalNew from "./components/Modal/ModalNew";
 function App() {
   return (
     <Router>
       <div>
+        <ModalNew />
         <TopBar />
         <SubBar />
         <MenuBar />

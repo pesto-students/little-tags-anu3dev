@@ -7,7 +7,6 @@ import {
   JEWELLERY,
   ELECTRONICS,
 } from "../common/ProductCategories";
-import ModalNew from "../Modal/ModalNew";
 
 export default function MenuBar() {
   // const callModal = () => {
@@ -42,9 +41,6 @@ export default function MenuBar() {
           </li>
           <li>
             <Link to={"/products/" + ELECTRONICS}>Electronics</Link>
-          </li>
-          <li>
-            <ModalNew />
           </li>
         </ul>
       </div>

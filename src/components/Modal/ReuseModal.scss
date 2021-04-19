@@ -2,7 +2,7 @@
   width: 30%;
   margin: 4rem auto;
   transition: all 0.5s ease;
-  position: absolute;
+  position: fixed;
   z-index: 100;
   top: 20%;
   left: 35%;
@@ -25,6 +25,10 @@
   margin-right: -15px;
   margin-top: -30px;
 }
+.modal-header p {
+  font-size: 25px;
+  font-weight: bold;
+}
 
 .modal-content {
   border-radius: 0px 0px 10px 10px;
@@ -34,4 +38,18 @@
   font-size: 100px;
   font-weight: bold;
   padding-left: 50px;
+}
+
+.back-drop {
+  opacity: 1;
+  background-color: rgba(63, 61, 61, 0.692);
+  height: 1500px;
+  width: 100%;
+  z-index: 100;
+  position: fixed;
+}
+.modal-body {
+  display: flex;
+  justify-content: center;
+  margin-left: -30px;
 }

@@ -49,13 +49,16 @@ export const Modal = ({ show, close, props }) => {
       </div>
       <div className="modal-content">
         <div className="modal-body">
-          <button className="logBtn" href="." onClick={handleGoogleSignIn}>
-            <i className="lab la-google-plus-g"></i>
-          </button>
-
-          <button className="logBtn" href="." onClick={handleFacebookSignIn}>
-            <i className="lab la-facebook"></i>
-          </button>
+          <div>
+            <button className="logBtn" href="." onClick={handleGoogleSignIn}>
+              <i className="lab la-google-plus-g"></i>
+            </button>
+          </div>
+          <div>
+            <button className="logBtn" href="." onClick={handleFacebookSignIn}>
+              <i className="lab la-facebook"></i>
+            </button>
+          </div>
         </div>
         <div className="modal-footer">
           <button onClick={close} className="btn">

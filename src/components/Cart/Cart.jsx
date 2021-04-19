@@ -1,13 +1,32 @@
-import React from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./Cart.scss";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { removeFromCart } from "../../redux/actions/CartActions";
+import FirebaseContext from "../Firebase/context";
 
 export default function Cart() {
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
   const dispatch = useDispatch();
+  const firebase = useContext(FirebaseContext);
+  const [errorMessage, setErrorMessage] = useState("");
+  const sessionUser = useSelector((state) => state.sessionState);
+  const { authUser } = sessionUser;
+
+  useEffect(() => {
+    if (authUser) {
+      firebase
+        .addCartToUser(cartItems, authUser.uid)
+        .then(() => {
+          console.log("cart replaced");
+        })
+        .catch((e) => {
+          setErrorMessage(e.message);
+        });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  });
 
   const handleRemoveFromCart = (id) => {
     dispatch(removeFromCart(id));
@@ -18,7 +37,9 @@ export default function Cart() {
   };
 
   const getCartSubTotal = () => {
-    return cartItems.reduce((price, item) => price + item.price * item.quantity, 0).toFixed(2);
+    return cartItems
+      .reduce((price, item) => price + item.price * item.quantity, 0)
+      .toFixed(2);
   };
 
   return (
@@ -36,7 +57,11 @@ export default function Cart() {
           {cartItems.length > 0 ? (
             cartItems.map((item, idx) => (
               <div className="row" key={idx}>
-                <img className="col-lg-2 col-md-3 cartImage" src={item.image} alt={item.title} />
+                <img
+                  className="col-lg-2 col-md-3 cartImage"
+                  src={item.image}
+                  alt={item.title}
+                />
                 <div className="col-lg-4 col-md-4 cartDetail">
                   <Link to={{ pathname: "/product/", productDetail: item }}>
                     <h3>{item.title}</h3>
@@ -52,6 +77,7 @@ export default function Cart() {
                   >
                     Remove
                   </button>
+                  <span>{errorMessage}</span>
                 </div>
                 <p className="col-lg-1 col-md-1 cartPrice">${item.price}</p>
               </div>

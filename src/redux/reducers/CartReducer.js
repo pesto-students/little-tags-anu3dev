@@ -1,4 +1,4 @@
-import * as ACTION_TYPES from '../constants/CartActionTypes';
+import * as ACTION_TYPES from "../constants/CartActionTypes";
 
 const CART_INITIAL_STATE = {
   cartItems: [],
@@ -12,9 +12,7 @@ export const CartReducer = (state = CART_INITIAL_STATE, action) => {
       if (existItem) {
         return {
           ...state,
-          cartItems: state.cartItems.map((x) =>
-            x.id === existItem.id ? item : x
-          ),
+          cartItems: state.cartItems.map((x) => (x.id === existItem.id ? item : x)),
         };
       } else {
         return {

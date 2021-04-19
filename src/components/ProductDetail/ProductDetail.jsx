@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import './ProductDetail.scss';
-import { Link, useParams } from 'react-router-dom';
-import ImagesThumb from './ImagesThumb';
-import { useDispatch } from 'react-redux';
-import { addToCart } from '../../redux/actions/CartActions';
-import ProductsData from '../common/data/products.json';
+import React, { useState, useEffect } from "react";
+import "./ProductDetail.scss";
+import { Link, useParams } from "react-router-dom";
+import ImagesThumb from "./ImagesThumb";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../redux/actions/CartActions";
+import ProductsData from "../common/data/products.json";
 
 export default function ProductDetail() {
   const productObj = useParams();
@@ -20,9 +20,9 @@ export default function ProductDetail() {
     setIndex(index);
     const images = imageRef.current.children;
     for (let i = 0; i < images.length; i++) {
-      images[i].className = images[i].className.replace('active', '');
+      images[i].className = images[i].className.replace("active", "");
     }
-    images[index].className = 'active';
+    images[index].className = "active";
   };
 
   const handleAddToCart = () => {
@@ -34,17 +34,17 @@ export default function ProductDetail() {
   };
 
   useEffect(() => {
-    imageRef.current.children[index].className = 'active';
+    imageRef.current.children[index].className = "active";
     // eslint-disable-next-line
   }, []);
   return (
     <div className="productScreen">
       <div className="navLinks">
-        <Link className="links" to={'/'}>
+        <Link className="links" to={"/"}>
           Home
           <i className="fa fa-angle-right arrowIcon"> </i>
         </Link>
-        <Link className="links" to={'/products/' + productDetail.category}>
+        <Link className="links" to={"/products/" + productDetail.category}>
           {productDetail.category}
           <i className="fa fa-angle-right arrowIcon"> </i>
         </Link>
@@ -95,7 +95,7 @@ export default function ProductDetail() {
               <option value="4">4</option>
             </select>
           </p>
-          <Link to={'/cart'}>
+          <Link to={"/cart"}>
             <button className="addToCart" onClick={handleAddToCart}>
               Add To Cart
             </button>

@@ -1,7 +1,7 @@
-import React from 'react';
-import './Footer.scss';
-import { Link } from 'react-router-dom';
-import * as ROUTES from '../common/Routes';
+import React from "react";
+import "./Footer.scss";
+import { Link } from "react-router-dom";
+import * as ROUTES from "../common/Routes";
 
 export default function Footer() {
   return (
@@ -9,10 +9,9 @@ export default function Footer() {
       <div className="col-lg-3 col-md-3">
         <h3>About Instant Order:</h3>
         <p>
-          Pesto Tech is proudly launching its own Online Clothing Store named
-          Little Tags. You have been awarded with the project and you need to
-          design and develop this project which should meet the requirements
-          mentioned in the MVP below.
+          Pesto Tech is proudly launching its own Online Clothing Store named Little Tags. You have
+          been awarded with the project and you need to design and develop this project which should
+          meet the requirements mentioned in the MVP below.
         </p>
       </div>
       <div className="col-lg-3 col-md-3">

@@ -1,15 +1,15 @@
-import React, { useState, useContext } from 'react';
-import { withRouter } from 'react-router-dom';
-import FirebaseContext from '../Firebase/context';
-import './SubBar.scss';
-import { Link } from 'react-router-dom';
-import * as ROUTES from '../common/Routes';
-import Modal from '../Modal/Modal';
-import { useSelector } from 'react-redux';
+import React, { useState, useContext } from "react";
+import { withRouter } from "react-router-dom";
+import FirebaseContext from "../Firebase/context";
+import "./SubBar.scss";
+import { Link } from "react-router-dom";
+import * as ROUTES from "../common/Routes";
+import Modal from "../Modal/Modal";
+import { useSelector } from "react-redux";
 
 function SubBar(props) {
   const firebase = useContext(FirebaseContext);
-  const [errorMessage, setErrorMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState("");
   const user = useSelector((state) => state.sessionState);
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
@@ -72,7 +72,7 @@ function SubBar(props) {
         <div className="subBarRightTwo">
           <ul>
             <li>
-              <Link to={'/cart'}>
+              <Link to={"/cart"}>
                 <i className="las la-shopping-cart"></i>
                 <span>Cart({getCartCount()})</span>
               </Link>
@@ -81,7 +81,7 @@ function SubBar(props) {
               <a href=".">
                 <i className="las la-user"></i>
                 <span>
-                  Hello {user.authUser === null ? 'Guest' : user.authUser.username.split(' ')[0]}
+                  Hello {user.authUser === null ? "Guest" : user.authUser.username.split(" ")[0]}
                 </span>
               </a>
             </li>
@@ -91,7 +91,7 @@ function SubBar(props) {
                   <i className="las la-sign-in-alt"></i>
                   <span>
                     {user.authUser === null ? (
-                      'Login'
+                      "Login"
                     ) : (
                       <button className="logBtn" href="." onClick={handleSignOut}>
                         LogOut
@@ -135,7 +135,7 @@ function SubBar(props) {
                     </li>
                     <li>
                       {user.authUser === null ? (
-                        ''
+                        ""
                       ) : (
                         <button className="logBtn" href="." onClick={handleSignOut}>
                           <i className="las la-sign-out-alt"></i>

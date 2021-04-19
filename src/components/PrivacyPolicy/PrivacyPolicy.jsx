@@ -1,5 +1,5 @@
-import React from 'react';
-import './PrivacyPolicy.scss';
+import React from "react";
+import "./PrivacyPolicy.scss";
 
 export default function PrivacyPolicy() {
   return (

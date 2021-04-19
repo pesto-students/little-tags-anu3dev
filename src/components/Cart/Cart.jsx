@@ -1,47 +1,17 @@
-import React, { useState, useContext, useEffect } from "react";
+import React from "react";
 import "./Cart.scss";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { removeFromCart } from "../../redux/actions/CartActions";
-import FirebaseContext from "../Firebase/context";
 
 export default function Cart() {
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
   const dispatch = useDispatch();
-  const firebase = useContext(FirebaseContext);
-  const [errorMessage, setErrorMessage] = useState("");
-  const sessionUser = useSelector((state) => state.sessionState);
-  const { authUser } = sessionUser;
 
   const handleRemoveFromCart = (id) => {
     dispatch(removeFromCart(id));
   };
-
-  useEffect(() => {
-    console.log("cartitems inside useEffect: ", cartItems);
-    if (cartItems.length === 0) {
-      console.log("cartitems 0 useEffect: ", cartItems);
-      firebase
-        .removeCartFromUser(authUser.uid)
-        .then(() => {
-          console.log("cart removed");
-        })
-        .catch((e) => {
-          setErrorMessage(e.message);
-        });
-    } else {
-      firebase
-        .addCartToUser(cartItems, authUser.uid)
-        .then(() => {
-          console.log("cart updated");
-        })
-        .catch((e) => {
-          setErrorMessage(e.message);
-        });
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  });
 
   const getCartCount = () => {
     return cartItems.reduce((qty, item) => Number(item.quantity) + qty, 0);
@@ -82,7 +52,6 @@ export default function Cart() {
                   >
                     Remove
                   </button>
-                  <span>{errorMessage}</span>
                 </div>
                 <p className="col-lg-1 col-md-1 cartPrice">${item.price}</p>
               </div>

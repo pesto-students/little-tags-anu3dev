@@ -13,6 +13,7 @@ class Firebase {
   constructor() {
     app.initializeApp(config);
     this.db = app.database();
+
     this.auth = app.auth();
 
     this.googleAuthProvider = new app.auth.GoogleAuthProvider();
@@ -47,10 +48,17 @@ class Firebase {
     });
   };
   addCartToUser = (cartItems, userId) => {
-    return this.db.ref("users/" + userId).set({ cart: cartItems });
+    // return this.db.ref("users/" + userId).set({ cart: cartItems });
+    // return this.db.ref
+    //   .collection("users")
+    //   .doc(userId)
+    //   .collection("cart")
+    //   .add(cartItems);
+    return console.log("firebase update to user: ", userId);
   };
   removeCartFromUser = (userId) => {
-    return this.db.ref("users/" + userId).set({ cart: [] });
+    // return this.db.ref("users/" + userId).set({ cart: [] });
+    return console.log("firebase update to user: ", userId);
   };
 }
 

@@ -1,6 +1,7 @@
 import app from "firebase/app";
 import "firebase/auth";
 import "firebase/database";
+import { getDataFromLocalStorage, setDataToLocalStorage } from "../common/Util";
 
 const config = {
   apiKey: process.env.REACT_APP_API_KEY,
@@ -48,17 +49,33 @@ class Firebase {
     });
   };
   addCartToUser = (cartItems, userId) => {
-    // return this.db.ref("users/" + userId).set({ cart: cartItems });
-    // return this.db.ref
-    //   .collection("users")
-    //   .doc(userId)
-    //   .collection("cart")
-    //   .add(cartItems);
-    return console.log("firebase update to user: ", userId);
+    let oldCartKey = getDataFromLocalStorage("cartKey");
+    let updates = {};
+    if (!oldCartKey) {
+      oldCartKey = this.db.ref().child("cart").push().key;
+      setDataToLocalStorage("cartKey", oldCartKey);
+    }
+    updates["/users/" + userId + "/" + oldCartKey] = { cart: cartItems };
+
+    return this.db.ref().update(updates);
+    //return console.log("firebase update to user: ", userId);
   };
-  removeCartFromUser = (userId) => {
-    // return this.db.ref("users/" + userId).set({ cart: [] });
-    return console.log("firebase update to user: ", userId);
+
+  getCartOfUser = (userId) => {
+    return this.db.ref
+      .child("users")
+      .child(userId)
+      .get()
+      .then((snapshot) => {
+        if (snapshot.exists()) {
+          console.log(snapshot.val());
+        } else {
+          console.log("No data available");
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
 }
 

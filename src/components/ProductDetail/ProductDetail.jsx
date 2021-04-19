@@ -44,7 +44,7 @@ export default function ProductDetail() {
           Home
           <i className="fa fa-angle-right arrowIcon"> </i>
         </Link>
-        <Link className="links" to={"/productsList/" + productDetail.category}>
+        <Link className="links" to={"/products/" + productDetail.category}>
           {productDetail.category}
           <i className="fa fa-angle-right arrowIcon"> </i>
         </Link>
@@ -53,18 +53,10 @@ export default function ProductDetail() {
       <div className="productDetailContent row">
         <div className="productDetailLeftp col-lg-4 col-md-4">
           <div className="imageScroll">
-            <img
-              className="leftImg"
-              src={productDetail.src[index]}
-              alt="product name"
-            />
+            <img className="leftImg" src={productDetail.src[index]} alt="product name" />
           </div>
           <div className="productImages">
-            <ImagesThumb
-              images={productDetail.src}
-              tab={handleTab}
-              imageRef={imageRef}
-            />
+            <ImagesThumb images={productDetail.src} tab={handleTab} imageRef={imageRef} />
           </div>
         </div>
         <div className="productDetailCenter  col-lg-6 col-md-6">
@@ -81,16 +73,11 @@ export default function ProductDetail() {
             <span>{productDetail.description}</span>
           </p>
           <div className="features">
-            <i className="las la-check-double"></i> 100% Original Products{" "}
-            <br />
-            <i className="las la-check-double"></i> Free Delivery on order above
-            Rs. 799 <br />
-            <i className="las la-check-double"></i> Pay on delivery might be
-            available <br />
-            <i className="las la-check-double"></i> Easy 30 days returns and
-            exchanges <br />
-            <i className="las la-check-double"></i> Try & Buy might be available{" "}
-            <br />
+            <i className="las la-check-double"></i> 100% Original Products <br />
+            <i className="las la-check-double"></i> Free Delivery on order above Rs. 799 <br />
+            <i className="las la-check-double"></i> Pay on delivery might be available <br />
+            <i className="las la-check-double"></i> Easy 30 days returns and exchanges <br />
+            <i className="las la-check-double"></i> Try & Buy might be available <br />
           </div>
           <p>
             <strong>Price: </strong>
@@ -101,11 +88,7 @@ export default function ProductDetail() {
           </p>
           <p>
             <strong> Quantity</strong>
-            <select
-              className="qtySelect"
-              value={quantity}
-              onChange={handleChangeQuantity}
-            >
+            <select className="qtySelect" value={quantity} onChange={handleChangeQuantity}>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>

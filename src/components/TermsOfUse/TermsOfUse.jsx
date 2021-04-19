@@ -1,5 +1,5 @@
-import React from 'react';
-import './TermsOfUse.scss';
+import React from "react";
+import "./TermsOfUse.scss";
 
 export default function TermsOfUse() {
   return (

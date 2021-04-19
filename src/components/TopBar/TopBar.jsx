@@ -1,18 +1,12 @@
-import React from 'react';
-import './TopBar.scss';
+import React from "react";
+import "./TopBar.scss";
 
 export default function TopBar() {
   return (
     <div className="topBar" id="accordion">
-      <div
-        id="collapseOne"
-        className="collapse show topBarSub"
-        data-parent="#accordion"
-      >
+      <div id="collapseOne" className="collapse show topBarSub" data-parent="#accordion">
         <div className="topBarLeft">
-          <p>
-            Due to the COVID 19 epidemic, orders may be processed with delay.
-          </p>
+          <p>Due to the COVID 19 epidemic, orders may be processed with delay.</p>
         </div>
         <div className="topBarRight">
           <div className="topBarRightOne">
@@ -29,27 +23,27 @@ export default function TopBar() {
             <ul>
               <li>
                 <a href=".">
-                  <i className="lab la-facebook-f"></i>{' '}
+                  <i className="lab la-facebook-f"></i>{" "}
                 </a>
               </li>
               <li>
                 <a href=".">
-                  <i className="lab la-instagram"></i>{' '}
+                  <i className="lab la-instagram"></i>{" "}
                 </a>
               </li>
               <li>
                 <a href=".">
-                  <i className="lab la-youtube"></i>{' '}
+                  <i className="lab la-youtube"></i>{" "}
                 </a>
               </li>
               <li>
                 <a href=".">
-                  <i className="lab la-pinterest"></i>{' '}
+                  <i className="lab la-pinterest"></i>{" "}
                 </a>
               </li>
               <li>
                 <a href=".">
-                  <i className="lab la-linkedin-in"></i>{' '}
+                  <i className="lab la-linkedin-in"></i>{" "}
                 </a>
               </li>
             </ul>

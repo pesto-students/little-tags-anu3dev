@@ -1,18 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import './ProductDetail.scss';
+import React from "react";
+import PropTypes from "prop-types";
+import "./ProductDetail.scss";
 
 export default function ImagesThumb({ images, tab, imageRef }) {
   return (
     <div className="thumb" ref={imageRef}>
       {images.map((image, id) => (
-        <img
-          className="thumbImage"
-          key={id}
-          src={image}
-          alt="thumbimage"
-          onClick={() => tab(id)}
-        />
+        <img className="thumbImage" key={id} src={image} alt="thumbimage" onClick={() => tab(id)} />
       ))}
     </div>
   );

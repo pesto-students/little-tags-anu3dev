@@ -1,5 +1,5 @@
-import React from 'react';
-import withAuthorization from '../Session/withAuthorization';
+import React from "react";
+import withAuthorization from "../Session/withAuthorization";
 
 function WishList(props) {
   return (

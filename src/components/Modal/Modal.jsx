@@ -1,5 +1,5 @@
-import React from 'react';
-import './Modal.scss';
+import React from "react";
+import "./Modal.scss";
 
 export default function Modal() {
   return (
@@ -32,11 +32,7 @@ export default function Modal() {
               >
                 Login
               </button>
-              <button
-                type="button"
-                className="btn1 btnFoot"
-                data-dismiss="modal"
-              >
+              <button type="button" className="btn1 btnFoot" data-dismiss="modal">
                 Close
               </button>
             </div>
@@ -90,11 +86,7 @@ export default function Modal() {
               >
                 SignUp
               </button>
-              <button
-                type="button"
-                className="btn1 btnFoot"
-                data-dismiss="modal"
-              >
+              <button type="button" className="btn1 btnFoot" data-dismiss="modal">
                 Close
               </button>
             </div>

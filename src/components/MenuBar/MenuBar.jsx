@@ -1,12 +1,12 @@
-import React from 'react';
-import './MenuBar.scss';
-import { Link } from 'react-router-dom';
+import React from "react";
+import "./MenuBar.scss";
+import { Link } from "react-router-dom";
 import {
   MENS_CLOTHING,
   WOMENS_CLOTHING,
   JEWELLERY,
   ELECTRONICS,
-} from '../common/ProductCategories';
+} from "../common/ProductCategories";
 
 export default function MenuBar() {
   return (
@@ -18,21 +18,21 @@ export default function MenuBar() {
           </a>
         </li>
         <li>
-          <Link to={'/productsList/' + MENS_CLOTHING}>Mens Wear</Link>
+          <Link to={"/products/" + MENS_CLOTHING}>Mens Wear</Link>
         </li>
         <li>
-          <Link to={'/productsList/' + WOMENS_CLOTHING} href=".">
+          <Link to={"/products/" + WOMENS_CLOTHING} href=".">
             Womens Wear
           </Link>
         </li>
         <li>
-          <Link to={'/productsList/' + JEWELLERY}>Beauty Care</Link>
+          <Link to={"/products/" + JEWELLERY}>Beauty Care</Link>
         </li>
         <li>
-          <Link to={'/productsList/' + JEWELLERY}>Jewellery</Link>
+          <Link to={"/products/" + JEWELLERY}>Jewellery</Link>
         </li>
         <li>
-          <Link to={'/productsList/' + ELECTRONICS}>Electronics</Link>
+          <Link to={"/products/" + ELECTRONICS}>Electronics</Link>
         </li>
       </ul>
     </div>

@@ -48,9 +48,7 @@ export default function Cart() {
   };
 
   const getCartSubTotal = () => {
-    return cartItems
-      .reduce((price, item) => price + item.price * item.quantity, 0)
-      .toFixed(2);
+    return cartItems.reduce((price, item) => price + item.price * item.quantity, 0).toFixed(2);
   };
 
   return (
@@ -68,11 +66,7 @@ export default function Cart() {
           {cartItems.length > 0 ? (
             cartItems.map((item, idx) => (
               <div className="row" key={idx}>
-                <img
-                  className="col-lg-2 col-md-3 cartImage"
-                  src={item.image}
-                  alt={item.title}
-                />
+                <img className="col-lg-2 col-md-3 cartImage" src={item.image} alt={item.title} />
                 <div className="col-lg-4 col-md-4 cartDetail">
                   <Link to={{ pathname: "/product/", productDetail: item }}>
                     <h3>{item.title}</h3>

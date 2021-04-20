@@ -5,6 +5,9 @@ import "./SubBar.scss";
 import { Link } from "react-router-dom";
 import * as ROUTES from "../common/Routes";
 import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { addToCart, clearCart } from "../../redux/actions/CartActions";
+import { resetAuthUser } from "../../redux/actions/index";
 
 function SubBar(props) {
   const firebase = useContext(FirebaseContext);
@@ -12,6 +15,7 @@ function SubBar(props) {
   const user = useSelector((state) => state.sessionState);
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
+  const dispatch = useDispatch();
   const getCartCount = () => {
     return cartItems.reduce((qty, item) => Number(item.quantity) + qty, 0);
   };
@@ -32,15 +36,27 @@ function SubBar(props) {
         setErrorMessage(error.message);
       });
   };
+  const updateCartFromFirebase = (uid) => {
+    firebase
+      .getCartOfUser(uid)
+      .then((cart) => {
+        dispatch(clearCart());
+        cart.map((item) => dispatch(addToCart(item)));
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
   const handleGoogleSignIn = () => {
     firebase
       .doGoogleSignIn()
       .then((authUser) => {
-        return firebase.user(authUser.user.uid).set({
+        firebase.user(authUser.user.uid).update({
           email: authUser.user.email,
           username: authUser.user.displayName,
           roles: {},
         });
+        return updateCartFromFirebase(authUser.user.uid);
       })
       .then(() => {
         props.history.push(ROUTES.HOME);
@@ -51,6 +67,8 @@ function SubBar(props) {
   };
   const handleSignOut = () => {
     firebase.doSignOut();
+    dispatch(resetAuthUser());
+    dispatch(clearCart());
   };
 
   return (
@@ -80,7 +98,10 @@ function SubBar(props) {
               <a href=".">
                 <i className="las la-user"></i>
                 <span>
-                  Hello {user.authUser === null ? "Guest" : user.authUser.username.split(" ")[0]}
+                  Hello{" "}
+                  {user.authUser === null
+                    ? "Guest"
+                    : user.authUser.username.split(" ")[0]}
                 </span>
               </a>
             </li>
@@ -92,7 +113,11 @@ function SubBar(props) {
                     {user.authUser === null ? (
                       "Login"
                     ) : (
-                      <button className="logBtn" href="." onClick={handleSignOut}>
+                      <button
+                        className="logBtn"
+                        href="."
+                        onClick={handleSignOut}
+                      >
                         LogOut
                       </button>
                     )}
@@ -112,12 +137,20 @@ function SubBar(props) {
                   <p className="dropdownText">Login with social links</p>
                   <ul>
                     <li>
-                      <button className="logBtn" href="." onClick={handleGoogleSignIn}>
+                      <button
+                        className="logBtn"
+                        href="."
+                        onClick={handleGoogleSignIn}
+                      >
                         <i className="lab la-google-plus-g"></i>
                       </button>
                     </li>
                     <li>
-                      <button className="logBtn" href="." onClick={handleFacebookSignIn}>
+                      <button
+                        className="logBtn"
+                        href="."
+                        onClick={handleFacebookSignIn}
+                      >
                         <i className="lab la-facebook"></i>
                       </button>
                     </li>
@@ -125,13 +158,19 @@ function SubBar(props) {
                       {user.authUser === null ? (
                         ""
                       ) : (
-                        <button className="logBtn" href="." onClick={handleSignOut}>
+                        <button
+                          className="logBtn"
+                          href="."
+                          onClick={handleSignOut}
+                        >
                           <i className="las la-sign-out-alt"></i>
                         </button>
                       )}
                     </li>
                   </ul>
-                  <span className="errorLog">{!!errorMessage && <p>{errorMessage}</p>}</span>
+                  <span className="errorLog">
+                    {!!errorMessage && <p>{errorMessage}</p>}
+                  </span>
                 </div>
               </div>
             </li>

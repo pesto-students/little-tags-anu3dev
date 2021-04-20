@@ -8,6 +8,8 @@ export default function sessionReducer(state = initialState, action) {
   switch (action.type) {
     case ACTIONS.SET_AUTH_USER:
       return { ...state, authUser: action.authUser };
+    case ACTIONS.RESET_AUTH_USER:
+      return { ...state, authUser: null };
     default:
       return state;
   }

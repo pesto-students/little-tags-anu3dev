@@ -48,29 +48,30 @@ class Firebase {
       }
     });
   };
+
   addCartToUser = (cartItems, userId) => {
-    let oldCartKey = getDataFromLocalStorage("cartKey");
+    let cartKey = getDataFromLocalStorage("cartKey");
     let updates = {};
-    if (!oldCartKey) {
-      oldCartKey = this.db.ref().child("cart").push().key;
-      setDataToLocalStorage("cartKey", oldCartKey);
+    if (!cartKey) {
+      cartKey = this.db.ref().child("cart").push().key;
+      setDataToLocalStorage("cartKey", cartKey);
     }
-    updates["/users/" + userId + "/" + oldCartKey] = { cart: cartItems };
+    updates["/users/" + userId + "/" + cartKey] = { cart: cartItems };
 
     return this.db.ref().update(updates);
-    //return console.log("firebase update to user: ", userId);
   };
 
   getCartOfUser = (userId) => {
-    return this.db.ref
-      .child("users")
-      .child(userId)
+    const cartKey = getDataFromLocalStorage("cartKey");
+    return this.db
+      .ref("/users/" + userId + "/" + cartKey)
       .get()
       .then((snapshot) => {
         if (snapshot.exists()) {
-          console.log(snapshot.val());
+          const { cart } = snapshot.val();
+          return cart;
         } else {
-          console.log("No data available");
+          return [];
         }
       })
       .catch((error) => {

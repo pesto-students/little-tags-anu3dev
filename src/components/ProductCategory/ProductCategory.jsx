@@ -1,13 +1,7 @@
 import React from "react";
 import "./ProductCategory.scss";
 import { Link } from "react-router-dom";
-import {
-  MENS_CLOTHING,
-  JEWELLERY,
-  ELECTRONICS,
-  WOMENS_CLOTHING,
-  KIDS_CLOTHING,
-} from "../common/ProductCategories";
+import * as ROUTES from "../common/ProductCategories";
 
 export default function ProductCat() {
   return (
@@ -17,35 +11,35 @@ export default function ProductCat() {
         <div className="productCatTop col-lg-6 col-md-6">
           <img src="/img/proD.png" alt="men" />
           <p className="onTextButton"></p>
-          <Link className="onImageButton btn" to={"/products/" + MENS_CLOTHING}>
+          <Link className="onImageButton btn" to={"/products/" + ROUTES.MENS_CLOTHING}>
             Mens Wear
           </Link>
         </div>
         <div className="productCatTop col-lg-6 col-md-6">
           <img src="/img/proE.png" alt="jewellery" />
           <p className="onTextButton"></p>
-          <Link className="onImageButton btn" to={"/products/" + WOMENS_CLOTHING}>
+          <Link className="onImageButton btn" to={"/products/" + ROUTES.WOMENS_CLOTHING}>
             Western Wear
           </Link>
         </div>
         <div className="productCatBot col-lg-4 col-md-4">
           <img src="/img/proA.png" alt="" />
           <p className="onTextButtonSmall"></p>
-          <Link className="onImageButtonSmall btn" to={"/products/" + KIDS_CLOTHING}>
+          <Link className="onImageButtonSmall btn" to={"/products/" + ROUTES.KIDS_CLOTHING}>
             Beauty Care
           </Link>
         </div>
         <div className="productCatBot col-lg-4 col-md-4">
           <img src="/img/proB.png" alt="" />
           <p className="onTextButtonSmall"></p>
-          <Link className="onImageButtonSmall btn" to={"/products/" + JEWELLERY}>
+          <Link className="onImageButtonSmall btn" to={"/products/" + ROUTES.JEWELLERY}>
             Jewellery
           </Link>
         </div>
         <div className="productCatBot col-lg-4 col-md-4">
           <img src="/img/proC.png" alt="" />
           <p className="onTextButtonSmall"></p>
-          <Link className="onImageButtonSmall btn" to={"/products/" + ELECTRONICS}>
+          <Link className="onImageButtonSmall btn" to={"/products/" + ROUTES.ELECTRONICS}>
             Electronics
           </Link>
         </div>

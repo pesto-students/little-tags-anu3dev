@@ -23,11 +23,12 @@ function SubBar(props) {
     firebase
       .doFacebookSignIn()
       .then((authUser) => {
-        return firebase.user(authUser.user.uid).set({
+        firebase.user(authUser.user.uid).set({
           email: authUser.user.email,
           username: authUser.user.displayName,
           roles: {},
         });
+        return updateCartFromFirebase(authUser.user.uid);
       })
       .then(() => {
         props.history.push(ROUTES.HOME);

@@ -3,19 +3,34 @@ import { withRouter } from "react-router-dom";
 import FirebaseContext from "../Firebase/context";
 import * as ROUTES from "../common/Routes";
 import "./ReuseModal.scss";
+import { useDispatch } from "react-redux";
+import { addToCart, clearCart } from "../../redux/actions/CartActions";
 
 function Modal(props) {
   const firebase = useContext(FirebaseContext);
   const [errorMessage, setErrorMessage] = useState("");
+  const dispatch = useDispatch();
+  const updateCartFromFirebase = (uid) => {
+    firebase
+      .getCartOfUser(uid)
+      .then((cart) => {
+        dispatch(clearCart());
+        cart.map((item) => dispatch(addToCart(item)));
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
   const handleFacebookSignIn = () => {
     firebase
       .doFacebookSignIn()
       .then((authUser) => {
-        return firebase.user(authUser.user.uid).set({
+        firebase.user(authUser.user.uid).set({
           email: authUser.user.email,
           username: authUser.user.displayName,
           roles: {},
         });
+        return updateCartFromFirebase(authUser.user.uid);
       })
       .then(() => {
         props.history.push(ROUTES.HOME);
@@ -28,11 +43,12 @@ function Modal(props) {
     firebase
       .doGoogleSignIn()
       .then((authUser) => {
-        return firebase.user(authUser.user.uid).set({
+        firebase.user(authUser.user.uid).set({
           email: authUser.user.email,
           username: authUser.user.displayName,
           roles: {},
         });
+        return updateCartFromFirebase(authUser.user.uid);
       })
       .then(() => {
         props.history.push(ROUTES.HOME);
@@ -67,7 +83,9 @@ function Modal(props) {
               <i className="lab la-facebook"></i>
             </button>
           </div>
-          <span className="errorLog">{!!errorMessage && <p>{errorMessage}</p>}</span>
+          <span className="errorLog">
+            {!!errorMessage && <p>{errorMessage}</p>}
+          </span>
         </div>
         <div className="modal-footer">
           <button onClick={props.close} className="btn">

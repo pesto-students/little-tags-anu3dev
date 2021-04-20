@@ -30,4 +30,5 @@ export const clearCart = () => (dispatch, getState) => {
   dispatch({
     type: CLEAR_CART,
   });
+  localStorage.setItem("cart", JSON.stringify(getState().cart.cartItems));
 };

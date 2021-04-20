@@ -4,7 +4,6 @@ import FirebaseContext from "../Firebase/context";
 import "./SubBar.scss";
 import { Link } from "react-router-dom";
 import * as ROUTES from "../common/Routes";
-import Modal from "../Modal/Modal";
 import { useSelector } from "react-redux";
 
 function SubBar(props) {
@@ -109,17 +108,6 @@ function SubBar(props) {
                   <Link to={ROUTES.WISHLIST} className="dropdown-item">
                     <i className="las la-heart"></i> Wishlist
                   </Link>
-                  {/* <p className="dropdownText">If you are a new user</p>
-                  <div className="btnMid">
-                    <a href="." data-toggle="modal" data-target="#myModal1">
-                      Signup
-                    </a>
-                  </div>
-                  <div className="btnMid">
-                    <a href="." data-toggle="modal" data-target="#myModal" className="btn">
-                      Login
-                    </a>
-                  </div> */}
                   <hr className="hrLine"></hr>
                   <p className="dropdownText">Login with social links</p>
                   <ul>
@@ -150,7 +138,6 @@ function SubBar(props) {
           </ul>
         </div>
       </div>
-      <Modal />
     </div>
   );
 }

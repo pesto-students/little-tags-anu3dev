@@ -37,9 +37,7 @@ export default function Cart() {
   };
 
   const getCartSubTotal = () => {
-    return cartItems
-      .reduce((price, item) => price + item.price * item.quantity, 0)
-      .toFixed(2);
+    return cartItems.reduce((price, item) => price + item.price * item.quantity, 0).toFixed(2);
   };
 
   return (
@@ -56,12 +54,8 @@ export default function Cart() {
         <div className="col-lg-8 col-md-8 ">
           {cartItems.length > 0 ? (
             cartItems.map((item, idx) => (
-              <div className="row" key={idx}>
-                <img
-                  className="col-lg-2 col-md-3 cartImage"
-                  src={item.image}
-                  alt={item.title}
-                />
+              <div className="row cartSmallSec" key={idx}>
+                <img className="col-lg-4 col-md-4 cartImage" src={item.image} alt={item.title} />
                 <div className="col-lg-4 col-md-4 cartDetail">
                   <Link to={{ pathname: "/product/", productDetail: item }}>
                     <h3>{item.title}</h3>
@@ -79,7 +73,7 @@ export default function Cart() {
                   </button>
                   <span>{errorMessage}</span>
                 </div>
-                <p className="col-lg-1 col-md-1 cartPrice">${item.price}</p>
+                <h3 className="col-lg-2 col-md-2 cartPrice">$ {item.price}</h3>
               </div>
             ))
           ) : (
@@ -87,13 +81,13 @@ export default function Cart() {
           )}
         </div>
         <div className="col-lg-4 col-md-4 cartCheckout">
-          <div className="row">
-            <p>Subtotal ({getCartCount()}) items:</p>
+          <div>
+            <h3>Subtotal ({getCartCount()}) items:</h3>
           </div>
-          <div className="row">
-            <p> ${getCartSubTotal()}</p>
+          <div>
+            <h3> $ {getCartSubTotal()}</h3>
           </div>
-          <div className="row">
+          <div>
             <button type="button" className="btn btn-danger">
               Clear Cart
             </button>

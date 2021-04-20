@@ -43,7 +43,7 @@ function Modal(props) {
     firebase
       .doGoogleSignIn()
       .then((authUser) => {
-        firebase.user(authUser.user.uid).set({
+        firebase.user(authUser.user.uid).update({
           email: authUser.user.email,
           username: authUser.user.displayName,
           roles: {},

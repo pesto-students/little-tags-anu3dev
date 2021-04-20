@@ -73,110 +73,83 @@ function SubBar(props) {
   };
 
   return (
-    <div className="subBar">
-      <div className="subBarLeft">
-        <div className="logo">
-          <Link to={ROUTES.HOME}>Instant Order</Link>
-        </div>
+    <div className="subBar row">
+      <div className="subBarLeft col-lg-3 col-md-3">
+        <Link to={ROUTES.HOME}>Instant Order</Link>
       </div>
-      <div className="subBarRight">
-        <div className="subBarRightOne">
-          <ul>
-            <li>
-              <input type="text" placeholder="Search for products" />
-            </li>
-          </ul>
-        </div>
-        <div className="subBarRightTwo">
-          <ul>
-            <li>
-              <Link to={"/cart"}>
-                <i className="las la-shopping-cart"></i>
-                <span>Cart({getCartCount()})</span>
-              </Link>
-            </li>
-            <li>
-              <a href=".">
-                <i className="las la-user"></i>
+
+      <div className="subBarMiddle col-lg-4 col-md-4">
+        <input type="text" placeholder="Search products" />
+      </div>
+      <div className="subBarRight col-lg-5 col-md-5">
+        <ul>
+          <li>
+            <Link to={"/cart"}>
+              <i className="las la-shopping-cart"></i>
+              <span>Cart({getCartCount()})</span>
+            </Link>
+          </li>
+          <li>
+            <a href=".">
+              <i className="las la-user"></i>
+              <span>
+                Hello {user.authUser === null ? "Guest" : user.authUser.username.split(" ")[0]}
+              </span>
+            </a>
+          </li>
+          <li>
+            <div className="dropdown">
+              <a href="." className="dropdown-toggle" data-toggle="dropdown">
+                <i className="las la-sign-in-alt"></i>
                 <span>
-                  Hello{" "}
-                  {user.authUser === null
-                    ? "Guest"
-                    : user.authUser.username.split(" ")[0]}
+                  {user.authUser === null ? (
+                    "Login"
+                  ) : (
+                    <button className="logoutBtn" href="." onClick={handleSignOut}>
+                      LogOut
+                    </button>
+                  )}
                 </span>
               </a>
-            </li>
-            <li>
-              <div className="dropdown">
-                <a href="." className="dropdown-toggle" data-toggle="dropdown">
-                  <i className="las la-sign-in-alt"></i>
-                  <span>
-                    {user.authUser === null ? (
-                      "Login"
-                    ) : (
-                      <button
-                        className="logBtn"
-                        href="."
-                        onClick={handleSignOut}
-                      >
-                        LogOut
-                      </button>
-                    )}
-                  </span>
-                </a>
-                <div className="dropdown-menu">
-                  <Link to={ROUTES.ACCOUNT} className="dropdown-item">
-                    <i className="las la-user-alt"></i> Your Account
-                  </Link>
-                  <Link to={ROUTES.ORDER} className="dropdown-item">
-                    <i className="las la-gift"></i> Your Order
-                  </Link>
-                  <Link to={ROUTES.WISHLIST} className="dropdown-item">
-                    <i className="las la-heart"></i> Wishlist
-                  </Link>
-                  <hr className="hrLine"></hr>
-                  <p className="dropdownText">Login with social links</p>
-                  <ul>
-                    <li>
-                      <button
-                        className="logBtn"
-                        href="."
-                        onClick={handleGoogleSignIn}
-                      >
-                        <i className="lab la-google-plus-g"></i>
-                      </button>
-                    </li>
-                    <li>
-                      <button
-                        className="logBtn"
-                        href="."
-                        onClick={handleFacebookSignIn}
-                      >
-                        <i className="lab la-facebook"></i>
-                      </button>
-                    </li>
-                    <li>
-                      {user.authUser === null ? (
-                        ""
-                      ) : (
-                        <button
-                          className="logBtn"
-                          href="."
-                          onClick={handleSignOut}
-                        >
-                          <i className="las la-sign-out-alt"></i>
-                        </button>
-                      )}
-                    </li>
-                  </ul>
-                  <span className="errorLog">
-                    {!!errorMessage && <p>{errorMessage}</p>}
-                  </span>
-                </div>
+              <div className="dropdown-menu">
+                <Link to={ROUTES.ACCOUNT} className="dropdown-item">
+                  <i className="las la-user-alt"></i> Your Account
+                </Link>
+                <Link to={ROUTES.ORDER} className="dropdown-item">
+                  <i className="las la-gift"></i> Your Order
+                </Link>
+                <Link to={ROUTES.WISHLIST} className="dropdown-item">
+                  <i className="las la-heart"></i> Wishlist
+                </Link>
+                <hr className="hrLine"></hr>
+                <p className="dropdownText">Login with social links</p>
+                {/* <button className="loginBtnSocialGoogle" href="." onClick={handleGoogleSignIn}>
+                  <img
+                    alt="Google sign-in"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png"
+                  />
+                  Login with Google
+                </button> */}
+                <button className="loginBtn loginBtn--google" onClick={handleGoogleSignIn}>
+                  Login with Google
+                </button>
+                <button className="loginBtn loginBtn--facebook" onClick={handleFacebookSignIn}>
+                  Login with Facebook
+                </button>
+                <br />
+                {user.authUser === null ? (
+                  ""
+                ) : (
+                  <button className="logoutBtn logoutBtnText" href="." onClick={handleSignOut}>
+                    <i className="las la-sign-out-alt"></i>Logout
+                  </button>
+                )}
+
+                <span className="errorLog">{!!errorMessage && <p>{errorMessage}</p>}</span>
               </div>
-            </li>
-          </ul>
-        </div>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   );

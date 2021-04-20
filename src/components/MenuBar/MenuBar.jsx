@@ -9,16 +9,9 @@ import {
 } from "../common/ProductCategories";
 
 export default function MenuBar() {
-  // const callModal = () => {
-  //   const userVisitStatus = localStorage.getItem("userVisitStatus");
-  //   console.log(userVisitStatus ? "" : localStorage.setItem("userVisitStatus", true) || Xyz());
-  // };
-  // const Xyz = () => {
-  //   console.log("hi");
-  // };
   return (
-    <div>
-      <div className="menuBar">
+    <div className="menuBar row">
+      <div className="col-md-12 col-lg-12">
         <ul>
           <li>
             <a href=".">
@@ -26,21 +19,55 @@ export default function MenuBar() {
             </a>
           </li>
           <li>
-            <Link to={"/products/" + MENS_CLOTHING}>Mens Wear</Link>
+            <div className="dropdown">
+              <a href="." className="dropdown-toggle" data-toggle="dropdown">
+                Clothing
+              </a>
+              <div className="dropdown-menu">
+                <Link to={"/products/" + MENS_CLOTHING} className="dropdown-item">
+                  Mens Wear
+                </Link>
+                <Link to={"/products/" + WOMENS_CLOTHING} className="dropdown-item">
+                  Womens Wear
+                </Link>
+              </div>
+            </div>
           </li>
           <li>
-            <Link to={"/products/" + WOMENS_CLOTHING} href=".">
-              Womens Wear
-            </Link>
+            <div className="dropdown">
+              <a href="." className="dropdown-toggle" data-toggle="dropdown">
+                Jewellery
+              </a>
+              <div className="dropdown-menu">
+                <Link to={"/products/" + JEWELLERY} className="dropdown-item">
+                  Ring
+                </Link>
+              </div>
+            </div>
           </li>
           <li>
-            <Link to={"/products/" + JEWELLERY}>Beauty Care</Link>
+            <div className="dropdown">
+              <a href="." className="dropdown-toggle" data-toggle="dropdown">
+                Electronics
+              </a>
+              <div className="dropdown-menu">
+                <Link to={"/products/" + ELECTRONICS} className="dropdown-item">
+                  Hard Disk
+                </Link>
+              </div>
+            </div>
           </li>
           <li>
-            <Link to={"/products/" + JEWELLERY}>Jewellery</Link>
-          </li>
-          <li>
-            <Link to={"/products/" + ELECTRONICS}>Electronics</Link>
+            <div className="dropdown">
+              <a href="." className="dropdown-toggle" data-toggle="dropdown">
+                Beauty
+              </a>
+              <div className="dropdown-menu">
+                <Link to={"/products/" + ELECTRONICS} className="dropdown-item">
+                  Makeup
+                </Link>
+              </div>
+            </div>
           </li>
         </ul>
       </div>

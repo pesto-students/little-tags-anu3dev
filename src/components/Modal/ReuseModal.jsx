@@ -58,19 +58,14 @@ function Modal(props) {
       </div>
       <div className="modal-content">
         <div className="modal-body">
-          <div>
-            <button className="logBtn" href="." onClick={handleGoogleSignIn}>
-              <i className="lab la-google-plus-g"></i>
-            </button>
-          </div>
-          <div>
-            <button className="logBtn" href="." onClick={handleFacebookSignIn}>
-              <i className="lab la-facebook"></i>
-            </button>
-          </div>
-          <span className="errorLog">
-            {!!errorMessage && <p>{errorMessage}</p>}
-          </span>
+          <button className="loginBtn loginBtn--google" onClick={handleGoogleSignIn}>
+            Login with Google
+          </button>
+          <br />
+          <button className="loginBtn loginBtn--facebook" onClick={handleFacebookSignIn}>
+            Login with Facebook
+          </button>
+          <span className="errorLog">{!!errorMessage && <p>{errorMessage}</p>}</span>
         </div>
         <div className="modal-footer">
           <button onClick={props.close} className="btn">

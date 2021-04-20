@@ -3,34 +3,20 @@ import { withRouter } from "react-router-dom";
 import FirebaseContext from "../Firebase/context";
 import * as ROUTES from "../common/Routes";
 import "./ReuseModal.scss";
-import { useDispatch } from "react-redux";
-import { addToCart, clearCart } from "../../redux/actions/CartActions";
 
 function Modal(props) {
   const firebase = useContext(FirebaseContext);
   const [errorMessage, setErrorMessage] = useState("");
-  const dispatch = useDispatch();
-  const updateCartFromFirebase = (uid) => {
-    firebase
-      .getCartOfUser(uid)
-      .then((cart) => {
-        dispatch(clearCart());
-        cart.map((item) => dispatch(addToCart(item)));
-      })
-      .catch((error) => {
-        console.log(error.message);
-      });
-  };
+
   const handleFacebookSignIn = () => {
     firebase
       .doFacebookSignIn()
       .then((authUser) => {
-        firebase.user(authUser.user.uid).set({
+        return firebase.user(authUser.user.uid).set({
           email: authUser.user.email,
           username: authUser.user.displayName,
           roles: {},
         });
-        return updateCartFromFirebase(authUser.user.uid);
       })
       .then(() => {
         props.history.push(ROUTES.HOME);
@@ -43,12 +29,11 @@ function Modal(props) {
     firebase
       .doGoogleSignIn()
       .then((authUser) => {
-        firebase.user(authUser.user.uid).update({
+        return firebase.user(authUser.user.uid).update({
           email: authUser.user.email,
           username: authUser.user.displayName,
           roles: {},
         });
-        return updateCartFromFirebase(authUser.user.uid);
       })
       .then(() => {
         props.history.push(ROUTES.HOME);

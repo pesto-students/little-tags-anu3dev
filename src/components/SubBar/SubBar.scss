@@ -1,142 +1,31 @@
 .subBar {
-  display: flex;
   position: relative;
   align-items: center;
-  margin-top: 25px;
+  margin: 25px 110px 0px 125px;
 }
 .subBar a {
   text-decoration: none;
 }
 .subBarLeft {
-  display: flex;
-  flex: 1;
-  justify-content: space-around;
-  margin-left: -100px;
-}
-.logo {
   cursor: pointer;
-  font-size: 60px;
+  font-size: 55px;
   font-weight: bold;
   color: #20225e;
 }
 .subBarRight {
   display: flex;
-  flex: 1;
-  margin-right: 100px;
-  justify-content: space-around;
+  justify-content: flex-end;
+}
+.subBarRight input {
   font-size: 30px;
-}
-.subBarRight ul {
-  list-style: none;
-  display: flex;
-}
-.subBarRight ul li {
-  cursor: pointer;
-  margin: 0px 5px 0px 5px;
-}
-.subBarRightOne li input {
-  font-size: 20px;
-  border: #ff9923 2px solid;
+  width: 60%;
+  border: #007bff 2px solid;
   border-radius: 10px;
   cursor: pointer;
   outline: none;
   padding-left: 10px;
-  margin-left: 20px;
+  margin-left: 10%;
 }
-.subBarRightOne li input:hover {
-  font-size: 20px;
-  border: #20225e 2px solid;
-}
-.subBarRightOne li input::placeholder {
-  color: #ff9923;
-}
-.subBarRightOne {
-  padding: 10px;
-}
-.subBarRight ul li a {
-  text-decoration: none;
-  color: #ff9923;
-}
-.subBarRight ul li a:hover {
-  text-decoration: none;
-  color: #20225e;
-}
-
-.btn1 {
-  font-size: 20px;
-  font-weight: bold;
-  font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.21;
-  letter-spacing: normal;
-  text-align: center;
-  color: #fff;
-  padding: 10px 20px 10px 20px;
-  cursor: pointer;
-  border-radius: 38.5px;
-  box-shadow: 0 20px 20px -16px rgba(2, 6, 127, 0.35);
-  background-color: #20225e;
-  margin: 5px 0px 5px 0px;
-}
-.btnWidth {
-  width: 100%;
-}
-.btnFoot {
-  width: 50%;
-}
-.btn1:hover {
-  background-color: #ff9923;
-}
-.subBarRightTwo span {
-  color: #20225e;
-  font-size: 25px;
-}
-.subBarRightTwo span:hover {
-  color: #ff9923;
-}
-.dropdown-menu {
-  padding: 10px;
-}
-.dropdown-item {
-  padding-left: 0px;
-}
-.btnMid {
-  text-align: center;
-  margin: 5px;
-}
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
-.hrLine {
-  border: 2px solid #ff9923;
-  border-radius: 1px;
-}
-.dropdownText {
-  color: #20225e;
-  font-weight: bold;
-}
-.dropdown-menu li {
-  font-size: 40px;
-  padding-left: 0px;
-}
-.dropdown-menu ul {
-  padding-left: 0px;
-}
-.popUpIcon p {
-  text-align: center;
-  font-size: 25px;
-}
-.popUpIcon ul {
-  list-style: none;
-  display: flex;
-  padding-left: 20px;
-  justify-content: center;
-}
-.popUpIcon li {
-  padding: 0px 10px 0px 10px;
-}
-.logBtn {
-  border: none;
-  background: none;
+.subBarRight input:hover {
+  border: #0056b3 2px solid;
 }

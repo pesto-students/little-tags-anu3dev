@@ -17,6 +17,8 @@ import ProductDetail from "./components/ProductDetail/ProductDetail";
 import Cart from "./components/Cart/Cart";
 import withAuthentication from "./components/Session/withAuthentication";
 import ModalNew from "./components/Modal/ModalNew";
+import SearchProducts from "./components/SearchProducts/SearchProducts";
+
 function App() {
   return (
     <Router>
@@ -47,6 +49,9 @@ function App() {
           </Route>
           <Route exact path={PATHS.TERMSOFUSE}>
             <TermsOfUse />
+          </Route>
+          <Route exact path={PATHS.SEARCH_PRODUCTS}>
+            <SearchProducts />
           </Route>
           <Route>
             <PageNotFound />

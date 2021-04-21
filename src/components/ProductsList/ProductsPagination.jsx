@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 import "./ProductsList.scss";
 
 export default function ProductsPagination({ data, dataLimit }) {
@@ -45,7 +46,10 @@ export default function ProductsPagination({ data, dataLimit }) {
             <p className="desc">{d.description}</p>
             <p className="price">₹ {d.price}</p>
             <p className="price">{d.category}</p>
-            <Link to={"/products/" + d.category + "/" + d.id} className="viewBtn">
+            <Link
+              to={"/products/" + d.category + "/" + d.id}
+              className="viewBtn"
+            >
               View
             </Link>
           </div>
@@ -64,7 +68,9 @@ export default function ProductsPagination({ data, dataLimit }) {
           <button
             key={index}
             onClick={handleChangePage}
-            className={`paginationItem ${currentPage === item ? "active" : null}`}
+            className={`paginationItem ${
+              currentPage === item ? "active" : null
+            }`}
           >
             <span>{item}</span>
           </button>
@@ -80,3 +86,8 @@ export default function ProductsPagination({ data, dataLimit }) {
     </div>
   );
 }
+
+ProductsPagination.propTypes = {
+  data: PropTypes.array.isRequired,
+  dataLimit: PropTypes.number.isRequired,
+};

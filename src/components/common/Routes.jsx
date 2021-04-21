@@ -7,3 +7,4 @@ export const ACCOUNT = "/account";
 export const ORDER = "/order";
 export const PRIVACYPOLICY = "/PrivacyPolicy";
 export const TERMSOFUSE = "/TermsOfUse";
+export const SEARCH_PRODUCTS = "/:searchText";

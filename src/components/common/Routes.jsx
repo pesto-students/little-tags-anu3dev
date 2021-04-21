@@ -8,3 +8,4 @@ export const ORDER = "/order";
 export const PRIVACYPOLICY = "/PrivacyPolicy";
 export const TERMSOFUSE = "/TermsOfUse";
 export const CHECKOUT = "/Checkout";
+export const SEARCH_PRODUCTS = "/:searchText";

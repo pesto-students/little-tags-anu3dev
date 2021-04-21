@@ -4,7 +4,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { removeFromCart, clearCart } from "../../redux/actions/CartActions";
 import FirebaseContext from "../Firebase/context";
-import Checkout from "../Checkout/Checkout";
 import * as ROUTES from "../common/Routes";
 
 export default function Cart() {
@@ -100,6 +99,7 @@ export default function Cart() {
             <button type="button" className="btn btn-success checkoutButton">
               Checkout
             </button>
+            {/* <Checkout TotalPayblePrice={getCartSubTotal()} /> */}
             <Link to={ROUTES.CHECKOUT} className="btn btn-success checkoutButton"></Link>
           </div>
         </div>

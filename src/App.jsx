@@ -19,6 +19,7 @@ import withAuthentication from "./components/Session/withAuthentication";
 import ModalNew from "./components/Modal/ModalNew";
 import Checkout from "./components/Checkout/Checkout";
 import SearchProducts from "./components/SearchProducts/SearchProducts";
+import Order from "./components/Order/Order";
 
 function App() {
   return (
@@ -56,6 +57,9 @@ function App() {
           </Route>
           <Route exact path={PATHS.SEARCH_PRODUCTS}>
             <SearchProducts />
+          </Route>
+          <Route exact path={PATHS.ORDER}>
+            <Order />
           </Route>
           <Route>
             <PageNotFound />

@@ -20,6 +20,7 @@ function Checkout() {
     image: "https://cdn.razorpay.com/logos/7K3b6d18wHwKzL_medium.png",
     // callback_url: ".",
     handler: function (response) {
+      console.log("resp: ", response);
       alert(response.razorpay_payment_id);
     },
     notes: {
@@ -53,11 +54,12 @@ function Checkout() {
               <input type="radio" name="1" />
               <label htmlFor="1">
                 <h6 className="addressHeading">
-                  Anurag Kumar +91-8595004299<i className="las la-edit editBtn"></i>
+                  Anurag Kumar +91-8595004299
+                  <i className="las la-edit editBtn"></i>
                 </h6>
                 <h6>
-                  house no 26, jalam mohalla, tughlakabad village, new delhi, tughlakabad village,
-                  New Delhi, Delhi
+                  house no 26, jalam mohalla, tughlakabad village, new delhi,
+                  tughlakabad village, New Delhi, Delhi
                 </h6>
               </label>
             </div>
@@ -65,11 +67,12 @@ function Checkout() {
               <input type="radio" name="1" />
               <label htmlFor="1">
                 <h6 className="addressHeading">
-                  Anurag Kumar +91-8595004299<i className="las la-edit editBtn"></i>
+                  Anurag Kumar +91-8595004299
+                  <i className="las la-edit editBtn"></i>
                 </h6>
                 <h6>
-                  house no 26, jalam mohalla, tughlakabad village, new delhi, tughlakabad village,
-                  New Delhi, Delhi
+                  house no 26, jalam mohalla, tughlakabad village, new delhi,
+                  tughlakabad village, New Delhi, Delhi
                 </h6>
               </label>
             </div>
@@ -77,11 +80,12 @@ function Checkout() {
               <input type="radio" name="1" />
               <label htmlFor="1">
                 <h6 className="addressHeading">
-                  Anurag Kumar +91-8595004299<i className="las la-edit editBtn"></i>{" "}
+                  Anurag Kumar +91-8595004299
+                  <i className="las la-edit editBtn"></i>{" "}
                 </h6>
                 <h6>
-                  house no 26, jalam mohalla, tughlakabad village, new delhi, tughlakabad village,
-                  New Delhi, Delhi
+                  house no 26, jalam mohalla, tughlakabad village, new delhi,
+                  tughlakabad village, New Delhi, Delhi
                 </h6>
               </label>
             </div>

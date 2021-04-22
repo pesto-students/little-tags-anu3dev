@@ -5,8 +5,9 @@ import { Link } from "react-router-dom";
 import { removeFromCart, clearCart } from "../../redux/actions/CartActions";
 import FirebaseContext from "../Firebase/context";
 import * as ROUTES from "../common/Routes";
+import withAuthorization from "../Session/withAuthorization";
 
-export default function Cart() {
+function Cart() {
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
   const dispatch = useDispatch();
@@ -96,14 +97,15 @@ export default function Cart() {
             <button type="button" className="btn btn-danger" onClick={handleClearCart}>
               Clear Cart
             </button>
-            <button type="button" className="btn btn-success checkoutButton">
+
+            <Link to={ROUTES.CHECKOUT} className="btn btn-success checkoutButton">
               Checkout
-            </button>
-            {/* <Checkout TotalPayblePrice={getCartSubTotal()} /> */}
-            <Link to={ROUTES.CHECKOUT} className="btn btn-success checkoutButton"></Link>
+            </Link>
           </div>
         </div>
       </div>
     </div>
   );
 }
+
+export default withAuthorization(Cart);

@@ -7,24 +7,21 @@ const DATA_LIMIT = 6;
 
 export default function SearchProducts() {
   const { searchText } = useParams();
-  console.log("inside comp: ", searchText);
   const [searchResults, setSearchResults] = useState([]);
-  console.log("searchText: ", searchText);
   useEffect(() => {
     window.scrollTo(0, 0);
     let products = Data.filter((product) => {
       return (
         product.category.toLowerCase().includes(searchText) ||
         product.description.toLowerCase().includes(searchText) ||
-        product.category.toLowerCase().includes(searchText) ||
-        searchText === "all"
+        product.category.toLowerCase().includes(searchText)
       );
     });
     setSearchResults(products);
   }, [searchText]);
 
   return (
-    <div className="container">
+    <div>
       <ProductsPagination data={searchResults} dataLimit={DATA_LIMIT} />
     </div>
   );

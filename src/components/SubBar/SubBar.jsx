@@ -9,16 +9,29 @@ function SubBar() {
   const [searchText, setSearchText] = useState("");
   const history = useHistory();
 
-  const handleChange = (event) => {
+  const getData = () => {
+    history.push(`/${searchText.toLowerCase()}`);
+  };
+
+  const handleDebouncedSearch = function (fn, delay) {
+    let timer;
+    return function () {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        getData();
+      }, delay);
+    };
+  };
+
+  const handleChangeSearch = (event) => {
     setSearchText(event.target.value.toLowerCase());
+    const debounce = handleDebouncedSearch(getData, 2000);
+    debounce();
   };
 
   const handleKeyPress = (event) => {
     if (event.charCode === ENTER_KEYCHAR_CODE) {
-      if (!searchText) {
-        setSearchText("all");
-      }
-      history.push(`/${searchText.toLowerCase()}`);
+      getData();
     }
   };
   return (
@@ -31,7 +44,7 @@ function SubBar() {
         <input
           type="search"
           placeholder="Search for products"
-          onChange={handleChange}
+          onKeyUp={handleChangeSearch}
           onKeyPress={handleKeyPress}
         />
       </div>

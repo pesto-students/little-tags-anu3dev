@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import { removeFromCart, clearCart } from "../../redux/actions/CartActions";
 import FirebaseContext from "../Firebase/context";
 import * as ROUTES from "../common/Routes";
-import withAuthorization from "../Session/withAuthorization";
 
 function Cart() {
   const cart = useSelector((state) => state.cart);
@@ -121,4 +120,4 @@ function Cart() {
   );
 }
 
-export default withAuthorization(Cart);
+export default Cart;

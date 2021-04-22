@@ -4,8 +4,10 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { removeFromCart, clearCart } from "../../redux/actions/CartActions";
 import FirebaseContext from "../Firebase/context";
+import * as ROUTES from "../common/Routes";
+import withAuthorization from "../Session/withAuthorization";
 
-export default function Cart() {
+function Cart() {
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
   const dispatch = useDispatch();
@@ -37,9 +39,7 @@ export default function Cart() {
   };
 
   const getCartSubTotal = () => {
-    return cartItems
-      .reduce((price, item) => price + item.price * item.quantity, 0)
-      .toFixed(2);
+    return cartItems.reduce((price, item) => price + item.price * item.quantity, 0).toFixed(2);
   };
 
   const handleClearCart = () => {
@@ -61,11 +61,7 @@ export default function Cart() {
           {cartItems.length > 0 ? (
             cartItems.map((item, idx) => (
               <div className="row cartSmallSec" key={idx}>
-                <img
-                  className="col-lg-4 col-md-4 cartImage"
-                  src={item.image}
-                  alt={item.title}
-                />
+                <img className="col-lg-4 col-md-4 cartImage" src={item.image} alt={item.title} />
                 <div className="col-lg-4 col-md-4 cartDetail">
                   <Link to={{ pathname: "/product/", productDetail: item }}>
                     <h3>{item.title}</h3>
@@ -98,19 +94,18 @@ export default function Cart() {
             <h3> $ {getCartSubTotal()}</h3>
           </div>
           <div className="row">
-            <button
-              type="button"
-              className="btn btn-danger"
-              onClick={handleClearCart}
-            >
+            <button type="button" className="btn btn-danger" onClick={handleClearCart}>
               Clear Cart
             </button>
-            <button type="button" className="btn btn-success checkoutButton">
+
+            <Link to={ROUTES.CHECKOUT} className="btn btn-success checkoutButton">
               Checkout
-            </button>
+            </Link>
           </div>
         </div>
       </div>
     </div>
   );
 }
+
+export default withAuthorization(Cart);

@@ -2,7 +2,7 @@
   width: 20%;
   transition: all 0.5s ease;
   position: fixed;
-  z-index: 100;
+  z-index: 1200;
   top: 25%;
   left: 40%;
   border-radius: 10px;
@@ -45,7 +45,7 @@
   background-color: rgba(63, 61, 61, 0.692);
   height: 1500px;
   width: 100%;
-  z-index: 100;
+  z-index: 1100;
   position: fixed;
 }
 .modal-body {

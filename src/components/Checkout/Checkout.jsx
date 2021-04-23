@@ -1,7 +1,9 @@
-import React, { useEffect } from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect, useContext } from "react";
 import "./Checkout.scss";
 import withAuthorization from "../Session/withAuthorization";
+import { useSelector, useDispatch } from "react-redux";
+import { clearCart } from "../../redux/actions/CartActions";
+import FirebaseContext from "../Firebase/context";
 
 function Checkout() {
   const cart = useSelector((state) => state.cart);
@@ -11,7 +13,23 @@ function Checkout() {
     .reduce((price, item) => price + item.price * item.quantity, 0)
     .toFixed(2);
   const totalPayblePrice = Math.ceil(totalPrice) * 100;
-
+  const firebase = useContext(FirebaseContext);
+  const dispatch = useDispatch();
+  const sessionUser = useSelector((state) => state.sessionState);
+  const { authUser } = sessionUser;
+  const handleCheckout = () => {
+    dispatch(clearCart());
+    if (authUser) {
+      firebase
+        .addCartToUser(cartItems, authUser.uid)
+        .then(() => {
+          return null;
+        })
+        .catch((e) => {
+          console.log(e.message);
+        });
+    }
+  };
   const options = {
     key: "rzp_test_cSeVaU8dO6fr4U",
     amount: totalPayblePrice,
@@ -20,8 +38,8 @@ function Checkout() {
     image: "https://cdn.razorpay.com/logos/7K3b6d18wHwKzL_medium.png",
     // callback_url: ".",
     handler: function (response) {
-      console.log("resp: ", response);
-      alert(response.razorpay_payment_id);
+      handleCheckout();
+      alert(`Your Payment ID: ${response.razorpay_payment_id}`);
     },
     notes: {
       address: "some address",

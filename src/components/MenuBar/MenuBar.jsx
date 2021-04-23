@@ -83,24 +83,14 @@ function MenuBar(props) {
               </li>
               <li>
                 <div className="dropdown">
-                  <a
-                    href="."
-                    className="dropdown-toggle"
-                    data-toggle="dropdown"
-                  >
+                  <a href="." className="dropdown-toggle" data-toggle="dropdown">
                     Clothing
                   </a>
                   <div className="dropdown-menu">
-                    <Link
-                      to={"/products/" + PATHS.MENS_CLOTHING}
-                      className="dropdown-item"
-                    >
+                    <Link to={"/products/" + PATHS.MENS_CLOTHING} className="dropdown-item">
                       Mens Wear
                     </Link>
-                    <Link
-                      to={"/products/" + PATHS.WOMENS_CLOTHING}
-                      className="dropdown-item"
-                    >
+                    <Link to={"/products/" + PATHS.WOMENS_CLOTHING} className="dropdown-item">
                       Womens Wear
                     </Link>
                   </div>
@@ -108,18 +98,11 @@ function MenuBar(props) {
               </li>
               <li>
                 <div className="dropdown">
-                  <a
-                    href="."
-                    className="dropdown-toggle"
-                    data-toggle="dropdown"
-                  >
+                  <a href="." className="dropdown-toggle" data-toggle="dropdown">
                     Jewellery
                   </a>
                   <div className="dropdown-menu">
-                    <Link
-                      to={"/products/" + PATHS.JEWELLERY}
-                      className="dropdown-item"
-                    >
+                    <Link to={"/products/" + PATHS.JEWELLERY} className="dropdown-item">
                       Ring
                     </Link>
                   </div>
@@ -127,18 +110,11 @@ function MenuBar(props) {
               </li>
               <li>
                 <div className="dropdown">
-                  <a
-                    href="."
-                    className="dropdown-toggle"
-                    data-toggle="dropdown"
-                  >
+                  <a href="." className="dropdown-toggle" data-toggle="dropdown">
                     Electronics
                   </a>
                   <div className="dropdown-menu">
-                    <Link
-                      to={"/products/" + PATHS.ELECTRONICS}
-                      className="dropdown-item"
-                    >
+                    <Link to={"/products/" + PATHS.ELECTRONICS} className="dropdown-item">
                       Hard Disk
                     </Link>
                   </div>
@@ -146,18 +122,11 @@ function MenuBar(props) {
               </li>
               <li>
                 <div className="dropdown">
-                  <a
-                    href="."
-                    className="dropdown-toggle"
-                    data-toggle="dropdown"
-                  >
+                  <a href="." className="dropdown-toggle" data-toggle="dropdown">
                     Beauty
                   </a>
                   <div className="dropdown-menu">
-                    <Link
-                      to={"/products/" + PATHS.ELECTRONICS}
-                      className="dropdown-item"
-                    >
+                    <Link to={"/products/" + PATHS.ELECTRONICS} className="dropdown-item">
                       Makeup
                     </Link>
                   </div>
@@ -177,30 +146,19 @@ function MenuBar(props) {
                 <a href="." className="userTextRight">
                   <i className="las la-user"></i>
                   <span>
-                    Hello{" "}
-                    {user.authUser === undefined || user.authUser === null
-                      ? "Guest"
-                      : user.authUser.username.split(" ")[0]}
+                    Hello {user.authUser === null ? "Guest" : user.authUser.username.split(" ")[0]}
                   </span>
                 </a>
               </li>
               <li>
                 <div className="dropdown">
-                  <a
-                    href="."
-                    className="dropdown-toggle"
-                    data-toggle="dropdown"
-                  >
+                  <a href="." className="dropdown-toggle" data-toggle="dropdown">
                     <i className="las la-sign-in-alt"></i>
                     <span>
                       {user.authUser === null ? (
                         "Login"
                       ) : (
-                        <button
-                          className="logoutBtn"
-                          href="."
-                          onClick={handleSignOut}
-                        >
+                        <button className="logoutBtn" href="." onClick={handleSignOut}>
                           LogOut
                         </button>
                       )}
@@ -225,34 +183,22 @@ function MenuBar(props) {
                   />
                   Login with Google
                 </button> */}
-                    <button
-                      className="loginBtn loginBtn--google"
-                      onClick={handleGoogleSignIn}
-                    >
+                    <button className="loginBtn loginBtn--google" onClick={handleGoogleSignIn}>
                       Login with Google
                     </button>
-                    <button
-                      className="loginBtn loginBtn--facebook"
-                      onClick={handleFacebookSignIn}
-                    >
+                    <button className="loginBtn loginBtn--facebook" onClick={handleFacebookSignIn}>
                       Login with Facebook
                     </button>
                     <br />
                     {user.authUser === null ? (
                       ""
                     ) : (
-                      <button
-                        className="logoutBtn logoutBtnText"
-                        href="."
-                        onClick={handleSignOut}
-                      >
+                      <button className="logoutBtn logoutBtnText" href="." onClick={handleSignOut}>
                         <i className="las la-sign-out-alt"></i>Logout
                       </button>
                     )}
 
-                    <span className="errorLog">
-                      {!!errorMessage && <p>{errorMessage}</p>}
-                    </span>
+                    <span className="errorLog">{!!errorMessage && <p>{errorMessage}</p>}</span>
                   </div>
                 </div>
               </li>

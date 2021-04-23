@@ -1,12 +1,20 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { withRouter } from "react-router-dom";
+import { useSelector } from "react-redux";
 import FirebaseContext from "../Firebase/context";
 import * as ROUTES from "../common/Routes";
 import "./ReuseModal.scss";
 
 function Modal(props) {
   const firebase = useContext(FirebaseContext);
+  const userPresent = useSelector((state) => state.sessionState);
   const [errorMessage, setErrorMessage] = useState("");
+
+  useEffect(() => {
+    if (userPresent.authUser) {
+      props.close();
+    }
+  });
 
   const handleFacebookSignIn = () => {
     firebase
@@ -58,22 +66,14 @@ function Modal(props) {
       </div>
       <div className="modal-content">
         <div className="modal-body">
-          <button
-            className="loginBtn loginBtn--google"
-            onClick={handleGoogleSignIn}
-          >
+          <button className="loginBtn loginBtn--google" onClick={handleGoogleSignIn}>
             Login with Google
           </button>
           <br />
-          <button
-            className="loginBtn loginBtn--facebook"
-            onClick={handleFacebookSignIn}
-          >
+          <button className="loginBtn loginBtn--facebook" onClick={handleFacebookSignIn}>
             Login with Facebook
           </button>
-          <span className="errorLog">
-            {!!errorMessage && <p>{errorMessage}</p>}
-          </span>
+          <span className="errorLog">{!!errorMessage && <p>{errorMessage}</p>}</span>
         </div>
         <div className="modal-footer">
           <button onClick={props.close} className="btn">

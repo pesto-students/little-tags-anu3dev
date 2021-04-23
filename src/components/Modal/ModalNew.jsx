@@ -3,6 +3,8 @@ import Modal from "./ReuseModal";
 
 function ModalNew() {
   const [show, setShow] = useState(false);
+  // const userPre = localStorage.getItem("authUser");
+
   const callModal = () => {
     const userVisitStatus = localStorage.getItem("userVisitStatus");
     if (!userVisitStatus) {
@@ -10,10 +12,13 @@ function ModalNew() {
       setShow(true);
     }
   };
-  const closeModalHandler = () => setShow(false);
+
   useEffect(() => {
     callModal();
   }, []);
+
+  const closeModalHandler = () => setShow(false);
+
   return (
     <div>
       {show ? <div onClick={closeModalHandler} className="back-drop"></div> : null}

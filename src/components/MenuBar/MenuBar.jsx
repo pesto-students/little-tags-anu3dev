@@ -178,7 +178,7 @@ function MenuBar(props) {
                   <i className="las la-user"></i>
                   <span>
                     Hello{" "}
-                    {user.authUser === null
+                    {user.authUser === undefined || user.authUser === null
                       ? "Guest"
                       : user.authUser.username.split(" ")[0]}
                   </span>

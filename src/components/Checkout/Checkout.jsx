@@ -51,41 +51,41 @@ function Checkout() {
         <div className="col-md-6 col-lg-6">
           <div className="addressSectionLeft">
             <div className="addressBox">
-              <input type="radio" name="1" />
+              <input type="radio" name="1" value="1" />
               <label htmlFor="1">
                 <h6 className="addressHeading">
                   Anurag Kumar +91-8595004299
                   <i className="las la-edit editBtn"></i>
                 </h6>
                 <h6>
-                  house no 26, jalam mohalla, tughlakabad village, new delhi,
-                  tughlakabad village, New Delhi, Delhi
+                  house no 26, jalam mohalla, tughlakabad village, new delhi, tughlakabad village,
+                  New Delhi, Delhi
                 </h6>
               </label>
             </div>
             <div className="addressBox">
-              <input type="radio" name="1" />
+              <input type="radio" name="1" value="2" />
               <label htmlFor="1">
                 <h6 className="addressHeading">
                   Anurag Kumar +91-8595004299
                   <i className="las la-edit editBtn"></i>
                 </h6>
                 <h6>
-                  house no 26, jalam mohalla, tughlakabad village, new delhi,
-                  tughlakabad village, New Delhi, Delhi
+                  house no 26, jalam mohalla, tughlakabad village, new delhi, tughlakabad village,
+                  New Delhi, Delhi
                 </h6>
               </label>
             </div>
             <div className="addressBox">
-              <input type="radio" name="1" />
+              <input type="radio" name="1" value="3" />
               <label htmlFor="1">
                 <h6 className="addressHeading">
                   Anurag Kumar +91-8595004299
                   <i className="las la-edit editBtn"></i>{" "}
                 </h6>
                 <h6>
-                  house no 26, jalam mohalla, tughlakabad village, new delhi,
-                  tughlakabad village, New Delhi, Delhi
+                  house no 26, jalam mohalla, tughlakabad village, new delhi, tughlakabad village,
+                  New Delhi, Delhi
                 </h6>
               </label>
             </div>

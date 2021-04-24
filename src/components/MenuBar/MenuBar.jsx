@@ -79,14 +79,14 @@ function MenuBar(props) {
               <li>
                 <div className="dropdown">
                   <a href="." className="dropdown-toggle" data-toggle="dropdown">
-                    Clothing
+                    CLOTHING
                   </a>
                   <div className="dropdown-menu">
                     <Link to={"/products/" + PATHS.MENS_CLOTHING} className="dropdown-item">
-                      Mens Wear
+                      MENS WEAR
                     </Link>
                     <Link to={"/products/" + PATHS.WOMENS_CLOTHING} className="dropdown-item">
-                      Womens Wear
+                      WOMENS WEAR
                     </Link>
                   </div>
                 </div>
@@ -94,11 +94,11 @@ function MenuBar(props) {
               <li>
                 <div className="dropdown">
                   <a href="." className="dropdown-toggle" data-toggle="dropdown">
-                    Jewellery
+                    JEWELLERY
                   </a>
                   <div className="dropdown-menu">
                     <Link to={"/products/" + PATHS.JEWELLERY} className="dropdown-item">
-                      Ring
+                      RING
                     </Link>
                   </div>
                 </div>
@@ -106,11 +106,11 @@ function MenuBar(props) {
               <li>
                 <div className="dropdown">
                   <a href="." className="dropdown-toggle" data-toggle="dropdown">
-                    Electronics
+                    ELECTRONICS
                   </a>
                   <div className="dropdown-menu">
                     <Link to={"/products/" + PATHS.ELECTRONICS} className="dropdown-item">
-                      Hard Disk
+                      HARD DISK
                     </Link>
                   </div>
                 </div>
@@ -118,11 +118,11 @@ function MenuBar(props) {
               <li>
                 <div className="dropdown">
                   <a href="." className="dropdown-toggle" data-toggle="dropdown">
-                    Beauty
+                    BEAUTY
                   </a>
                   <div className="dropdown-menu">
                     <Link to={"/products/" + PATHS.ELECTRONICS} className="dropdown-item">
-                      Makeup
+                      MAKEUP
                     </Link>
                   </div>
                 </div>
@@ -134,7 +134,7 @@ function MenuBar(props) {
               <li>
                 <Link to={"/cart"} className="userTextRight">
                   <i className="las la-shopping-cart menuBarRightBar"></i>
-                  <span>Cart({getCartCount()})</span>
+                  <span>CART({getCartCount()})</span>
                 </Link>
               </li>
               <li>

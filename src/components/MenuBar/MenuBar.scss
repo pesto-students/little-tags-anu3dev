@@ -1,5 +1,5 @@
 .navBarComp {
-  background-color: #20225e;
+  background-color: #f5f5f6;
   margin: 10px 110px 0px 125px;
 }
 .menuBar {
@@ -9,8 +9,7 @@
   text-decoration: none;
 }
 .menuBarLeft a:hover {
-  text-decoration: none;
-  color: #ff9923;
+  color: black;
 }
 .menuBarLeft ul {
   display: flex;
@@ -40,8 +39,7 @@
   text-decoration: none;
 }
 .menuBarRight ul li a:hover {
-  text-decoration: none;
-  color: #ff9923;
+  color: black;
 }
 
 .dropdown-menu {
@@ -55,10 +53,12 @@
   padding-left: 0px;
 }
 .dropdown-toggle {
-  color: #fff;
+  color: black;
+  font-weight: 600;
 }
 .userTextRight {
-  color: #fff;
+  color: black;
+  font-weight: 600;
 }
 .hrLine {
   border: 2px solid #ff9923;
@@ -72,8 +72,9 @@
 .logoutBtn {
   border: none;
   background: none;
-  color: #ff9923;
-  font-size: 25px;
+  color: black;
+  font-size: 16px;
+  font-weight: 600;
 }
 .logoutBtn:hover {
   color: #20225e;

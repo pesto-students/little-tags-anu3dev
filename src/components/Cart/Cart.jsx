@@ -20,7 +20,7 @@ function Cart() {
       firebase
         .addCartToUser(cartItems, authUser.uid)
         .then(() => {
-          console.log("cart replaced");
+          return null;
         })
         .catch((e) => {
           setErrorMessage(e.message);

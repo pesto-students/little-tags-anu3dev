@@ -1,7 +1,6 @@
 import app from "firebase/app";
 import "firebase/auth";
 import "firebase/database";
-import { getDataFromLocalStorage, setDataToLocalStorage } from "../common/Util";
 
 const config = {
   apiKey: process.env.REACT_APP_API_KEY,
@@ -50,26 +49,19 @@ class Firebase {
   };
 
   addCartToUser = (cartItems, userId) => {
-    let cartKey = getDataFromLocalStorage("cartKey");
     let updates = {};
-    if (!cartKey) {
-      cartKey = this.db.ref().child("cart").push().key;
-      setDataToLocalStorage("cartKey", cartKey);
-    }
-    updates["/users/" + userId + "/" + cartKey] = { cart: cartItems };
-
+    updates["/users/" + userId + "/cart"] = { cartItems };
     return this.db.ref().update(updates);
   };
 
   getCartOfUser = (userId) => {
-    const cartKey = getDataFromLocalStorage("cartKey");
     return this.db
-      .ref("/users/" + userId + "/" + cartKey)
+      .ref("/users/" + userId + "/cart")
       .get()
       .then((snapshot) => {
         if (snapshot.exists()) {
-          const { cart } = snapshot.val();
-          return cart;
+          const { cartItems } = snapshot.val();
+          return cartItems;
         } else {
           return [];
         }

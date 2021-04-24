@@ -1,6 +1,6 @@
 .footer {
   margin: 50px 0px 0px 0px;
-  padding: 20px 110px 0px 115px;
+  padding: 20px 110px 0px 125px;
   background-color: #20225e;
   color: #fff;
 }
@@ -10,7 +10,7 @@
   list-style: none;
 }
 .footer li::before {
-  content: '\2022';
+  content: "\2022";
   color: #ff9923;
   font-size: 25px;
   padding: 0px 10px 0px 0px;
@@ -26,4 +26,9 @@
 .footer h3 {
   font-weight: bold;
   color: #ff9923;
+}
+@media only screen and (max-width: 1200px) {
+  .footer {
+    padding: 20px;
+  }
 }

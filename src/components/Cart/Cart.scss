@@ -38,3 +38,8 @@
 .cartImage {
   max-height: 250px;
 }
+@media only screen and (max-width: 1200px) {
+  .cartScreen {
+    margin: 20px;
+  }
+}

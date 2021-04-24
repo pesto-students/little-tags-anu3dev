@@ -56,12 +56,12 @@ function Cart() {
         <h2 className="col-lg-12 col-md-12 ">YOUR CART </h2>
       </div>
       <div className="row cartItem">
-        <div className="col-lg-8 col-md-8 ">
+        <div className="col-lg-8 col-xl-8 ">
           {cartItems.length > 0 ? (
             cartItems.map((item, idx) => (
               <div className="row cartSmallSec" key={idx}>
-                <img className="col-lg-4 col-md-4 cartImage" src={item.image} alt={item.title} />
-                <div className="col-lg-4 col-md-4 cartDetail">
+                <img className="col-lg-4 col-xl-4 cartImage" src={item.image} alt={item.title} />
+                <div className="col-lg-4 col-xl-4 cartDetail">
                   <Link to={{ pathname: "/product/", productDetail: item }}>
                     <h3>{item.title}</h3>
                   </Link>
@@ -78,14 +78,14 @@ function Cart() {
                   </button>
                   <span>{errorMessage}</span>
                 </div>
-                <h3 className="col-lg-2 col-md-2 cartPrice">$ {item.price}</h3>
+                <h3 className="col-lg-2 col-xl-2 cartPrice">$ {item.price}</h3>
               </div>
             ))
           ) : (
             <h1>Your cart is empty!</h1>
           )}
         </div>
-        <div className="col-lg-4 col-md-4 cartCheckout">
+        <div className="col-lg-4 col-xl-4 cartCheckout">
           <div>
             <h3>Subtotal ({getCartCount()}) items:</h3>
           </div>

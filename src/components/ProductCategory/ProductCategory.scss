@@ -1,5 +1,5 @@
 .productCat {
-  margin: 40px 130px 0px 115px;
+  margin: 40px 110px 0px 125px;
   position: relative;
 }
 .productCat h1 {
@@ -10,7 +10,7 @@
 .productCat img {
   width: 100%;
   cursor: pointer;
-  margin: 10px 10px 10px 10px;
+  margin: 10px 0px 10px 0px;
   border-radius: 10px;
 }
 .onImageButton {
@@ -62,4 +62,9 @@
   font-size: 30px;
   font-weight: bold;
   color: #b6b0a9;
+}
+@media only screen and (max-width: 1200px) {
+  .productCat {
+    margin: 40px 20px;
+  }
 }

@@ -1,6 +1,6 @@
 .navBarComp {
   background-color: #20225e;
-  margin: 10px 120px 0px 125px;
+  margin: 10px 110px 0px 125px;
 }
 .menuBar {
   padding-top: 12px;
@@ -14,9 +14,9 @@
 }
 .menuBarLeft ul {
   display: flex;
-  font-size: 25px;
+  font-size: 16px;
   list-style: none;
-  padding-left: 25px;
+  padding-left: 10px;
 }
 .menuBarLeft ul li {
   margin: 0px 12px 0px 12px;
@@ -34,7 +34,7 @@
 .menuBarRight ul li {
   cursor: pointer;
   margin: 0px 5px 0px 5px;
-  font-size: 25px;
+  font-size: 16px;
 }
 .menuBarRight ul li a {
   text-decoration: none;
@@ -146,4 +146,9 @@
 .loginBtn--google:hover,
 .loginBtn--google:focus {
   background: #e74b37;
+}
+@media only screen and (max-width: 1200px) {
+  .navBarComp {
+    margin: 10px 20px;
+  }
 }

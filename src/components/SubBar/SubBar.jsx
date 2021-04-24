@@ -36,11 +36,11 @@ function SubBar() {
   };
   return (
     <div className="subBar row">
-      <div className="subBarLeft col-lg-6 col-md-6">
+      <div className="subBarLeft col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
         <Link to={HOME}>Instant Order</Link>
       </div>
 
-      <div className="subBarRight col-lg-6 col-md-6">
+      <div className="subBarRight col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
         <input
           type="search"
           placeholder="Search for products"

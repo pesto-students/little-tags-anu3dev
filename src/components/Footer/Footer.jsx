@@ -6,7 +6,7 @@ import * as ROUTES from "../common/Routes";
 export default function Footer() {
   return (
     <div className="footer row">
-      <div className="col-lg-3 col-md-3">
+      <div className="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
         <h3>About Instant Order:</h3>
         <p>
           Pesto Tech is proudly launching its own Online Clothing Store named Little Tags. You have
@@ -14,7 +14,7 @@ export default function Footer() {
           meet the requirements mentioned in the MVP below.
         </p>
       </div>
-      <div className="col-lg-3 col-md-3">
+      <div className="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
         <h3>Product Categories:</h3>
         <ul>
           <li>
@@ -34,7 +34,7 @@ export default function Footer() {
           </li>
         </ul>
       </div>
-      <div className="col-lg-3 col-md-3">
+      <div className="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
         <h3>Quick Links:</h3>
         <ul>
           <li>
@@ -54,7 +54,7 @@ export default function Footer() {
           </li>
         </ul>
       </div>
-      <div className="col-lg-3 col-md-3">
+      <div className="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
         <h3>Reach Us:</h3>
         <p>
           <i className="las la-street-view"></i> : B-11, Shanti Bagh, London,

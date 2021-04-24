@@ -48,7 +48,7 @@ function Checkout() {
     <div className="checkoutPage">
       <h1>Delivery Address: </h1>
       <div className="row">
-        <div className="col-md-6 col-lg-6">
+        <div className="col-xl-6 col-md-6 col-lg-6  col-sm-12 col-12">
           <div className="addressSectionLeft">
             <div className="addressBox">
               <input type="radio" name="1" value="1" />
@@ -94,7 +94,7 @@ function Checkout() {
             Pay with Razorpay
           </button>
         </div>
-        <div className="col-md-6 col-lg-6">
+        <div className="col-xl-6 col-md-6 col-lg-6 col-sm-12 col-12">
           <div className="addressSectionRight">
             <div className="halfInput">
               <input type="text" placeholder="Full Name" />

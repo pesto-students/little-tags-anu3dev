@@ -51,7 +51,7 @@ export default function ProductDetail() {
         <div className="links">{productDetail.title}</div>
       </div>
       <div className="productDetailContent row">
-        <div className="productDetailLeftp col-lg-4 col-md-4">
+        <div className="productDetailLeftp col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
           <div className="imageScroll">
             <img className="leftImg" src={productDetail.src[index]} alt="product name" />
           </div>
@@ -59,7 +59,7 @@ export default function ProductDetail() {
             <ImagesThumb images={productDetail.src} tab={handleTab} imageRef={imageRef} />
           </div>
         </div>
-        <div className="productDetailCenter  col-lg-6 col-md-6">
+        <div className="productDetailCenter  col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
           <h1 className="title">{productDetail.title}</h1>
           <div className="rating">
             <i className="las la-star"></i>
@@ -101,7 +101,7 @@ export default function ProductDetail() {
             </button>
           </Link>
         </div>
-        <div className="productDetailRight  col-lg-2 col-md-2">
+        <div className="productDetailRight  col-xl-2 col-lg-2">
           <div className="rightSec">
             <i className="las la-wallet"></i>
             <p>

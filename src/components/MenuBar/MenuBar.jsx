@@ -77,11 +77,6 @@ function MenuBar(props) {
           <div className="menuBarLeft col-md-7 col-lg-7">
             <ul>
               <li>
-                <Link to={ROUTES.HOME} className="userTextRight">
-                  <i className="las la-bars"></i>
-                </Link>
-              </li>
-              <li>
                 <div className="dropdown">
                   <a href="." className="dropdown-toggle" data-toggle="dropdown">
                     Clothing

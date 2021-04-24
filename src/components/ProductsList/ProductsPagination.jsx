@@ -38,7 +38,7 @@ export default function ProductsPagination({ data, dataLimit }) {
     <div className="productContent">
       <div className="row">
         {getPaginatedData().map((d, idx) => (
-          <div className="card col-md-4" key={idx}>
+          <div className="card col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12" key={idx}>
             <div className="cardImage">
               <img src={d.image} alt="product" />
             </div>
@@ -47,10 +47,7 @@ export default function ProductsPagination({ data, dataLimit }) {
               <p className="desc">{d.description}</p>
               <p className="price">₹ {d.price}</p>
               <p className="price">{d.category}</p>
-              <Link
-                to={"/products/" + d.category + "/" + d.id}
-                className="viewBtn"
-              >
+              <Link to={"/products/" + d.category + "/" + d.id} className="viewBtn">
                 View
               </Link>
             </div>
@@ -70,9 +67,7 @@ export default function ProductsPagination({ data, dataLimit }) {
             <button
               key={index}
               onClick={handleChangePage}
-              className={`paginationItem ${
-                currentPage === item ? "active" : null
-              }`}
+              className={`paginationItem ${currentPage === item ? "active" : null}`}
             >
               <span>{item}</span>
             </button>

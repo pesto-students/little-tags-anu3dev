@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./SubBar.scss";
-import { useHistory, Link } from "react-router-dom";
-import { HOME } from "../common/Routes";
+import { useHistory } from "react-router-dom";
 
 const ENTER_KEYCHAR_CODE = 13;
 

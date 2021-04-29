@@ -27,8 +27,8 @@ function App() {
       <div>
         <ModalNew />
         <TopBar />
-        <SubBar />
         <MenuBar />
+        <SubBar />
         <Switch>
           <Route exact path={PATHS.HOME}>
             <Slider slides={SliderData} />

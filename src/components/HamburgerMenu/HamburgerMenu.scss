@@ -1,0 +1,18 @@
+.burgerContainer {
+  display: flex;
+  flex-direction: column;
+  width: 2rem;
+  height: 1.5rem;
+  justify-content: space-around;
+  flex-flow: column no-wrap;
+  cursor: pointer;
+  z-index: 20;
+  div {
+    width: 2rem;
+    height: 0.25rem;
+    border-radius: 10px;
+    transform-origin: 1px;
+    transition: all 0.3s linear;
+    background-color: #333;
+  }
+}

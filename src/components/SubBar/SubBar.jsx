@@ -37,7 +37,7 @@ function SubBar() {
   return (
     <div className="subBar row">
       <div className="subBarLeft col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-        <Link to={HOME}>Instant Order</Link>
+        {/* <Link to={HOME}>Instant Order</Link> */}
       </div>
 
       <div className="subBarRight col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">

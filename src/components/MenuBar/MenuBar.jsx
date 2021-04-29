@@ -3,10 +3,11 @@ import { withRouter, Link } from "react-router-dom";
 import FirebaseContext from "../Firebase/context";
 import { useSelector, useDispatch } from "react-redux";
 import "./MenuBar.scss";
-import * as PATHS from "../common/ProductCategories";
 import * as ROUTES from "../common/Routes";
 import { addToCart, clearCart } from "../../redux/actions/CartActions";
 import { resetAuthUser } from "../../redux/actions/index";
+import MenuBarRight from "./MenuBarRight";
+import HamburgerMenu from "../HamburgerMenu/HamburgerMenu";
 
 function MenuBar(props) {
   const firebase = useContext(FirebaseContext);
@@ -22,11 +23,13 @@ function MenuBar(props) {
     firebase
       .doFacebookSignIn()
       .then((authUser) => {
-        firebase.user(authUser.user.uid).update({
-          email: authUser.user.email,
-          username: authUser.user.displayName,
-          roles: {},
-        });
+        if (authUser.additionalUserInfo.isNewUser) {
+          firebase.user(authUser.user.uid).set({
+            email: authUser.user.email,
+            username: authUser.user.displayName,
+            roles: {},
+          });
+        }
         return updateCartFromFirebase(authUser.user.uid);
       })
       .then(() => {
@@ -51,11 +54,13 @@ function MenuBar(props) {
     firebase
       .doGoogleSignIn()
       .then((authUser) => {
-        firebase.user(authUser.user.uid).update({
-          email: authUser.user.email,
-          username: authUser.user.displayName,
-          roles: {},
-        });
+        if (authUser.additionalUserInfo.isNewUser) {
+          firebase.user(authUser.user.uid).set({
+            email: authUser.user.email,
+            username: authUser.user.displayName,
+            roles: {},
+          });
+        }
         return updateCartFromFirebase(authUser.user.uid);
       })
       .then(() => {
@@ -72,61 +77,17 @@ function MenuBar(props) {
   };
   return (
     <>
-      <nav className="sticky-top navBarComp">
+      <nav className="sticky-top fixed-top navBarComp">
         <div className="menuBar row">
           <div className="menuBarLeft col-md-7 col-lg-7">
             <ul>
               <li>
-                <div className="dropdown">
-                  <a href="." className="dropdown-toggle" data-toggle="dropdown">
-                    CLOTHING
-                  </a>
-                  <div className="dropdown-menu">
-                    <Link to={"/products/" + PATHS.MENS_CLOTHING} className="dropdown-item">
-                      MENS WEAR
-                    </Link>
-                    <Link to={"/products/" + PATHS.WOMENS_CLOTHING} className="dropdown-item">
-                      WOMENS WEAR
-                    </Link>
-                  </div>
-                </div>
+                <HamburgerMenu />
               </li>
-              <li>
-                <div className="dropdown">
-                  <a href="." className="dropdown-toggle" data-toggle="dropdown">
-                    JEWELLERY
-                  </a>
-                  <div className="dropdown-menu">
-                    <Link to={"/products/" + PATHS.JEWELLERY} className="dropdown-item">
-                      RING
-                    </Link>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div className="dropdown">
-                  <a href="." className="dropdown-toggle" data-toggle="dropdown">
-                    ELECTRONICS
-                  </a>
-                  <div className="dropdown-menu">
-                    <Link to={"/products/" + PATHS.ELECTRONICS} className="dropdown-item">
-                      HARD DISK
-                    </Link>
-                  </div>
-                </div>
-              </li>
-              <li>
-                <div className="dropdown">
-                  <a href="." className="dropdown-toggle" data-toggle="dropdown">
-                    BEAUTY
-                  </a>
-                  <div className="dropdown-menu">
-                    <Link to={"/products/" + PATHS.ELECTRONICS} className="dropdown-item">
-                      MAKEUP
-                    </Link>
-                  </div>
-                </div>
-              </li>
+              <div className="title">
+                <Link to={ROUTES.HOME}>Instant Order</Link>
+              </div>
+              <MenuBarRight />
             </ul>
           </div>
           <div className="menuBarRight col-md-5 col-lg-5">
@@ -141,19 +102,30 @@ function MenuBar(props) {
                 <a href="." className="userTextRight">
                   <i className="las la-user"></i>
                   <span>
-                    Hello {user.authUser === null ? "Guest" : user.authUser.username.split(" ")[0]}
+                    Hello{" "}
+                    {user.authUser === null
+                      ? "Guest"
+                      : user.authUser.username.split(" ")[0]}
                   </span>
                 </a>
               </li>
               <li>
                 <div className="dropdown">
-                  <a href="." className="dropdown-toggle" data-toggle="dropdown">
+                  <a
+                    href="."
+                    className="dropdown-toggle"
+                    data-toggle="dropdown"
+                  >
                     <i className="las la-sign-in-alt"></i>
                     <span>
                       {user.authUser === null ? (
                         "Login"
                       ) : (
-                        <button className="logoutBtn" href="." onClick={handleSignOut}>
+                        <button
+                          className="logoutBtn"
+                          href="."
+                          onClick={handleSignOut}
+                        >
                           LogOut
                         </button>
                       )}
@@ -178,22 +150,34 @@ function MenuBar(props) {
                   />
                   Login with Google
                 </button> */}
-                    <button className="loginBtn loginBtn--google" onClick={handleGoogleSignIn}>
+                    <button
+                      className="loginBtn loginBtn--google"
+                      onClick={handleGoogleSignIn}
+                    >
                       Login with Google
                     </button>
-                    <button className="loginBtn loginBtn--facebook" onClick={handleFacebookSignIn}>
+                    <button
+                      className="loginBtn loginBtn--facebook"
+                      onClick={handleFacebookSignIn}
+                    >
                       Login with Facebook
                     </button>
                     <br />
                     {user.authUser === null ? (
                       ""
                     ) : (
-                      <button className="logoutBtn logoutBtnText" href="." onClick={handleSignOut}>
+                      <button
+                        className="logoutBtn logoutBtnText"
+                        href="."
+                        onClick={handleSignOut}
+                      >
                         <i className="las la-sign-out-alt"></i>Logout
                       </button>
                     )}
 
-                    <span className="errorLog">{!!errorMessage && <p>{errorMessage}</p>}</span>
+                    <span className="errorLog">
+                      {!!errorMessage && <p>{errorMessage}</p>}
+                    </span>
                   </div>
                 </div>
               </li>

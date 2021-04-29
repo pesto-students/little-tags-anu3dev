@@ -1,6 +1,6 @@
 export const SliderData = [
   {
-    image: "./img/sliderA.jpg",
+    image: "./img/sliderD.jpg",
   },
   {
     image: "./img/sliderB.jpg",
@@ -9,7 +9,7 @@ export const SliderData = [
     image: "./img/sliderC.jpg",
   },
   {
-    image: "./img/sliderD.jpg",
+    image: "./img/sliderA.jpg",
   },
   {
     image: "./img/sliderE.jpg",

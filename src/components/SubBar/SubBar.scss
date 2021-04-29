@@ -19,17 +19,18 @@
 .subBarRight {
   display: flex;
   justify-content: flex-end;
+  border: 1px solid black;
+  border-radius: 20px;
 }
 .subBarRight input {
+  width: 200px;
+  padding: 10px;
+  outline: none;
+  padding-left: 10px;
+  border: 0;
   font-size: 22px;
   width: 80%;
-  border: 1px solid #f6f6f5;
-  border-radius: 0 4px 4px 0;
   cursor: pointer;
-  outline: none;
-  padding: 10px 0px 10px 10px;
-  margin-left: 10%;
-  background-color: #f5f5f6;
 }
 .subBarRight input:focus {
   outline-offset: 0px;

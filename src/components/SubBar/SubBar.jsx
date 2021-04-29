@@ -46,6 +46,11 @@ function SubBar() {
           onKeyUp={handleChangeSearch}
           onKeyPress={handleKeyPress}
         />
+        <img
+          className="search-icon"
+          src="/images/search.svg"
+          alt="Search Products"
+        />
       </div>
     </div>
   );

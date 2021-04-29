@@ -9,14 +9,14 @@ export default function HamburgerSubMenu({ handleClick }) {
       <button onClick={handleClick}>&times;</button>
       <ul>
         <li>
-          <div className="menu">
+          <div className="menu" onClick={handleClick}>
             <Link to={"/products/" + PATHS.MENS_CLOTHING} className="menuItem">
               MENS WEAR
             </Link>{" "}
           </div>
         </li>
         <li>
-          <div className="menu">
+          <div className="menu" onClick={handleClick}>
             <Link
               to={"/products/" + PATHS.WOMENS_CLOTHING}
               className="menuItem"
@@ -26,21 +26,21 @@ export default function HamburgerSubMenu({ handleClick }) {
           </div>
         </li>
         <li>
-          <div className="menu">
+          <div className="menu" onClick={handleClick}>
             <Link to={"/products/" + PATHS.JEWELLERY} className="menuItem">
               JEWELLERY
             </Link>
           </div>
         </li>
         <li>
-          <div className="menu">
+          <div className="menu" onClick={handleClick}>
             <Link to={"/products/" + PATHS.ELECTRONICS} className="menuItem">
               ELECTRONICS
             </Link>
           </div>
         </li>
         <li>
-          <div className="menu">
+          <div className="menu" onClick={handleClick}>
             <Link to={"/products/" + PATHS.ELECTRONICS} className="menuItem">
               BEAUTY
             </Link>

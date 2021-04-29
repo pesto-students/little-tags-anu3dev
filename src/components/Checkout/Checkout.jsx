@@ -76,8 +76,8 @@ function Checkout() {
                   <i className="las la-edit editBtn"></i>
                 </h6>
                 <h6>
-                  house no 26, jalam mohalla, tughlakabad village, new delhi, tughlakabad village,
-                  New Delhi, Delhi
+                  house no 26, jalam mohalla, tughlakabad village, new delhi,
+                  tughlakabad village, New Delhi, Delhi
                 </h6>
               </label>
             </div>
@@ -89,8 +89,8 @@ function Checkout() {
                   <i className="las la-edit editBtn"></i>
                 </h6>
                 <h6>
-                  house no 26, jalam mohalla, tughlakabad village, new delhi, tughlakabad village,
-                  New Delhi, Delhi
+                  house no 26, jalam mohalla, tughlakabad village, new delhi,
+                  tughlakabad village, New Delhi, Delhi
                 </h6>
               </label>
             </div>
@@ -102,8 +102,8 @@ function Checkout() {
                   <i className="las la-edit editBtn"></i>{" "}
                 </h6>
                 <h6>
-                  house no 26, jalam mohalla, tughlakabad village, new delhi, tughlakabad village,
-                  New Delhi, Delhi
+                  house no 26, jalam mohalla, tughlakabad village, new delhi,
+                  tughlakabad village, New Delhi, Delhi
                 </h6>
               </label>
             </div>

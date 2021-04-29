@@ -1,8 +1,8 @@
 .footer {
   margin: 50px 0px 0px 0px;
   padding: 20px 110px 0px 125px;
-  background-color: #20225e;
-  color: #fff;
+  background-color: lightblue;
+  color: black;
 }
 .footer ul {
   margin-left: -40px;
@@ -11,21 +11,21 @@
 }
 .footer li::before {
   content: "\2022";
-  color: #ff9923;
+  color: black;
   font-size: 25px;
   padding: 0px 10px 0px 0px;
 }
 .footer a {
   text-decoration: none;
-  color: #fff;
+  color: black;
 }
 .footer a:hover {
   text-decoration: none;
-  color: #ff9923;
+  color: black;
 }
 .footer h3 {
   font-weight: bold;
-  color: #ff9923;
+  color: black;
 }
 @media only screen and (max-width: 1200px) {
   .footer {

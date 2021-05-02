@@ -9,7 +9,6 @@ export default function SearchProducts() {
   const { searchText } = useParams();
   const [searchResults, setSearchResults] = useState([]);
   useEffect(() => {
-    window.scrollTo(0, 0);
     let products = Data.filter((product) => {
       return (
         product.category.toLowerCase().includes(searchText) ||

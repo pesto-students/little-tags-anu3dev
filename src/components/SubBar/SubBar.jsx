@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import "./SubBar.scss";
 import { useHistory } from "react-router-dom";
 
-const ENTER_KEYCHAR_CODE = 13;
-
 function SubBar() {
   const [searchText, setSearchText] = useState("");
   const history = useHistory();

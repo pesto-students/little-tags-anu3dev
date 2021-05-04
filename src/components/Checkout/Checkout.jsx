@@ -35,8 +35,8 @@ function Checkout() {
     // callback_url: ".",
     handler: function (response) {
       handleCheckout();
+      alert(`Your Payment ID: ${response.razorpay_payment_id}`);
       history.push(ORDER);
-      //alert(`Your Payment ID: ${response.razorpay_payment_id}`);
     },
     notes: {
       address: "some address",
@@ -69,7 +69,7 @@ function Checkout() {
               <input type="radio" name="1" value="1" />
               <label htmlFor="1">
                 <h6 className="addressHeading">
-                  Anurag Kumar +91-8595004299
+                  Home +91-8595004299
                   <i className="las la-edit editBtn"></i>
                 </h6>
                 <h6>
@@ -82,25 +82,22 @@ function Checkout() {
               <input type="radio" name="1" value="2" />
               <label htmlFor="1">
                 <h6 className="addressHeading">
-                  Anurag Kumar +91-8595004299
+                  Office +91-8595004299
                   <i className="las la-edit editBtn"></i>
                 </h6>
-                <h6>
-                  house no 26, jalam mohalla, tughlakabad village, new delhi,
-                  tughlakabad village, New Delhi, Delhi
-                </h6>
+                <h6>house no AF06, Vindhyachal apartment, chennai,TamilNadu</h6>
               </label>
             </div>
             <div className="addressBox">
               <input type="radio" name="1" value="3" />
               <label htmlFor="1">
                 <h6 className="addressHeading">
-                  Anurag Kumar +91-8595004299
+                  Office +91-8595004299
                   <i className="las la-edit editBtn"></i>{" "}
                 </h6>
                 <h6>
-                  house no 26, jalam mohalla, tughlakabad village, new delhi,
-                  tughlakabad village, New Delhi, Delhi
+                  Flat No: 18, New Perungalathur,
+                  Bannarghatta,Bangalore,Karnataka
                 </h6>
               </label>
             </div>

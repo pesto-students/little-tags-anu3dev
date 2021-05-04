@@ -12,22 +12,11 @@ export default function Order() {
   useEffect(() => {
     if (authUser) {
       setOrderList([]);
-      console.log("inside useeffect");
       firebase.getOrderData(authUser.uid).then((snapshot) => {
         let order = snapshot.val();
         for (let i in order) {
           for (let j of order[i]) {
-            const { id, title, image, price } = j;
-            setOrderList((arr) => [
-              ...arr,
-              {
-                id,
-                title,
-                price,
-                image,
-                i,
-              },
-            ]);
+            setOrderList((arr) => [...arr, j]);
           }
         }
       });

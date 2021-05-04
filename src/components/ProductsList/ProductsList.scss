@@ -1,0 +1,123 @@
+.dFlex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.productContent {
+  @extend .dFlex;
+  position: relative;
+  margin: 0px 110px 0px 125px;
+  padding: 2% 0 0;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  .card {
+    border-radius: 15px;
+    @extend .dFlex;
+    position: relative;
+    transform: scale(0.9);
+    transition: all 0.3s ease-in-out;
+    .cardImage {
+      text-align: center;
+      padding-top: 20px;
+      img {
+        max-height: 200px;
+      }
+    }
+    .cardHeader {
+      @extend .dFlex;
+      flex-direction: column;
+      color: var(--black);
+      margin: 25px 0;
+      .title {
+        font-size: 18px;
+      }
+      .desc {
+        font-size: 14px;
+        text-align: center;
+        color: rgba(var(--white), 0.3);
+        margin: 8px 0;
+      }
+      .price {
+        font-size: 25px;
+        color: var(--orange);
+      }
+    }
+  }
+  .card:hover {
+    transform: scale(0.95);
+    cursor: pointer;
+  }
+  .card:hover {
+    .viewBtn {
+      background-color: var(--orange);
+      color: var(--white);
+      outline: none;
+    }
+    .title {
+      color: var(--black);
+    }
+  }
+}
+
+.viewBtn {
+  width: 50%;
+  height: 50%;
+  font-size: 20px;
+  border-radius: 35px;
+  background-color: var(--text);
+  color: var(--white);
+  @extend .dFlex;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s ease;
+  overflow: hidden;
+  outline: none;
+}
+
+.paginationItem {
+  background: var(--white);
+  border: 2px solid var(--greyBorder);
+  padding: 10px 15px;
+  border-radius: 50%;
+  height: 45px;
+  width: 45px;
+  position: relative;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.paginationItem span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.prev,
+.next {
+  background: var(--white);
+  border: none;
+  padding: 10px;
+  color: var(--blue);
+  box-shadow: 0 0 3px var(--borderColor);
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.paginationItem.active {
+  border: 1px solid #888;
+  color: #888;
+  pointer-events: none;
+}
+
+.prev.disabled,
+.next.disabled {
+  pointer-events: none;
+  box-shadow: none;
+  color: #999;
+}
+@media only screen and (max-width: 1200px) {
+  .productContent {
+    margin: 0px 20px;
+  }
+}

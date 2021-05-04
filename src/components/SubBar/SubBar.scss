@@ -1,0 +1,44 @@
+.subBar {
+  position: relative;
+  align-items: center;
+  margin: 25px 110px 0px 125px;
+}
+.subBarLeft a {
+  text-decoration: none;
+  color: black;
+}
+.subBarLeft a:hover {
+  color: black;
+}
+.subBarLeft {
+  cursor: pointer;
+  font-size: 55px;
+  font-weight: bold;
+  color: #20225e;
+}
+.subBarRight {
+  display: flex;
+  justify-content: flex-end;
+  border: 1px solid black;
+  border-radius: 20px;
+  background-color: #f5f5f6;
+}
+.subBarRight input {
+  width: 200px;
+  padding: 10px;
+  outline: none;
+  padding-left: 10px;
+  border: 0;
+  font-size: 22px;
+  width: 80%;
+  cursor: pointer;
+  background-color: #f5f5f6;
+}
+.subBarRight input:focus {
+  outline-offset: 0px;
+}
+@media only screen and (max-width: 1200px) {
+  .subBar {
+    margin: 25px 20px 0px 20px;
+  }
+}

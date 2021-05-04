@@ -1,0 +1,45 @@
+.cartScreen {
+  margin: 20px 110px 0px 125px;
+  position: relative;
+  min-height: 400px;
+}
+.cartHeader {
+  color: #103178;
+  font-style: bold;
+  font-size: 30px;
+  background-color: #f5f5f6;
+  height: 100%;
+  margin-bottom: 40px;
+}
+.cartLink {
+  margin-bottom: 20px;
+  text-decoration: underline;
+  width: 60%;
+}
+.cartDetail {
+  font-style: bold;
+  margin: 0 50px 0 30px;
+}
+.cartItem {
+  margin-bottom: 30px;
+}
+.cartCheckout {
+  margin-top: 10px;
+}
+.checkoutButton {
+  margin-left: 10px;
+}
+.cartSmallSec {
+  margin: 10px 0px 50px 0px;
+}
+.cartPrice {
+  text-align: center;
+}
+.cartImage {
+  max-height: 250px;
+}
+@media only screen and (max-width: 1200px) {
+  .cartScreen {
+    margin: 20px;
+  }
+}

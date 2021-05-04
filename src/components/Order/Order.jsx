@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import FirebaseContext from "../Firebase/context";
 import ProductsPagination from "../ProductsList/ProductsPagination";
+import "./Order.scss";
+
 const DATA_LIMIT = 8;
 
 export default function Order() {
@@ -23,15 +25,16 @@ export default function Order() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
-    <div>
+    <div className="orderPage">
+      <div className="orderHeader">
+        <h2>YOUR ORDER </h2>
+      </div>
       {orderList.length > 0 ? (
         <>
           <ProductsPagination data={orderList} dataLimit={DATA_LIMIT} />
         </>
       ) : (
-        <h1 style={{ textAlign: "center", marginTop: "40px" }}>
-          Please Login to access this page.
-        </h1>
+        <h1>No orders to display.</h1>
       )}
     </div>
   );

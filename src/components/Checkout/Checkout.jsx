@@ -69,17 +69,17 @@ function Checkout() {
               <input type="radio" name="1" value="1" />
               <label htmlFor="1">
                 <h6 className="addressHeading">
-                  Home +91-8595004299
+                  Home +91-9990100321
                   <i className="las la-edit editBtn"></i>
                 </h6>
                 <h6>
-                  house no 26, jalam mohalla, tughlakabad village, new delhi,
-                  tughlakabad village, New Delhi, Delhi
+                  house no 26, jalam mohalla, tughlakabad village, new delhi, tughlakabad village,
+                  New Delhi, Delhi
                 </h6>
               </label>
             </div>
             <div className="addressBox">
-              <input type="radio" name="1" value="2" />
+              <input type="radio" name="1" value="2" checked="checked" />
               <label htmlFor="1">
                 <h6 className="addressHeading">
                   Office +91-8595004299
@@ -92,13 +92,10 @@ function Checkout() {
               <input type="radio" name="1" value="3" />
               <label htmlFor="1">
                 <h6 className="addressHeading">
-                  Office +91-8595004299
+                  Office +91-9698942300
                   <i className="las la-edit editBtn"></i>{" "}
                 </h6>
-                <h6>
-                  Flat No: 18, New Perungalathur,
-                  Bannarghatta,Bangalore,Karnataka
-                </h6>
+                <h6>Flat No: 18, New Perungalathur, Bannarghatta,Bangalore,Karnataka</h6>
               </label>
             </div>
           </div>

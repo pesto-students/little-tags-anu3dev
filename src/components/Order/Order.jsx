@@ -11,7 +11,6 @@ export default function Order() {
   const { authUser } = sessionUser;
   useEffect(() => {
     if (authUser) {
-      setOrderList([]);
       firebase.getOrderData(authUser.uid).then((snapshot) => {
         let order = snapshot.val();
         for (let i in order) {
@@ -22,7 +21,7 @@ export default function Order() {
       });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [authUser]);
+  }, []);
   return (
     <div>
       {orderList.length > 0 ? (

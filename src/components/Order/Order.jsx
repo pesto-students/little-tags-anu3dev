@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import FirebaseContext from "../Firebase/context";
 import ProductsPagination from "../ProductsList/ProductsPagination";
-const DATA_LIMIT = 6;
+const DATA_LIMIT = 8;
 
 export default function Order() {
   const firebase = useContext(FirebaseContext);
@@ -29,7 +29,9 @@ export default function Order() {
           <ProductsPagination data={orderList} dataLimit={DATA_LIMIT} />
         </>
       ) : (
-        <h1>No Orders to display:</h1>
+        <h1 style={{ textAlign: "center", marginTop: "40px" }}>
+          Please Login to access this page.
+        </h1>
       )}
     </div>
   );

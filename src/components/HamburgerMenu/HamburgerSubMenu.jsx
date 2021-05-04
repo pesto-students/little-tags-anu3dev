@@ -6,7 +6,9 @@ import "./HamburgerSubMenu.scss";
 export default function HamburgerSubMenu({ handleClick }) {
   return (
     <div className="subMenu">
-      <button onClick={handleClick}>&times;</button>
+      <button className="subMenuBtn" onClick={handleClick}>
+        &times;
+      </button>
       <ul>
         <li>
           <div className="menu" onClick={handleClick}>

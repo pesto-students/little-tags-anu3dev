@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import "./SubBar.scss";
 import { useHistory } from "react-router-dom";
 
-const ENTER_KEYCHAR_CODE = 13;
-
 function SubBar() {
   const [searchText, setSearchText] = useState("");
   const history = useHistory();
@@ -27,22 +25,15 @@ function SubBar() {
     const debounce = handleDebouncedSearch(getData, 2000);
     debounce();
   };
-
-  const handleKeyPress = (event) => {
-    if (event.charCode === ENTER_KEYCHAR_CODE) {
-      getData();
-    }
-  };
   return (
     <div className="subBar row">
       <div className="subBarLeft col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12"></div>
 
       <div className="subBarRight col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
         <input
-          type="search"
+          type="text"
           placeholder="Search for products"
-          onKeyUp={handleChangeSearch}
-          onKeyPress={handleKeyPress}
+          onChange={handleChangeSearch}
         />
         <img
           className="search-icon"

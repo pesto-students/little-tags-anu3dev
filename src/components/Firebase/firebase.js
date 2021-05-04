@@ -51,9 +51,8 @@ class Firebase {
   addCartToUser = (cartItems, userId) => {
     let updates = {};
     updates["/users/" + userId + "/cart"] = { cartItems };
-    return this.db.ref().update(updates);
+    this.db.ref().update(updates);
   };
-
   getCartOfUser = (userId) => {
     return this.db
       .ref("/users/" + userId + "/cart")
@@ -69,6 +68,16 @@ class Firebase {
       .catch((error) => {
         console.error(error);
       });
+  };
+
+  setOrderData = (userId, products) => {
+    const currentTimeStamp = Math.floor(Date.now() / 1000);
+    this.db.ref(`/users/${userId}/orders/${currentTimeStamp}/`).set(products);
+  };
+
+  getOrderData = async (userId) => {
+    let ref = this.db.ref(`/users/${userId}/orders/`);
+    return await ref.once("value");
   };
 }
 

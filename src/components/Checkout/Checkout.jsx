@@ -4,10 +4,12 @@ import withAuthorization from "../Session/withAuthorization";
 import { useSelector, useDispatch } from "react-redux";
 import { clearCart } from "../../redux/actions/CartActions";
 import FirebaseContext from "../Firebase/context";
+import { useHistory } from "react-router-dom";
+import { ORDER } from "../common/Routes";
 
 function Checkout() {
   const cart = useSelector((state) => state.cart);
-
+  const history = useHistory();
   const { cartItems } = cart;
   const totalPrice = cartItems
     .reduce((price, item) => price + item.price * item.quantity, 0)
@@ -18,16 +20,10 @@ function Checkout() {
   const sessionUser = useSelector((state) => state.sessionState);
   const { authUser } = sessionUser;
   const handleCheckout = () => {
-    dispatch(clearCart());
     if (authUser) {
-      firebase
-        .addCartToUser(cartItems, authUser.uid)
-        .then(() => {
-          return null;
-        })
-        .catch((e) => {
-          console.log(e.message);
-        });
+      firebase.setOrderData(authUser.uid, cartItems);
+      dispatch(clearCart());
+      firebase.addCartToUser({}, authUser.uid);
     }
   };
   const options = {
@@ -39,7 +35,8 @@ function Checkout() {
     // callback_url: ".",
     handler: function (response) {
       handleCheckout();
-      alert(`Your Payment ID: ${response.razorpay_payment_id}`);
+      history.push(ORDER);
+      //alert(`Your Payment ID: ${response.razorpay_payment_id}`);
     },
     notes: {
       address: "some address",

@@ -1,10 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import FirebaseContext from "../Firebase/context";
-import ProductsPagination from "../ProductsList/ProductsPagination";
+import OrdersPagination from "./OrdersPagination";
 import "./Order.scss";
+import { formatDate } from "../common/Util";
 
-const DATA_LIMIT = 8;
+const DATA_LIMIT = 6;
 
 export default function Order() {
   const firebase = useContext(FirebaseContext);
@@ -14,10 +15,22 @@ export default function Order() {
   useEffect(() => {
     if (authUser) {
       firebase.getOrderData(authUser.uid).then((snapshot) => {
-        let order = snapshot.val();
+        const order = snapshot.val();
         for (let i in order) {
           for (let j of order[i]) {
-            setOrderList((arr) => [...arr, j]);
+            const { id, title, description, category, image, price } = j;
+            setOrderList((arr) => [
+              ...arr,
+              {
+                orderDate: formatDate(i),
+                id,
+                title,
+                description,
+                category,
+                price,
+                image,
+              },
+            ]);
           }
         }
       });
@@ -27,11 +40,11 @@ export default function Order() {
   return (
     <div className="orderPage">
       <div className="orderHeader">
-        <h2>YOUR ORDER </h2>
+        <h2>YOUR ORDERS </h2>
       </div>
       {orderList.length > 0 ? (
         <>
-          <ProductsPagination data={orderList} dataLimit={DATA_LIMIT} />
+          <OrdersPagination data={orderList} dataLimit={DATA_LIMIT} />
         </>
       ) : (
         <h1>No orders to display.</h1>

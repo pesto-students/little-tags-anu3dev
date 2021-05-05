@@ -42,3 +42,8 @@
   border: none;
   outline: none;
 }
+@media only screen and (max-width: 800px) {
+  .subMenu {
+    width: 50%;
+  }
+}

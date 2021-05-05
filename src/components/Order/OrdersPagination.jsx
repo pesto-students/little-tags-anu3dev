@@ -42,17 +42,19 @@ export default function OrdersPagination({ data, dataLimit }) {
           <div className="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-12">
             <img src={d.image} alt="product" />
           </div>
-          <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-            <h6>{d.title}</h6>
+          <div className="col-xl-5 col-lg-5 col-md-6 col-sm-6 col-12">
+            <h6 style={{ fontWeight: "bold" }}>{d.title}</h6>
             <h6>{d.description}</h6>
-            <p>Category: {d.category}</p>
           </div>
           <div className="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-12">
             <p>₹ {d.price}</p>
           </div>
-          <div className="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-12">
-            <h6>Ordered on: {d.orderDate} </h6>
-            <Link to={`/products/${d.category}/${d.id}`}>View</Link>
+          <div className="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">
+            <h6>
+              <span style={{ fontWeight: "bold" }}>Ordered on: </span>
+              {d.orderDate}{" "}
+            </h6>
+            <Link to={`/products/${d.category}/${d.id}`}>View Ordered Product</Link>
           </div>
         </div>
       ))}

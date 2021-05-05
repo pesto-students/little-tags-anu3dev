@@ -1,8 +1,4 @@
-import {
-  ADD_TO_CART,
-  CLEAR_CART,
-  REMOVE_FROM_CART,
-} from "../constants/CartActionTypes";
+import { ADD_TO_CART, CLEAR_CART, REMOVE_FROM_CART } from "../constants/CartActionTypes";
 
 export const addToCart = (product) => (dispatch, getState) => {
   dispatch({
@@ -14,6 +10,7 @@ export const addToCart = (product) => (dispatch, getState) => {
       price: product.price,
       quantity: product.quantity,
       description: product.description,
+      category: product.category,
     },
   });
   localStorage.setItem("cart", JSON.stringify(getState().cart.cartItems));

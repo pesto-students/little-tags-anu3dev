@@ -1,0 +1,49 @@
+.subMenu {
+  transform: translateX(0);
+  background-color: #f5f5f6;
+  position: fixed;
+  height: 100vh;
+  width: 25%;
+  left: 0;
+  transition: transform 0.3s ease-in-out;
+  margin-top: 40px;
+  ul {
+    list-style: none;
+    display: flex;
+    width: 100%;
+    flex-flow: column nowrap;
+    padding: 18px 10px 20px 59px;
+    align-items: flex-start;
+    font-size: 20px;
+  }
+}
+.menu:hover {
+  display: block;
+}
+.menu {
+  margin: 40px 0 10px 0;
+}
+.menuItem {
+  padding-left: 0px;
+  color: black;
+}
+.subMenuBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  color: black;
+  outline: none;
+}
+.subMenuBtn:focus {
+  border: none;
+  outline: none;
+}
+@media only screen and (max-width: 800px) {
+  .subMenu {
+    width: 50%;
+  }
+}

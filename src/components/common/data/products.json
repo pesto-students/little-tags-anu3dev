@@ -1,0 +1,452 @@
+[
+  {
+    "id": 1,
+    "title": "Vijay Trend Casual wear",
+    "price": 109.95,
+    "description": "Your perfect clothing for everyday use and walks in the forest. ",
+    "category": "men",
+    "image": "/images/MensWear1_1.png",
+    "src": [
+      "/images/MensWear1_1.png",
+      "/images/MensWear1_2.png",
+      "/images/MensWear1_3.png",
+      "/images/MensWear1_4.png"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Mens Casual Premium Slim Fit T-Shirts ",
+    "price": 22.3,
+    "description": "Slim-fitting style, contrast raglan long sleeve, light weight & soft fabric for breathable",
+    "category": "men",
+    "image": "/images/MensWear2_1.png",
+    "src": [
+      "/images/MensWear2_1.png",
+      "/images/MensWear2_2.png",
+      "/images/MensWear2_3.jpg",
+      "/images/MensWear2_4.png"
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Mens Cotton Jacket",
+    "price": 55.99,
+    "description": "Great outerwear jackets for Spring/Autumn/Winter, cycling, traveling or other outdoors.",
+    "category": "men",
+    "image": "/images/MensWear3_1.png",
+    "src": [
+      "/images/MensWear3_1.png",
+      "/images/MensWear3_2.png",
+      "/images/MensWear3_3.png",
+      "/images/MensWear3_4.png"
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Mens Casual Full Sleeve",
+    "price": 15.99,
+    "description": "The color could be different on the screen and in practice.Please note that body builds vary by person.",
+    "category": "men",
+    "image": "/images/MensWear4_1.png",
+    "src": [
+      "/images/MensWear4_1.png",
+      "/images/MensWear4_2.png",
+      "/images/MensWear4_3.png",
+      "/images/MensWear4_4.png"
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Mens Casual Slim Fit",
+    "price": 15.99,
+    "description": "The color could be different on the screen and in practice.Please note that body builds vary by person.",
+    "category": "men",
+    "image": "/images/MensWear5_1.png",
+    "src": [
+      "/images/MensWear5_1.png",
+      "/images/MensWear5_2.png",
+      "/images/MensWear5_3.png",
+      "/images/MensWear5_4.png"
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Mens Casual Regular Fit T-Shirts ",
+    "price": 45.3,
+    "description": "Regular-fitting style, light weight & soft fabric for breathable and comfortable wearing.",
+    "category": "men",
+    "image": "/images/MensWear6_1.png",
+    "src": [
+      "/images/MensWear6_1.png",
+      "/images/MensWear6_2.png",
+      "/images/MensWear6_3.png",
+      "/images/MensWear6_4.png"
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Mens Woollen Jacket",
+    "price": 65.99,
+    "description": "great outerwear jackets for Winter.Keeps you warm during the coldest of days!",
+    "category": "men",
+    "image": "/images/MensWear7_1.png",
+    "src": [
+      "/images/MensWear7_1.png",
+      "/images/MensWear7_2.png",
+      "/images/MensWear7_3.png",
+      "/images/MensWear7_4.png"
+    ]
+  },
+  {
+    "id": 8,
+    "title": "Mens Casual Regular Fit",
+    "price": 45.99,
+    "description": "Regular-fitting style, contrast to slim fit casuals for men!",
+    "category": "men",
+    "image": "/images/MensWear8_1.png",
+    "src": [
+      "/images/MensWear8_1.png",
+      "/images/MensWear8_2.png",
+      "/images/MensWear8_3.png",
+      "/images/MensWear8_4.png"
+    ]
+  },
+  {
+    "id": 9,
+    "title": "T-shirts Casual wear",
+    "price": 109.95,
+    "description": "Your perfect fit for everyday use and walks in the forest.",
+    "category": "men",
+    "image": "/images/MensWear9_1.png",
+    "src": [
+      "/images/MensWear9_1.png",
+      "/images/MensWear9_2.png",
+      "/images/MensWear9_3.png",
+      "/images/MensWear9_4.png"
+    ]
+  },
+  {
+    "id": 10,
+    "title": "John Hardy Women's Legends Naga Gold & Silver Dragon Station Chain Bracelet",
+    "price": 695,
+    "description": "From our Legends Collection, the Naga was inspired by the mythical water dragon.",
+    "category": "jewelery",
+    "image": "/images/jewels1_1.png",
+    "src": [
+      "/images/jewels1_1.png",
+      "/images/jewels1_2.png",
+      "/images/jewels1_3.png",
+      "/images/jewels1_4.png"
+    ]
+  },
+  {
+    "id": 11,
+    "title": "Solid Gold Petite Micropave ",
+    "price": 168,
+    "description": "Satisfaction Guaranteed. Return or exchange any order within 30 days.",
+    "category": "jewelery",
+    "image": "/images/jewels2_1.png",
+    "src": [
+      "/images/jewels2_1.png",
+      "/images/jewels2_2.png",
+      "/images/jewels2_3.png",
+      "/images/jewels2_4.png"
+    ]
+  },
+  {
+    "id": 12,
+    "title": "White Gold Plated Princess",
+    "price": 9.99,
+    "description": "Classic Created Wedding Engagement Solitaire Diamond Promise Ring for Her.",
+    "category": "jewelery",
+    "image": "/images/jewels3_1.png",
+    "src": [
+      "/images/jewels3_1.png",
+      "/images/jewels3_2.png",
+      "/images/jewels3_3.png",
+      "/images/jewels3_4.png"
+    ]
+  },
+  {
+    "id": 13,
+    "title": "Pierced Owl Rose Gold Plated Stainless Steel Double",
+    "price": 10.99,
+    "description": "Rose Gold Plated Double Flared Tunnel Plug Earrings. Made of 316L Stainless Steel",
+    "category": "jewelery",
+    "image": "/images/jewels4_1.png",
+    "src": [
+      "/images/jewels4_1.png",
+      "/images/jewels4_2.png",
+      "/images/jewels4_3.png",
+      "/images/jewels4_4.png"
+    ]
+  },
+  {
+    "id": 14,
+    "title": "KuberBox 18KT Yellow Gold and Diamond",
+    "price": 500,
+    "description": "Wear facing inward to be bestowed with love and abundance, or outward for protection.",
+    "category": "jewelery",
+    "image": "/images/jewels5_1.png",
+    "src": [
+      "/images/jewels5_1.png",
+      "/images/jewels5_2.png",
+      "/images/jewels5_3.png",
+      "/images/jewels5_4.png"
+    ]
+  },
+  {
+    "id": 15,
+    "title": "Gold Petite Micropave ",
+    "price": 200,
+    "description": "Designed and sold by Hafeez Center in India.",
+    "category": "jewelery",
+    "image": "/images/jewels6_1.png",
+    "src": [
+      "/images/jewels6_1.png",
+      "/images/jewels6_2.png",
+      "/images/jewels6_3.png",
+      "/images/jewels6_4.png"
+    ]
+  },
+  {
+    "id": 16,
+    "title": "Platinum Plated Princess",
+    "price": 21.99,
+    "description": "Gifts to spoil your love more for Engagement, Wedding, Anniversary, Valentine's Day.",
+    "category": "jewelery",
+    "image": "/images/jewels7_1.png",
+    "src": [
+      "/images/jewels7_1.png",
+      "/images/jewels7_2.png",
+      "/images/jewels7_3.png",
+      "/images/jewels7_4.png"
+    ]
+  },
+  {
+    "id": 17,
+    "title": "Gold Plated Stainless Steel Double",
+    "price": 42.99,
+    "description": "Made of 316L Stainless Steel.Rose Gold Plated Double Flared Tunnel Plug Earrings. ",
+    "category": "jewelery",
+    "image": "/images/jewels8_1.png",
+    "src": [
+      "/images/jewels8_1.png",
+      "/images/jewels8_2.png",
+      "/images/jewels8_3.png",
+      "/images/jewels8_4.png"
+    ]
+  },
+  {
+    "id": 18,
+    "title": "WD 2TB Elements Portable External Hard Drive - USB 3.0 ",
+    "price": 64,
+    "description": "USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve PC Performance High Capacity;",
+    "category": "electronics",
+    "image": "/images/elect1_1.png",
+    "src": [
+      "/images/elect1_1.png",
+      "/images/elect1_2.png",
+      "/images/elect1_3.png",
+      "/images/elect1_4.png"
+    ]
+  },
+  {
+    "id": 19,
+    "title": "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
+    "price": 109,
+    "description": "Easy upgrade for faster boot up, shutdown, application load and response .",
+    "category": "electronics",
+    "image": "/images/elect2_1.png",
+    "src": [
+      "/images/elect2_1.png",
+      "/images/elect2_2.png",
+      "/images/elect2_3.png",
+      "/images/elect2_4.png"
+    ]
+  },
+  {
+    "id": 20,
+    "title": "Silicon Power 256GB SSD 3D NAND A55 SLC Boost",
+    "price": 109,
+    "description": "Remarkable transfer speeds that enable faster bootup and improved overall system performance.",
+    "category": "electronics",
+    "image": "/images/elect3_1.png",
+    "src": [
+      "/images/elect3_1.png",
+      "/images/elect3_2.png",
+      "/images/elect3_3.png",
+      "/images/elect3_4.png"
+    ]
+  },
+  {
+    "id": 21,
+    "title": "Playstation 4 Portable External Hard Drive",
+    "price": 114,
+    "description": "Play anywhere Fast and easy, setup Sleek design with high capacity, 3-year manufacturer's limited warranty",
+    "category": "electronics",
+    "image": "/images/elect4_1.png",
+    "src": [
+      "/images/elect4_1.png",
+      "/images/elect4_2.png",
+      "/images/elect4_3.png",
+      "/images/elect4_4.png"
+    ]
+  },
+  {
+    "id": 22,
+    "title": "Acer SB220Q bi 21.5 inches Full HD",
+    "price": 599,
+    "description": "21. 5 inches Full HD (1920 x 1080) widescreen IPS display And Radeon free Sync technology.",
+    "category": "electronics",
+    "image": "/images/elect5_1.png",
+    "src": [
+      "/images/elect5_1.png",
+      "/images/elect5_2.png",
+      "/images/elect5_3.png",
+      "/images/elect5_4.png"
+    ]
+  },
+  {
+    "id": 23,
+    "title": "Samsung 49-Inch CHG90 144HzQLED ",
+    "price": 999.99,
+    "description": "49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screen.",
+    "category": "electronics",
+    "image": "/images/elect6_1.png",
+    "src": [
+      "/images/elect6_1.png",
+      "/images/elect6_2.png",
+      "/images/elect6_3.png",
+      "/images/elect6_4.png"
+    ]
+  },
+  {
+    "id": 24,
+    "title": "MBJ Women's Short Sleeve",
+    "price": 56.99,
+    "description": "It is suitable for different season and help you adapt to different climates.",
+    "category": "women",
+    "image": "/images/Womenswear4_1.png",
+    "src": [
+      "/images/Womenswear4_1.png",
+      "/images/Womenswear4_2.png",
+      "/images/Womenswear4_3.png",
+      "/images/Womenswear4_4.png"
+    ]
+  },
+  {
+    "id": 25,
+    "title": "Women's Cotton Top",
+    "price": 29.95,
+    "description": "The Top is Indian standard size. It is suitable for different season and to different climates.",
+    "category": "women",
+    "image": "/images/Womenswear2_1.png",
+    "src": [
+      "/images/Womenswear2_1.png",
+      "/images/Womenswear2_2.png",
+      "/images/Womenswear2_3.png",
+      "/images/Womenswear2_4.png"
+    ]
+  },
+  {
+    "id": 26,
+    "title": "Rain Jacket Women Raincoats",
+    "price": 39.99,
+    "description": "Design provide more convenience. It is suitable for different season.",
+    "category": "women",
+    "image": "/images/Womenswear3_1.png",
+    "src": [
+      "/images/Womenswear3_1.png",
+      "/images/Womenswear3_2.png",
+      "/images/Womenswear3_3.png",
+      "/images/Womenswear3_4.png"
+    ]
+  },
+  {
+    "id": 27,
+    "title": "Indian Women's Hoody",
+    "price": 9.85,
+    "description": "The Jacket is standard size. It is suitable for different season and help you adapt to different climates.",
+    "category": "women",
+    "image": "/images/Womenswear1_1.png",
+    "src": [
+      "/images/Womenswear1_1.png",
+      "/images/Womenswear1_2.png",
+      "/images/Womenswear1_3.png",
+      "/images/Womenswear1_4.png"
+    ]
+  },
+  {
+    "id": 28,
+    "title": "Opna Women's Moisture",
+    "price": 7.95,
+    "description": "Women's top for all sizes.It helps you adapt to different climates.",
+    "category": "women",
+    "image": "/images/Womenswear5_1.png",
+    "src": [
+      "/images/Womenswear5_1.png",
+      "/images/Womenswear5_2.png",
+      "/images/Womenswear5_3.png",
+      "/images/Womenswear5_4.png"
+    ]
+  },
+  {
+    "id": 29,
+    "title": "DANVOUY Womens T-Shirt",
+    "price": 12.99,
+    "description": "Pure cotton T-shirt.It is suitable for different season and help you adapt to different climates.",
+    "category": "women",
+    "image": "/images/Womenswear6_1.png",
+    "src": [
+      "/images/Womenswear6_1.png",
+      "/images/Womenswear6_2.png",
+      "/images/Womenswear6_3.png",
+      "/images/Womenswear6_4.png"
+    ]
+  },
+  {
+    "id": 30,
+    "title": "Women's Half Design Art Silk Kanchipuram",
+    "price": 56.99,
+    "description": "Pure cotton silk saree. Design provide more convenience.",
+    "category": "women",
+    "image": "/images/Womenswear7_1.png",
+    "src": [
+      "/images/Womenswear7_1.png",
+      "/images/Womenswear7_2.png",
+      "/images/Womenswear7_3.png",
+      "/images/Womenswear7_4.png"
+    ]
+  },
+  {
+    "id": 31,
+    "title": "BIYLACLESEN Women's Kurti",
+    "price": 56.99,
+    "description": "The Kurti is Indian standard size. It is suitable for different season.",
+    "category": "women",
+    "image": "/images/Womenswear8_1.png",
+    "src": [
+      "/images/Womenswear8_1.png",
+      "/images/Womenswear8_2.png",
+      "/images/Womenswear8_3.png",
+      "/images/Womenswear8_4.png"
+    ],
+    "colors": ["red", "black", "crimson", "teal"]
+  },
+  {
+    "id": 32,
+    "title": "Long Top for women",
+    "price": 56.99,
+    "description": "The Long Top is Indian standard size. Design provide more convenience. ",
+    "category": "women",
+    "image": "/images/Womenswear9_1.png",
+    "src": [
+      "/images/Womenswear9_1.png",
+      "/images/Womenswear9_2.png",
+      "/images/Womenswear9_3.png",
+      "/images/Womenswear9_4.png"
+    ],
+    "colors": ["red", "black", "crimson", "teal"]
+  }
+]

@@ -1,0 +1,26 @@
+.modal-content {
+  border-radius: 10px;
+  color: #ff9923;
+}
+.modal-content a {
+  color: #ff9923;
+  font-size: 25px;
+  font-weight: bold;
+}
+.modal-content a:hover {
+  color: #20225e;
+}
+.modal-body input {
+  cursor: pointer;
+  margin: 5px 0px 5px 0px;
+  width: 100%;
+  padding: 5px 0px 5px 10px;
+  outline: none;
+  border-radius: 38.5px;
+}
+.modal-body button {
+  outline: none;
+}
+.modal-footer button {
+  outline: none;
+}

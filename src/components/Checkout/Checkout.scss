@@ -1,0 +1,85 @@
+.checkoutPage {
+  margin: 10px 110px 0px 125px;
+}
+.checkoutPage h1 {
+  margin: 20px 0px 20px 0px;
+}
+.addressSectionLeft {
+  margin: 10px 0px 20px 0px;
+}
+.addressBox {
+  display: flex;
+}
+.addressBox input {
+  margin: 25px 15px 0px 0px;
+  cursor: pointer;
+}
+.addressBox input[type="radio"]:checked {
+  margin-top: 45px;
+}
+.addressBox input[type="radio"]:checked + label {
+  border: 2px solid lightgrey;
+  border-radius: 5px;
+  padding: 10px 20px 10px 10px;
+  .editBtn {
+    display: inline;
+    padding-left: 15px;
+    cursor: pointer;
+    font-size: 24px;
+  }
+}
+.editBtn {
+  display: none;
+}
+.addressHeading {
+  font-weight: bold;
+}
+.razorPayBtn {
+  background-color: rgb(35, 113, 236);
+  color: #fff;
+  border: none;
+  padding: 15px;
+}
+.halfInput {
+  display: flex;
+}
+.halfInput input {
+  margin: 10px;
+  padding: 5px 0px 5px 10px;
+  width: 100%;
+}
+.inputTextArea {
+  width: 100%;
+  margin: 10px;
+  padding: 10px;
+}
+.inputTextAreaDiv {
+  margin-right: 20px;
+}
+.halfRadio {
+  display: flex;
+  margin: 10px;
+  width: 100%;
+}
+.halfRadio input {
+  margin-right: 20px;
+  cursor: pointer;
+}
+.halfRadio label {
+  margin-right: 20px;
+}
+.newAddress {
+  margin: 10px;
+}
+.addressSectionRight a {
+  text-decoration: none;
+  background-color: #2371ec;
+  color: #fff;
+  border: none;
+  padding: 10px 10px 10px 15px;
+}
+@media only screen and (max-width: 1200px) {
+  .checkoutPage {
+    margin: 20px;
+  }
+}

@@ -1,0 +1,26 @@
+.topBar {
+  background-color: #f0f2f5;
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+.topBarLeft {
+  display: flex;
+  flex: 1;
+  justify-content: space-around;
+  margin: 0px 5px 0px 5px;
+}
+.topBarRight {
+  display: flex;
+  flex: 1;
+  justify-content: space-around;
+  margin-right: 100px;
+}
+.topBarRight ul {
+  list-style: none;
+  display: flex;
+}
+.topBarRight ul li {
+  cursor: pointer;
+  margin: 0px 5px 0px 5px;
+}
